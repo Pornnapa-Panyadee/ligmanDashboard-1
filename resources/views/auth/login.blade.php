@@ -67,7 +67,10 @@
             </div>
           </div>
           <div class="card-footer justify-content-center">
-            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Lets Go') }}</button>
+            <div id="checkbox_captcha"></div>
+          </div>
+          <div class="card-footer justify-content-center">
+            <button type="submit" class="btn btn-outline-success">{{ __('Log In') }}</button>
           </div>
         </div>
       </form>
@@ -89,3 +92,15 @@
   </div>
 </div>
 @endsection
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+  async defer>
+</script>
+
+<script type="text/javascript">
+  var onloadCallback = function() {
+    grecaptcha.render('checkbox_captcha', {
+      'sitekey' : '6LeLVKQaAAAAAKv1T8janH0uFJNUXuTO7JFpRp4p'
+    });
+  };
+</script>
