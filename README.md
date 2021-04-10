@@ -1,17 +1,17 @@
-ligmanDashboard
+<h1>ligmanDashboard</h1>
 
 # Prepare installation
-git — https://git-scm.com/downloads
-docker — https://www.docker.com/get-docker
-docker-compose — https://docs.docker.com/compose/install/#install-compose
+git — https://git-scm.com/downloads<br>
+docker — https://www.docker.com/get-docker<br>
+docker-compose — https://docs.docker.com/compose/install/#install-compose<br>
 
 # first setup
-cd ligmanDashboard
-git clone https://github.com/Laradock/laradock.git
+<code>cd ligmanDashboard</code>
+<code>git clone https://github.com/Laradock/laradock.git</code>
 
 # start environment
-cd laradock
-docker-compose up -d nginx mysql phpmyadmin workspace
+<code>cd laradock</code>
+<code>docker-compose up -d nginx mysql phpmyadmin workspace</code>
 
 # go to /var/www workspace
-docker-compose exec --user laradock workspace bash
+<code>docker-compose exec --user laradock workspace bash</code>
