@@ -11,13 +11,21 @@ docker-compose — https://docs.docker.com/compose/install/#install-compose<br>
 <code>git clone https://github.com/Laradock/laradock.git</code><br>
 <code>cp laradock_env/env-example laradock/.env</code><br>
 
-
-# delete data in database if you change database config (database name)
+# delete data in mysql if you change mysql config (database name)
+<code>docker-compose stop mysql</code><br>
 <code>rm -rf ~/.laradock/data/mysql</code><br>
+<code>docker-compose build --no-cache mysql</code><br>
 
 # start environment after already setup
 <code>cd laradock</code><br>
 <code>docker-compose up -d nginx mysql phpmyadmin workspace</code><br>
 
-# go to /var/www workspace
+# go to /var/www workspace and exit
 <code>docker-compose exec --user laradock workspace bash</code><br>
+<code>exit</code><br>
+
+# stop environment
+<code>docker-compose stop</code><br>
+
+# shutdown environment
+<code>docker-compose down</code><br>
