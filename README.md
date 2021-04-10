@@ -13,6 +13,7 @@ docker-compose — https://docs.docker.com/compose/install/#install-compose<br>
 <code>cp laradock_env/env-example laradock/.env</code><br>
 
 # delete data in mysql if you change mysql config (database name)
+<code>cd laradock</code><br>
 <code>docker-compose stop mysql</code><br>
 <code>rm -rf ~/.laradock/data/mysql</code><br>
 <code>docker-compose build --no-cache mysql</code><br>
