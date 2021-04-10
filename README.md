@@ -24,6 +24,9 @@ docker-compose — https://docs.docker.com/compose/install/#install-compose<br>
 <code>docker-compose exec --user laradock workspace bash</code><br>
 <code>exit</code><br>
 
+# test command in /var/www workspace
+<code>php artisan migrate</code><br>
+
 # stop environment
 <code>docker-compose stop</code><br>
 
