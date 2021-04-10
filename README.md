@@ -17,7 +17,6 @@ docker-compose — https://docs.docker.com/compose/install/#install-compose<br>
 
 # start environment after already setup
 <code>cd laradock</code><br>
-<code>cp env-example .env</code><br>
 <code>docker-compose up -d nginx mysql phpmyadmin workspace</code><br>
 
 # go to /var/www workspace
