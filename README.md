@@ -13,6 +13,7 @@ docker-compose — https://docs.docker.com/compose/install/#install-compose<br>
 <code>cp laradock_env/env-example laradock/.env</code><br>
 
 # delete data in mysql if you change mysql config (database name)
+<code>cd laradock</code><br>
 <code>docker-compose stop mysql</code><br>
 <code>rm -rf ~/.laradock/data/mysql</code><br>
 <code>docker-compose build --no-cache mysql</code><br>
@@ -24,6 +25,9 @@ docker-compose — https://docs.docker.com/compose/install/#install-compose<br>
 # go to /var/www workspace and exit
 <code>docker-compose exec --user laradock workspace bash</code><br>
 <code>exit</code><br>
+
+# install laravel package
+<code>composer update</code><br>
 
 # test command in /var/www workspace
 <code>php artisan migrate</code><br>
