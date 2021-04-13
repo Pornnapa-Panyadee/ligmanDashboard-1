@@ -1,88 +1,139 @@
-<div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
-  <!--
-      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+  <div class="sidebar" data-color="white" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
+    <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-      Tip 2: you can also add an image using data-image tag
-  -->
-  <div class="logo">
-    <a href="https://creative-tim.com/" class="simple-text logo-normal">
-      {{ __('Creative Tim') }}
-    </a>
-  </div>
-  <div class="sidebar-wrapper">
-    <ul class="nav">
-      <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('home') }}">
-          <i class="material-icons">dashboard</i>
-            <p>{{ __('Dashboard') }}</p>
-        </a>
-      </li>
-      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
-        <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
-          <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
-          <p>{{ __('Laravel Examples') }}
-            <b class="caret"></b>
-          </p>
-        </a>
-        <div class="collapse show" id="laravelExample">
-          <ul class="nav">
-            <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('profile.edit') }}">
-                <span class="sidebar-mini"> UP </span>
-                <span class="sidebar-normal">{{ __('User profile') }} </span>
-              </a>
-            </li>
-            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('user.index') }}">
-                <span class="sidebar-mini"> UM </span>
-                <span class="sidebar-normal"> {{ __('User Management') }} </span>
-              </a>
-            </li>
-          </ul>
+        Tip 2: you can also add an image using data-image tag
+    -->
+    <div class="logo">
+      <a href="/" class="simple-text logo-normal">
+        <img src="{{ asset('material/img/logo/ligman_logo_20_2c_fn_200.png') }}" widht="100%" >
+      </a>
+      <!-- <a href="/" class="simple-text hidden logo-mini ">
+        <img src="{{ asset('material/img/logo/ligman_logo_20_2c_fn_200.png') }}" widht="10%" >
+      </a> -->
+    </div>
+    
+    <div class="sidebar-wrapper">
+      
+      <ul class="nav">
+        <div id="group">
+        <li class="menu-title text-head ">Camera</li>
         </div>
-      </li>
-      <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('table') }}">
-          <i class="material-icons">content_paste</i>
-            <p>{{ __('Table List') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('typography') }}">
-          <i class="material-icons">library_books</i>
-            <p>{{ __('Typography') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('icons') }}">
-          <i class="material-icons">bubble_chart</i>
-          <p>{{ __('Icons') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'map' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('map') }}">
-          <i class="material-icons">location_ons</i>
-            <p>{{ __('Maps') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'notifications' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('notifications') }}">
-          <i class="material-icons">notifications</i>
-          <p>{{ __('Notifications') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'language' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('language') }}">
-          <i class="material-icons">language</i>
-          <p>{{ __('RTL Support') }}</p>
-        </a>
-      </li>
-      <li class="nav-item active-pro{{ $activePage == 'upgrade' ? ' active' : '' }}">
-        <a class="nav-link text-white bg-danger" href="{{ route('upgrade') }}">
-          <i class="material-icons text-white">unarchive</i>
-          <p>{{ __('Upgrade to PRO') }}</p>
-        </a>
-      </li>
-    </ul>
+        <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('home') }}">
+              <i class="icon-dome-camera text-orange"></i>
+              <p>{{ __('Speed Dome Camera 360°') }}</p>
+          </a>
+        </li>
+        
+        <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('table') }}">
+            <i class="icon-car text-orange"></i>
+              <p>{{ __('Camera Fix Lens (plate)') }}</p>
+          </a>
+        </li>
+        <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('typography') }}">
+            <i class="icon-temp text-orange"></i>
+              <p>{{ __('Camera Temp Monitoring') }}</p>
+          </a>
+        </li>
+        <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('icons') }}">
+            <i class="icon-face text-orange"></i>
+            <p>{{ __('Camera Fix Lens (Face)') }}</p>
+          </a>
+        </li>
+        <li class="nav-item{{ $activePage == 'icons1' ? ' active' : '' }}">
+          <a class="nav-link" href="/">
+            <i class="icon-intercom text-orange"></i>
+              <p>{{ __('Intercom') }}</p>
+          </a>
+        </li>
+        <div id="group">
+          <li class="menu-title text-head ">Advertisement</li>
+        </div>
+        <li class="nav-item{{ $activePage == 'notifications' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('notifications') }}">
+            <i class="icon-bullhorn text-orange"></i>
+            <p>{{ __('Exstreamer Loud Speaker') }}</p>
+          </a>
+        </li>
+        <li class="nav-item{{ $activePage == 'language' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('language') }}">
+            <i class="icon-In-loud text-orange"></i>
+            <p>{{ __('Instreamer Loud Speaker') }}</p>
+          </a>
+        </li>
+        <li class="nav-item{{ $activePage == 'language' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('language') }}">
+            <i class="icon-Digital_Signage text-orange"></i>
+            <p>{{ __('Digital Signage') }}</p>
+          </a>
+        </li>
+        <div id="group">
+          <li class="menu-title text-head ">Weather</li>
+        </div>
+        <li class="nav-item ">
+          <a class="nav-link " href="">
+            <i class="icon-cloudy1 text-orange"></i>
+            <p>{{ __('e-Save Meteodata') }}</p>
+          </a>
+        </li>
+        <li class="nav-item a{{ $activePage == 'upgrade2' ? ' active' : '' }}">
+          <a class="nav-link " href="">
+            <i class="icon-pm text-orange" ></i>
+            <p>{{ __('Air Transmitter') }}</p>
+          </a>
+        </li>
+        <div id="group">
+          <li class="menu-title text-head ">Control System</li>
+        </div>
+        <li class="nav-item {{ $activePage == 'upgrade' ? ' active' : '' }}">
+          <a class="nav-link " href="{{ route('upgrade') }}">
+            <i class="icon-occupancy text-orange"></i>
+            <p>{{ __('Occupancy Sensor') }}</p>
+          </a>
+        </li>
+        <li class="nav-item {{ $activePage == 'upgrade' ? ' active' : '' }}">
+          <a class="nav-link " href="{{ route('upgrade') }}">
+            <i class="icon-power-plug text-orange"></i>
+            <p>{{ __('Roud Power Socket') }}</p>
+          </a>
+        </li>
+        <div id="group">
+          <li class="menu-title text-head ">Smart Lighting</li>
+        </div>
+        <li class="nav-item {{ $activePage == 'upgrade' ? ' active' : '' }}">
+          <a class="nav-link " href="{{ route('upgrade') }}">
+            <i class="icon-gauge text-orange" ></i>
+            <p>{{ __('e-Save Dashboard') }}</p>
+          </a>
+        </li>
+        <li class="nav-item {{ $activePage == 'upgrade' ? ' active' : '' }}">
+          <a class="nav-link " href="{{ route('upgrade') }}">
+            <i class="icon-imergency text-orange"></i>
+            <p>{{ __('Beacon Glow Blue') }}</p>
+          </a>
+        </li>
+        <li class="nav-item {{ $activePage == 'upgrade' ? ' active' : '' }}">
+          <a class="nav-link " href="{{ route('upgrade') }}">
+            <i class="icon-cluster_projectors text-orange"></i>
+            <p>{{ __('Cluster Projectors') }}</p>
+          </a>
+        </li>
+        <li class="nav-item {{ $activePage == 'upgrade' ? ' active' : '' }}">
+          <a class="nav-link " href="{{ route('upgrade') }}">
+            <i class="icon-cluster_projectors_ladar text-orange"></i>
+            <p>{{ __('Cluster Projectors Lador ') }}</p>
+          </a>
+        </li>
+        <li class="nav-item {{ $activePage == 'upgrade' ? ' active' : '' }}">
+          <a class="nav-link " href="{{ route('upgrade') }}">
+            <i class="icon-imergency text-orange"></i>
+            <p>{{ __('Emergency Beacon ') }}</p>
+          </a>
+        </li>      
+      </ul>
+    </div>
   </div>
-</div>
