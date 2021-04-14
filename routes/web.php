@@ -25,33 +25,95 @@ Auth::routes();
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('table-list', function () {
-		return view('pages.table_list');
-	})->name('table');
+	// 1
+	Route::get('camera360', function () {
+		return view('pages.camera360');
+	})->name('camera360');
+	// 2
+	Route::get('camera_license', function () {
+		return view('pages.camera_license');
+	})->name('camera_license');
+	// 3
+	Route::get('camera_temp', function () {
+		return view('pages.camera_temp');
+	})->name('camera_temp');
+	// 4
+	Route::get('camera_face', function () {
+		return view('pages.camera_face');
+	})->name('camera_face');
+	// 5
+	Route::get('intercom', function () {
+		return view('pages.intercom');
+	})->name('intercom');
+	// 6
+	Route::get('exstreamer_loud_speaker', function () {
+		return view('pages.ex_speaker');
+	})->name('ex_speaker');
+	// 7
+	Route::get('instreamer_loud_speaker', function () {
+		return view('pages.in_speaker');
+	})->name('in_speaker');
+	// 8
+	Route::get('digital_signage', function () {
+		return view('pages.digital_signage');
+	})->name('digital_signage');
+	// 9
+	Route::get('meteodata', function () {
+		return view('pages.meteodata');
+	})->name('meteodata');
+	// 10
+	Route::get('air_transmitter', function () {
+		return view('pages.air_transmitter');
+	})->name('air_transmitter');
+	// 11
+	Route::get('occupancy', function () {
+		return view('pages.occupancy');
+	})->name('occupancy');
+	// 12
+	Route::get('power_socket', function () {
+		return view('pages.power_socket');
+	})->name('power_socket');
+	// 13
+	Route::get('esave_dashboard', function () {
+		return view('pages.esave_dashboard');
+	})->name('esave_dashboard');
+	// 14
+	Route::get('cluster_projector', function () {
+		return view('pages.cluster_projector');
+	})->name('cluster_projector');
+	// 15
+	Route::get('cluster_projector_lador', function () {
+		return view('pages.cluster_projector_lador');
+	})->name('cluster_projector_lador');
 
-	Route::get('typography', function () {
-		return view('pages.typography');
-	})->name('typography');
+	// old template
+		Route::get('table-list', function () {
+			return view('pages.table_list');
+		})->name('table');
 
-	Route::get('icons', function () {
-		return view('pages.icons');
-	})->name('icons');
+		Route::get('typography', function () {
+			return view('pages.typography');
+		})->name('typography');
 
-	Route::get('map', function () {
-		return view('pages.map');
-	})->name('map');
+		Route::get('icons', function () {
+			return view('pages.icons');
+		})->name('icons');
 
-	Route::get('notifications', function () {
-		return view('pages.notifications');
-	})->name('notifications');
+		Route::get('map', function () {
+			return view('pages.map');
+		})->name('map');
 
-	Route::get('rtl-support', function () {
-		return view('pages.language');
-	})->name('language');
+		Route::get('notifications', function () {
+			return view('pages.notifications');
+		})->name('notifications');
 
-	Route::get('upgrade', function () {
-		return view('pages.upgrade');
-	})->name('upgrade');
+		Route::get('rtl-support', function () {
+			return view('pages.language');
+		})->name('language');
+
+		Route::get('upgrade', function () {
+			return view('pages.upgrade');
+		})->name('upgrade');
 });
 
 Route::group(['middleware' => 'auth'], function () {

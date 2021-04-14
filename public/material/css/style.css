@@ -1,0 +1,233 @@
+
+
+
+
+/*------------- icon------------ */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?ty0m5x');
+  src:  url('fonts/icomoon.eot?ty0m5x#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ty0m5x') format('truetype'),
+    url('fonts/icomoon.woff?ty0m5x') format('woff'),
+    url('fonts/icomoon.svg?ty0m5x#icomoon') format('svg');
+
+
+   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fafafa;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-occupancy:before {
+  content: "\e900";
+}
+.icon-car:before {
+  content: "\e901";
+}
+.icon-cluster_projectors:before {
+  content: "\e902";
+}
+.icon-cluster_projectors_ladar:before {
+  content: "\e903";
+}
+.icon-Digital_Signage:before {
+  content: "\e904";
+}
+.icon-dome-camera:before {
+  content: "\e905";
+}
+.icon-face:before {
+  content: "\e906";
+}
+.icon-imergency:before {
+  content: "\e907";
+}
+.icon-In-loud:before {
+  content: "\e90a";
+}
+.icon-intercom:before {
+  content: "\e90b";
+}
+.icon-meteodata:before {
+  content: "\e90c";
+}
+.icon-pm:before {
+  content: "\e90e";
+}
+.icon-temp:before {
+  content: "\e90f";
+}
+.icon-star:before {
+  content: "\e910";
+}
+.icon-sound:before {
+  content: "\e911";
+}
+.icon-trash:before {
+  content: "\e912";
+}
+.icon-display:before {
+  content: "\e913";
+}
+.icon-paperplane:before {
+  content: "\e914";
+}
+.icon-camera:before {
+  content: "\e915";
+}
+.icon-gauge:before {
+  content: "\e916";
+}
+.icon-light-bulb:before {
+  content: "\e917";
+}
+.icon-power-plug:before {
+  content: "\e918";
+}
+.icon-announcement:before {
+  content: "\e919";
+}
+.icon-pylon:before {
+  content: "\e91b";
+}
+.icon-cloudy:before {
+  content: "\e91c";
+}
+.icon-cloudy1:before {
+  content: "\e91d";
+}
+.icon-home:before {
+  content: "\e908";
+}
+.icon-pencil:before {
+  content: "\e909";
+}
+.icon-image:before {
+  content: "\e90d";
+}
+.icon-bullhorn:before {
+  content: "\e91a";
+}
+.icon-files-empty:before {
+  content: "\e925";
+}
+.icon-stack:before {
+  content: "\e92e";
+}
+.icon-pushpin:before {
+  content: "\e946";
+}
+.icon-location:before {
+  content: "\e947";
+}
+.icon-location2:before {
+  content: "\e948";
+}
+.icon-alarm:before {
+  content: "\e950";
+}
+.icon-bell:before {
+  content: "\e951";
+}
+.icon-laptop:before {
+  content: "\e957";
+}
+.icon-download:before {
+  content: "\e960";
+}
+.icon-upload:before {
+  content: "\e961";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-equalizer:before {
+  content: "\e992";
+}
+.icon-equalizer2:before {
+  content: "\e993";
+}
+.icon-cog:before {
+  content: "\e994";
+}
+.icon-cogs:before {
+  content: "\e995";
+}
+.icon-mug:before {
+  content: "\e9a2";
+}
+.icon-meter:before {
+  content: "\e9a6";
+}
+.icon-hammer2:before {
+  content: "\e9a8";
+}
+.icon-lab:before {
+  content: "\e9aa";
+}
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-power-cord:before {
+  content: "\e9b7";
+}
+.icon-cross:before {
+  content: "\ea0f";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+}
+.icon-enter:before {
+  content: "\ea13";
+}
+.icon-exit:before {
+  content: "\ea14";
+}
+.icon-play2:before {
+  content: "\ea15";
+}
+.icon-play3:before {
+  content: "\ea1c";
+}
+.icon-pause2:before {
+  content: "\ea1d";
+}
+.icon-stop2:before {
+  content: "\ea1e";
+}
+.icon-volume-mute2:before {
+  content: "\ea2a";
+}
+.icon-volume-increase:before {
+  content: "\ea2b";
+}
+.icon-volume-decrease:before {
+  content: "\ea2c";
+}
+.icon-loop:before {
+  content: "\ea2d";
+}
+.icon-loop2:before {
+  content: "\ea2e";
+}
+.icon-mail4:before {
+  content: "\ea86";
+}
