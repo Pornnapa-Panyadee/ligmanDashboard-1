@@ -104,6 +104,7 @@
         <div id="group">
           <li class="menu-title text-head ">Smart Lighting</li>
         </div>
+<<<<<<< master
         <li class="nav-item {{ $activePage == 'esave_dashboard' ? ' active' : '' }}">
           <a class="nav-link " href="{{ route('esave_dashboard') }}">
             <i class="icon-gauge text-orange" ></i>
@@ -138,3 +139,66 @@
       </ul>
     </div>
   </div>
+=======
+      </li>
+      <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('table') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('Table List') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('typography') }}">
+          <i class="material-icons">library_books</i>
+            <p>{{ __('Typography') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('icons') }}" onclick="openRequestedSinglePopup('https://www.esaveag.com/slcontrol/?id=230&lang=en')">
+          <i class="material-icons">bubble_chart</i>
+          <p>{{ __('Icons') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'map' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('map') }}">
+          <i class="material-icons">location_ons</i>
+            <p>{{ __('Maps') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'notifications' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('notifications') }}">
+          <i class="material-icons">notifications</i>
+          <p>{{ __('Notifications') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'language' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('language') }}">
+          <i class="material-icons">language</i>
+          <p>{{ __('RTL Support') }}</p>
+        </a>
+      </li>
+      <li class="nav-item active-pro{{ $activePage == 'upgrade' ? ' active' : '' }}">
+        <a class="nav-link text-white bg-danger" href="{{ route('upgrade') }}">
+          <i class="material-icons text-white">unarchive</i>
+          <p>{{ __('Upgrade to PRO') }}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function openRequestedSinglePopup(url) {
+    newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
+    // focus on the popup //
+    newWindow.focus();
+    // newWindow.close();
+    
+    // if you want to close it after some time (like for example open the popup print the receipt and close it) //
+    // setTimeout(function() {
+    //   newWindow.close();
+    // }, 5000);
+  }
+
+</script>
+>>>>>>> master
