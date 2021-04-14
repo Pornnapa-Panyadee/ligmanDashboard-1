@@ -54,7 +54,7 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('icons') }}">
+        <a class="nav-link" href="{{ route('icons') }}" onclick="openRequestedSinglePopup('https://www.esaveag.com/slcontrol/?id=230&lang=en')">
           <i class="material-icons">bubble_chart</i>
           <p>{{ __('Icons') }}</p>
         </a>
@@ -86,3 +86,18 @@
     </ul>
   </div>
 </div>
+
+<script>
+  function openRequestedSinglePopup(url) {
+    newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
+    // focus on the popup //
+    newWindow.focus();
+    // newWindow.close();
+    
+    // if you want to close it after some time (like for example open the popup print the receipt and close it) //
+    // setTimeout(function() {
+    //   newWindow.close();
+    // }, 5000);
+  }
+
+</script>
