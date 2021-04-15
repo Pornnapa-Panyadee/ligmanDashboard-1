@@ -25,14 +25,12 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
-                                    <img id="hikimg" src="http://user:123456789A@10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview" height="290px">
-                                    {{-- <img id="streamimage" src="rtsp://user:123456789A@10.2.4.54:554/Streaming/Channels/101/" height="290px"> --}}
-                                    {{-- <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
+                                    {{-- <img id="hikimg" src="http://user:123456789A@10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview" height="290px"> --}}
+                                    <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
                                       width="320"
                                       height="290"
-                                      target="rtsp://user:123456789A@10.2.4.54:554/Streaming/Channels/101/"
-                                      target="rtsp://10.2.4.54:554/user=user&password=123456789A&channel=1&stream=1.sdp?"
-                                      id="vlc" /> --}}
+                                      target="http://user:123456789A@10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview"
+                                      id="vlc" />
                                   </div>
                                 </div>
                                 <div class="card-footer">
