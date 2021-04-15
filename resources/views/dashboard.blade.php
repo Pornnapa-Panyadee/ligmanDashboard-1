@@ -25,7 +25,7 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
-                                    <iframe id="myFrame" name="myFrame" width="100%" height="100%" style="
+                                    <iframe id="myFrame" name="myFrame" width="200%" height="200%" style="
                                       -webkit-transform: scale(0.5);
                                       -webkit-transform-origin: 100 0;">
                                       <p>Your browser does not support iframes.</p>
