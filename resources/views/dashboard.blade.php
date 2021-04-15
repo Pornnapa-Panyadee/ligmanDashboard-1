@@ -25,7 +25,7 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
-                                    <img id="streamimage" src="http://user:123456789A@10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview" height="290px">
+                                    <img id="hikimg" src="http://user:123456789A@10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview" height="290px">
                                     {{-- <img id="streamimage" src="rtsp://user:123456789A@10.2.4.54:554/Streaming/Channels/101/" height="290px"> --}}
                                     {{-- <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
                                       width="320"
@@ -52,7 +52,7 @@
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
                                     {{-- <img id="streamimage" src="https://media-exp1.licdn.com/dms/image/C560BAQHMnA03XDdf3w/company-logo_200_200/0/1519855918965?e=2159024400&v=beta&t=CrP5Le1mWICRcaxIGNBuajHcHGFPuyNA5C8DI339lSk" height="290px"> --}}
-                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="290px">
+                                    <img id="interimg" src="http://10.2.4.50:8080/video.cgi" height="290px">
                                   </div>
                                 </div>
                                 <div class="card-footer">
@@ -74,7 +74,7 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:180px;text-align:center;vertical-align:middle;">
-                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="180px">
+                                    <img id="tempimg" src="http://10.2.4.50:8080/video.cgi" height="180px">
                                   </div>
                                 </div>
                                 <div class="card-footer">
@@ -93,7 +93,7 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:180px;text-align:center;vertical-align:middle;">
-                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="180px">
+                                    <img id="plateimg" src="http://10.2.4.50:8080/video.cgi" height="180px">
                                   </div>
                                 </div>
                                 <div class="card-footer">
@@ -112,7 +112,7 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:180px;text-align:center;vertical-align:middle;">
-                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="180px">
+                                    <img id="faceimg" src="http://10.2.4.50:8080/video.cgi" height="180px">
                                   </div>
                                 </div>
                                 <div class="card-footer">
