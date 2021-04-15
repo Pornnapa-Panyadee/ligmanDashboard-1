@@ -25,14 +25,11 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
-                                    <iframe name="myFrame" width="360px" height="290px"style="
-                                      zoom: 0.5;
-                                      -moz-transform: scale(0.5);
-                                      -moz-transform-origin: 0 0;
-                                      -o-transform: scale(0.5);
-                                      -o-transform-origin: 0 0;
-                                      -webkit-transform: scale(0.5);
-                                      -webkit-transform-origin: 0 0;">
+                                    <iframe name="myFrame" width="100%" height="100%" style="
+                                      zoom: 0.75; 
+                                      -moz-transform: 
+                                      scale(0.75); 
+                                      -moz-transform-origin: 0 0;">
                                       <p>Your browser does not support iframes.</p>
                                     </iframe>
                                     <script>
