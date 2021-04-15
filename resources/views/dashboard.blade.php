@@ -29,12 +29,8 @@
                                       <iframe id="myFrame" name="myFrame" width="1920px" height="1080px" style="
                                         zoom: 0.5;
                                         -moz-transform: scale(0.5);
-                                        -moz-transform-origin: 0 0;
                                         -o-transform: scale(0.5);
-                                        -o-transform-origin: 0 0;
                                         -webkit-transform: scale(0.5);
-                                        -webkit-transform-origin: 0 0;
-                                        margin: 0 auto;
                                         display:block;">
                                         <p>Your browser does not support iframes.</p>
                                       </iframe>
