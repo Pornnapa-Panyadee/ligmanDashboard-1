@@ -29,7 +29,7 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://10.2.4.50/fcgi/do?id=1";
+  window.frames["myFrame"].location = "http://admin:ligman@cmU1@10.2.4.50/fcgi/do?id=1";
 </script>
 
 <form name="intercomForm" id="intercomForm" method="POST" action="http://10.2.4.50/fcgi/do?id=1" target="_blank"> 
