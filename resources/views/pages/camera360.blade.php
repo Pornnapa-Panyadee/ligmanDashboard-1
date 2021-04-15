@@ -11,6 +11,12 @@
                  <b>Speed Dome Camera 360°</b>
             </h4>
         </div>
+        <div class="card-header card-header-primary">
+          <h4 class="card-title">First Entry</h4>
+          <p class="card-category">If you never login to "Hikvision" click this button
+            <button type="button" class="btn btn-success" onclick="loginesaveag()">Auto Login</button> only once. After this, it is not necessary.
+          </p>
+        </div>
         <div class="row">
           <div class="col-md-12">
             <div class="card-body">
@@ -32,9 +38,9 @@
   window.frames["myFrame"].location = "http://10.2.4.54/doc/page/preview.asp";
 </script>
 
-<form name="esaveagForm" id="esaveagForm" method="POST" action="https://www.esaveag.com/slcontrol/?lang=en&id=1&a=&lp=&lpt=" target="_blank"> 
-  <input type=hidden id="usrname" name="usrname" value="cmu-ligman@ligman.com"/>
-  <input type=hidden id="usrcode" name="usrcode" value="ligman@cmU1"/>
+<form name="hikvisionForm" id="hikvisionForm" method="POST" action="http://10.2.4.54/doc/page/login.asp?_1618488065777&page=preview" target="_blank"> 
+  <input type=hidden id="username" name="username" value="user"/>
+  <input type=hidden id="password" name="password" value="123456789A"/>
 </form>
 
 <script>
@@ -43,7 +49,7 @@
   };
   function loginesaveag(){
     console.log("start login");
-    document.getElementById("esaveagForm").submit();
+    // document.getElementById("hikvisionForm").submit();
   }
 </script>
 @endsection

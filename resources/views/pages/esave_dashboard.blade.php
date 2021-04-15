@@ -21,6 +21,7 @@
           <div class="col-md-12">
             <div class="card-body">
               <div class="iframe-container d-none d-lg-block">
+                <iframe name="myFrame" width="100%" height="100%"><p>Your browser does not support iframes.</p></iframe>
               </div>
               <div class="col-md-12 d-none d-sm-block d-md-block d-lg-none d-block d-sm-none text-center ml-auto mr-auto">
                 <h5>The icons are visible on Desktop mode inside an iframe. Since the iframe is not working on Mobile and Tablets please visit the icons on their original page on Google.</h5>
@@ -33,6 +34,10 @@
   </div>
 </div>
 
+<script>
+  window.frames["myFrame"].location = "https://www.esaveag.com/slcontrol/?id=230&lang=en";
+</script>
+
 <form name="esaveagForm" id="esaveagForm" method="POST" action="https://www.esaveag.com/slcontrol/?lang=en&id=1&a=&lp=&lpt=" target="_blank"> 
   <input type=hidden id="usrname" name="usrname" value="cmu-ligman@ligman.com"/>
   <input type=hidden id="usrcode" name="usrcode" value="ligman@cmU1"/>
@@ -44,7 +49,7 @@
   };
   function loginesaveag(){
     console.log("start login");
-    document.getElementById("esaveagForm").submit();
+    // document.getElementById("esaveagForm").submit();
   }
 </script>
 @endsection
