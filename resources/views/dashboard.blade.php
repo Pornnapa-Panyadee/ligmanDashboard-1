@@ -25,7 +25,7 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
-                                    <iframe name="myFrame" width="100%" height="290px"><p>Your browser does not support iframes.</p></iframe>
+                                    <iframe name="myFrame" width="330px" height="290px"><p>Your browser does not support iframes.</p></iframe>
                                     <script>
                                       window.frames["myFrame"].location = "http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview";
                                     </script>
