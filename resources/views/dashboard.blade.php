@@ -41,8 +41,9 @@
                             <div class="col-md-6">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  {{-- <div class="ct-chart" style="height:290px;"></div> --}}
-                                  <img id="streamimage" src="http://10.2.4.50:8080/video.cgi">
+                                  <div class="ct-chart" style="height:290px;">
+                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi">
+                                  </div>
                                 </div>
                                 <div class="card-footer">
                                   <div class="stats">

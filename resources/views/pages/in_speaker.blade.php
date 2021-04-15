@@ -29,11 +29,11 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://10.2.4.53/";
+  window.frames["myFrame"].location = "http://10.2.4.53/index.html";
 </script>
 
-<form name="esaveagForm" id="esaveagForm" method="POST" action="https://www.esaveag.com/slcontrol/?lang=en&id=1&a=&lp=&lpt=" target="_blank"> 
-  <input type=hidden id="usrname" name="usrname" value="cmu-ligman@ligman.com"/>
+<form name="inspeakForm" id="inspeakForm" method="POST" action="http://10.2.4.53/index.html" target="_blank"> 
+  <input type=hidden id="usrname" name="usrname" value="admin"/>
   <input type=hidden id="usrcode" name="usrcode" value="ligman@cmU1"/>
 </form>
 
@@ -43,7 +43,7 @@
   };
   function loginesaveag(){
     console.log("start login");
-    document.getElementById("esaveagForm").submit();
+    document.getElementById("inspeakForm").submit();
   }
 </script>
 @endsection
