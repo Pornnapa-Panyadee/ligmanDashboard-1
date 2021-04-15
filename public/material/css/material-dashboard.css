@@ -506,6 +506,23 @@ div.absoluteMap{
   text-align:center;
   color:e8e8e8;
 }
+.login_layout{
+  height:100%;
+  width: 100%;
+  position: absolute;
+  right:0;
+  background-color:#FFC932; 
+  background-size: cover; 
+  
+}
+.login_form{
+  text-align: left;
+  margin:30px;
+  position:sticky;
+  top:20%;
+  left:10%;
+}
+
 @media print {
   *,
   *::before,
@@ -552,6 +569,9 @@ div.absoluteMap{
   }
   .container {
     min-width: 992px !important;
+  }
+  .container1 {
+    min-width: 1500px !important;
   }
   .navbar {
     display: none;
@@ -1124,14 +1144,13 @@ pre code {
   overflow-y: scroll;
 }
 
-.container {
+.container .container1  {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
-
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -1148,11 +1167,18 @@ pre code {
   .container {
     max-width: 960px;
   }
+  .container1 {
+    max-width: 98%;
+  }
+
 }
 
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+  .container1 {
+    max-width: 98%;
   }
 }
 
