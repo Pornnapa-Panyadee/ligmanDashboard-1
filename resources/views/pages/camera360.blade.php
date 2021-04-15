@@ -19,11 +19,7 @@
                   <p>Your browser does not support iframes.</p>
                 </iframe> --}}
                 {{-- <iframe id="frame" src="https://www.esaveag.com/slcontrol/" width="100%" height="300"> --}}
-                <iframe name="myFrame" width="100%" height="100%">
-                </iframe>
-                <script>
-                  window.frames["myFrame"].location = "https://www.esaveag.com/slcontrol/"
-                </script>
+                <iframe name="myFrame" width="100%" height="100%"></iframe>
 
               </div>
               <div class="col-md-12 d-none d-sm-block d-md-block d-lg-none d-block d-sm-none text-center ml-auto mr-auto">
@@ -38,4 +34,8 @@
     </div>
   </div>
 </div>
+
+<script>
+  window.frames["myFrame"].location = "https://10.2.4.54/";
+</script>
 @endsection
