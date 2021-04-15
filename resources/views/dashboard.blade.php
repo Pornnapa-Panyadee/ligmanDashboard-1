@@ -64,8 +64,8 @@
                             <div class="col-md-4">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:290px;text-align:center;">
-                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="290px">
+                                  <div class="ct-chart" style="height:200px;text-align:center;">
+                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="200px">
                                   </div>
                                 <div class="card-footer">
                                   <div class="stats">
@@ -82,8 +82,8 @@
                             <div class="col-md-4">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:290px;text-align:center;">
-                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="290px">
+                                  <div class="ct-chart" style="height:200px;text-align:center;">
+                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="200px">
                                   </div>
                                 <div class="card-footer">
                                   <div class="stats">
@@ -100,8 +100,8 @@
                             <div class="col-md-4">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:290px;text-align:center;">
-                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="290px">
+                                  <div class="ct-chart" style="height:200px;text-align:center;">
+                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="200px">
                                   </div>
                                 <div class="card-footer">
                                   <div class="stats">
