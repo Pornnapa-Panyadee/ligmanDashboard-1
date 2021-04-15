@@ -25,12 +25,21 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
+                                    <img style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 25%);" 
+                                          src="http://user:123456789A@10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview">
                                     {{-- <img id="hikimg" src="http://user:123456789A@10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview" height="290px"> --}}
-                                    <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
+                                    {{-- <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
                                       width="320"
                                       height="290"
                                       target="http://user:123456789A@10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview"
                                       id="vlc" />
+                                    <script>
+                                      function start(){
+                                        var id = vlc.playlist.add("Local file location");
+                                        vlc.playlist.playItem(id);
+                                      }
+                                      window.addEventListener("load", start, false);
+                                    </script> --}}
                                   </div>
                                 </div>
                                 <div class="card-footer">
