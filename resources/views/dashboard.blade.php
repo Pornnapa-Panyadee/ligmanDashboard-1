@@ -33,8 +33,8 @@
                                       -o-transform-origin: 0 0;
                                       -webkit-transform: scale(0.5);
                                       -webkit-transform-origin: 0 0;
-                                      text-align:center;
-                                      vertical-align:middle;">
+                                      margin: 0 auto;
+                                      display:block;">
                                       <p>Your browser does not support iframes.</p>
                                     </iframe>
                                     <script>
