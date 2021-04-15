@@ -25,7 +25,7 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
-                                    <iframe name="myFrame" width="200%" height="200%" style="
+                                    <iframe id="myFrame" name="myFrame" width="200%" height="200%" style="
                                       zoom: 0.5;
                                       -moz-transform: scale(0.5);
                                       -moz-transform-origin: 0 0;
@@ -37,8 +37,14 @@
                                       display:block;">
                                       <p>Your browser does not support iframes.</p>
                                     </iframe>
-                                    <script>
+                                    {{-- <script>
                                       window.frames["myFrame"].location = "http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview";
+                                    </script> --}}
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                                    <script>
+                                      $(document).ready(function(){
+                                        $('#myFrame').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
+                                      });
                                     </script>
                                   </div>
                                 </div>
