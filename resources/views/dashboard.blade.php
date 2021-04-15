@@ -25,16 +25,11 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
-                                    <div>
-                                      <iframe id="myFrame" name="myFrame" width="1920px" height="1080px" style="
-                                        zoom: 0.5;
-                                        -moz-transform: scale(0.5);
-                                        -o-transform: scale(0.5);
-                                        -webkit-transform: scale(0.5);
-                                        display:block;">
-                                        <p>Your browser does not support iframes.</p>
-                                      </iframe>
-                                    </div>
+                                    <iframe id="myFrame" name="myFrame" width="100%" height="100%" style="
+                                      -webkit-transform: scale(0.5);
+                                      -webkit-transform-origin: 100 0;">
+                                      <p>Your browser does not support iframes.</p>
+                                    </iframe>
                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                                     <script>
                                       $(document).ready(function(){
