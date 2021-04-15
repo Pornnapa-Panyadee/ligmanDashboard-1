@@ -26,9 +26,9 @@
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
                                     <iframe id="myFrame" name="myFrame" width="100%" height="100%" style="
-                                      zoom: 0.25;
-                                      -o-transform: scale(0.25);
-                                      -o-transform-origin: 0 0;">
+                                      zoom: 0.5;
+                                      -moz-transform: scale(0.5);
+                                      -moz-transform-origin: 0 0;">
                                       <p>Your browser does not support iframes.</p>
                                     </iframe>
 
