@@ -11,6 +11,12 @@
                  <b>Intercom</b>
             </h4>
         </div>
+        <div class="card-header card-header-primary">
+          <h4 class="card-title">First Entry</h4>
+          <p class="card-category">If you never login to "Akuvox" click this button 
+            <button type="button" class="btn btn-success" onclick="loginesaveag()">Auto Login</button> only once. After this, it is not necessary.
+          </p>
+        </div>
         <div class="row">
           <div class="col-md-12">
             <div class="card-body">
@@ -34,7 +40,7 @@
 
 <form name="intercomForm" id="intercomForm" method="POST" action="http://10.2.4.50/fcgi/do?id=1" target="_blank"> 
   <input type=hidden id="username" name="username" value="admin"/>
-  <input type=hidden id="password" name="password" value="ligman@cmU1"/>
+  <input type=hidden id="password" name="password" value="ligman"/>
 </form>
 
 <script>

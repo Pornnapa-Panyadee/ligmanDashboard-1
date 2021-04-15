@@ -43,7 +43,7 @@
           <p>{{ __('Camera Fix Lens (Face)') }}</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'intercom' ? ' active' : '' }}">
+      <li class="nav-item{{ $activePage == 'intercom' ? ' active' : '' }}" onclick="openRequestedSinglePopup('http://10.2.4.50/fcgi/do?id=1')">
         <a class="nav-link" href="{{ route('intercom') }}">
           <i class="icon-intercom text-orange"></i>
             <p>{{ __('Intercom') }}</p>
