@@ -35,7 +35,7 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://user:123456789A@10.2.4.54/doc/page/preview.asp";
+  window.frames["myFrame"].location = "http://user:123456789A@10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview";
 </script>
 
 <form name="hikvisionForm" id="hikvisionForm" method="POST" action="http://10.2.4.54/doc/page/login.asp?_1618488065777&page=preview" target="_blank"> 
