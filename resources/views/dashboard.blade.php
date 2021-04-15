@@ -28,7 +28,7 @@
                                     <iframe id="myFrame" name="myFrame" width="200%" height="200%" style="
                                       zoom: 0.5;
                                       -webkit-transform: scale(0.5);
-                                      -webkit-transform-origin: 0 0;">
+                                      -webkit-transform-origin: 100 0;">
                                       <p>Your browser does not support iframes.</p>
                                     </iframe>
 
