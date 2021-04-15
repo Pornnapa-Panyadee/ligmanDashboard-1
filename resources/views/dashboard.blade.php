@@ -25,7 +25,7 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
-                                    <img id="streamimage" src="http://user:123456789A@10.2.4.54:80/ISAPI/Streaming/channels/101" height="290px">
+                                    <img id="streamimage" src="http://user:123456789A@10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview" height="290px">
                                     {{-- <img id="streamimage" src="rtsp://user:123456789A@10.2.4.54:554/Streaming/Channels/101/" height="290px"> --}}
                                     {{-- <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
                                       width="320"
