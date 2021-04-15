@@ -42,7 +42,7 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;">
-                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi">
+                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="290px">
                                   </div>
                                 </div>
                                 <div class="card-footer">
