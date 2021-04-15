@@ -29,7 +29,8 @@
                                       zoom: 0.5;
                                       -webkit-transform: scale(0.5);
                                       -webkit-transform-origin: 0 0;
-                                      margin-block-start: auto;">
+                                      margin-block-start: 40px;
+                                      writing-mode: vertical-lr;">
                                       <p>Your browser does not support iframes.</p>
                                     </iframe>
 
