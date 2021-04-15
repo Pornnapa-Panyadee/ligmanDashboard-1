@@ -45,11 +45,11 @@
 
 <script>
   window.onload = function afterWebPageLoad() { 
-    loginesaveag();
+    // loginesaveag();
   };
   function loginesaveag(){
     console.log("start login");
-    // document.getElementById("hikvisionForm").submit();
+    document.getElementById("hikvisionForm").submit();
   }
 </script>
 @endsection

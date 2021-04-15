@@ -19,7 +19,7 @@
       <li class="menu-title text-head ">Camera</li>
       </div>
       <li class="nav-item{{ $activePage == 'camera360' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('camera360') }}">
+        <a class="nav-link" href="{{ route('camera360') }}" onclick="openRequestedSinglePopup('http://10.2.4.54/doc/page/preview.asp')">
             <i class="icon-dome-camera text-orange"></i>
             <p>{{ __('Speed Dome Camera 360°') }}</p>
         </a>
