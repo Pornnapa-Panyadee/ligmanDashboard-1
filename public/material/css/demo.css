@@ -15,11 +15,11 @@ small {
   font-size: .66666667em;
 }
 a {
-  color: #e74c3c;
+  color: #e8e8e8;
   text-decoration: none;
 }
 a:hover, a:focus {
-  box-shadow: 0 1px #e74c3c;
+  box-shadow: 0 1px #fcaf17;
 }
 .bshadow0, input {
   box-shadow: inset 0 -2px #e7e7e7;
