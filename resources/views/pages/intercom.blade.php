@@ -29,11 +29,11 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://10.2.4.51/fcgi/do?id=1";
+  window.frames["myFrame"].location = "http://10.2.4.50/fcgi/do?id=1";
 </script>
 
 <form name="esaveagForm" id="esaveagForm" method="POST" action="https://www.esaveag.com/slcontrol/?lang=en&id=1&a=&lp=&lpt=" target="_blank"> 
-  <input type=hidden id="usrname" name="usrname" value="cmu-ligman@ligman.com"/>
+  <input type=hidden id="usrname" name="usrname" value="admin"/>
   <input type=hidden id="usrcode" name="usrcode" value="ligman@cmU1"/>
 </form>
 
