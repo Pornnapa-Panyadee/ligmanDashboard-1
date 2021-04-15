@@ -85,8 +85,8 @@
                             <div class="col-md-4">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:200px;text-align:center;vertical-align:middle;">
-                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="170px">
+                                  <div class="ct-chart" style="height:180px;text-align:center;vertical-align:middle;">
+                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="180px">
                                   </div>
                                 </div>
                                 <div class="card-footer">
@@ -104,8 +104,8 @@
                             <div class="col-md-4">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:200px;text-align:center;vertical-align:middle;">
-                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="170px">
+                                  <div class="ct-chart" style="height:180px;text-align:center;vertical-align:middle;">
+                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="180px">
                                   </div>
                                 </div>
                                 <div class="card-footer">
