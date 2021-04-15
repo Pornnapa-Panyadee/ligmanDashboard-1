@@ -25,7 +25,7 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
-                                    <img id="streamimage" src="http://10.2.4.50:8080/video.cgi" height="290px">
+                                    <img id="streamimage" src="rtsp://10.2.4.54:554/Streaming/channels/101" height="290px">
                                   </div>
                                 </div>
                                 <div class="card-footer">
