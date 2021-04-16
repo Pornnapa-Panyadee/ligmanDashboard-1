@@ -11,6 +11,7 @@
                  <b>Digital Signage</b>
             </h4>
         </div>
+        
         <div class="row">
           <div class="col-md-12">
             <div class="card-body">
@@ -36,6 +37,9 @@
     </div>
   </div>
 </div>
+<?php
+  shell_exec("start \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Nova Star\\ViPlex Express\\ViPlex Express.lnk\"");
+?>
 
 <script>
   (function() {
@@ -48,8 +52,6 @@
     // var commandtoRun = "start \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Nova Star\\ViPlex Express\\ViPlex Express.lnk\"";
     // var oShell = new ActiveXObject("Shell.Application");
     // oShell.ShellExecute(commandtoRun,"","","open","1");
-    var spawn = require("child_process").spawn;
-    spawn("powershell.exe",["start \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Nova Star\\ViPlex Express\\ViPlex Express.lnk\""]);
   })();
 </script>
 @endsection
