@@ -46,7 +46,7 @@
 <script>
   (function() {
     var url = 'http://user:123456789A@10.2.4.54/doc/page/preview.asp';
-    var newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
+    newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
     // focus on the popup //
     newWindow.focus();
   })();

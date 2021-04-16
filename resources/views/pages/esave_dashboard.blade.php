@@ -46,11 +46,11 @@
 <script>
   (function() {
     var url = 'https://www.esaveag.com/slcontrol/?id=230&lang=en';
-    var newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
+    newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
     // focus on the popup //
     newWindow.focus();
   })();
-
+  
   function loginesaveag() {
     console.log("start login");
     document.getElementById("esaveagForm").submit();
