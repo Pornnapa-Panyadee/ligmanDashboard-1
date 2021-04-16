@@ -142,12 +142,4 @@
   window.onfocus = function() {  
     newWindow.close();  
   }
-  // function close_prevWindow() {
-  //   newWindow.close();
-    
-  //   // if you want to close it after some time (like for example open the popup print the receipt and close it) //
-  //   // setTimeout(function() {
-  //   //   newWindow.close();
-  //   // }, 5000);
-  // }
 </script>

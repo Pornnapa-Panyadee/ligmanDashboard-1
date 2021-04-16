@@ -44,60 +44,16 @@
 </form>
 
 <script>
-  var token_ // variable will store the token
-  var userName = "user"; // app clientID
-  var passWord = "123456789A"; // app clientSecret
-  var caspioTokenUrl = "http://10.2.4.54/doc/page/login.asp?_1618488065777&page=preview"; // Your application token endpoint  
-  var request = new XMLHttpRequest(); 
-
   (function() {
-    // Get the token
-    getToken(caspioTokenUrl, userName, passWord);
-    CallWebAPI();
-
-    // var url = 'http://user:123456789A@10.2.4.54/doc/page/preview.asp';
-    // newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
-    // // focus on the popup //
-    // newWindow.focus();
+    var url = 'http://user:123456789A@10.2.4.54/doc/page/preview.asp';
+    newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
+    // focus on the popup //
+    newWindow.focus();
   })();
 
   function login360(){
     console.log("start login");
     document.getElementById("hikvisionForm").submit();
   }
-
-  function getToken(url, clientID, clientSecret) {
-      var key;
-      request.open("POST", url, true);
-      request.setRequestHeader("Content-type", "application/json");
-      request.send("grant_type=client_credentials&client_id="+clientID+"&"+"client_secret="+clientSecret); // specify the credentials to receive the token on request
-      request.onreadystatechange = function () {
-          if (request.readyState == request.DONE) {
-              var response = request.responseText;
-              var obj = JSON.parse(response); 
-              key = obj.access_token; //store the value of the accesstoken
-              token_ = key; // store token in your global variable "token_" or you could simply return the value of the access token from the function
-          }
-      }
-  }
-
-  function CallWebAPI() {
-    var request_ = new XMLHttpRequest();        
-    var encodedParams = encodeURIComponent(params);
-    request_.open("GET", "http://10.2.4.54/doc/page/preview.asp", true);
-    request_.setRequestHeader("Authorization", "Bearer "+ token_);
-    request_.send();
-    request_.onreadystatechange = function () {
-        if (request_.readyState == 4 && request_.status == 200) {
-            var response = request_.responseText;
-            var obj = JSON.parse(response); 
-            // handle data as needed... 
-            var url = 'http://10.2.4.54/doc/page/preview.asp';
-            newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
-            // focus on the popup //
-            newWindow.focus();
-        }
-    }
-  } 
 </script>
 @endsection

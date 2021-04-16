@@ -65,7 +65,6 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
-                                    {{-- <img id="streamimage" src="https://media-exp1.licdn.com/dms/image/C560BAQHMnA03XDdf3w/company-logo_200_200/0/1519855918965?e=2159024400&v=beta&t=CrP5Le1mWICRcaxIGNBuajHcHGFPuyNA5C8DI339lSk" height="290px"> --}}
                                     <img id="interimg" src="http://10.2.4.50:8080/video.cgi" height="290px">
                                   </div>
                                 </div>
