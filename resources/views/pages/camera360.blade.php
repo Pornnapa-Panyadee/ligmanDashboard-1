@@ -14,7 +14,7 @@
         <div class="card-header card-header-primary">
           <h4 class="card-title">First Entry</h4>
           <p class="card-category">If you never login to "Hikvision" click this button
-            <button type="button" class="btn btn-success" onclick="loginesaveag()">Auto Login</button> only once. After this, it is not necessary.
+            <button type="button" class="btn btn-success" onclick="login360()">Auto Login</button> only once. After this, it is not necessary.
           </p>
         </div>
         <div class="row">
@@ -44,10 +44,14 @@
 </form>
 
 <script>
-  window.onload = function afterWebPageLoad() { 
-    // loginesaveag();
-  };
-  function loginesaveag(){
+  (function() {
+    var url = 'http://user:123456789A@10.2.4.54/doc/page/preview.asp';
+    var newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
+    // focus on the popup //
+    newWindow.focus();
+  })();
+
+  function login360(){
     console.log("start login");
     document.getElementById("hikvisionForm").submit();
   }

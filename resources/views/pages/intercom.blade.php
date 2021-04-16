@@ -14,7 +14,7 @@
         <div class="card-header card-header-primary">
           <h4 class="card-title">First Entry</h4>
           <p class="card-category">If you never login to "Akuvox" click this button 
-            <button type="button" class="btn btn-success" onclick="loginesaveag()">Auto Login</button> only once. After this, it is not necessary.
+            <button type="button" class="btn btn-success" onclick="loginintercom()">Auto Login</button> only once. After this, it is not necessary.
           </p>
         </div>
         <div class="row">
@@ -44,10 +44,14 @@
 </form>
 
 <script>
-  window.onload = function afterWebPageLoad() { 
-    // loginesaveag();
-  };
-  function loginesaveag(){
+  (function() {
+    var url = 'http://10.2.4.50/fcgi/do?id=1';
+    var newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
+    // focus on the popup //
+    newWindow.focus();
+  })();
+  
+  function loginintercom(){
     console.log("start login");
     document.getElementById("intercomForm").submit();
   }

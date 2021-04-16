@@ -19,7 +19,7 @@
       <li class="menu-title text-head ">Camera</li>
       </div>
       <li class="nav-item{{ $activePage == 'camera360' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('camera360') }}" onclick="openRequestedSinglePopup('http://10.2.4.54/doc/page/preview.asp')">
+        <a class="nav-link" href="{{ route('camera360') }}">
             <i class="icon-dome-camera text-orange"></i>
             <p>{{ __('Speed Dome Camera 360°') }}</p>
         </a>
@@ -43,7 +43,7 @@
           <p>{{ __('Camera Fix Lens (Face)') }}</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'intercom' ? ' active' : '' }}" onclick="openRequestedSinglePopup('http://10.2.4.50/fcgi/do?id=1')">
+      <li class="nav-item{{ $activePage == 'intercom' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('intercom') }}">
           <i class="icon-intercom text-orange"></i>
             <p>{{ __('Intercom') }}</p>
@@ -104,7 +104,7 @@
         <li class="menu-title text-head ">Smart Lighting</li>
       </div>
       <li class="nav-item {{ $activePage == 'esave_dashboard' ? ' active' : '' }}">
-        <a class="nav-link " href="{{ route('esave_dashboard') }}" onclick="openRequestedSinglePopup('https://www.esaveag.com/slcontrol/?id=230&lang=en')">
+        <a class="nav-link " href="{{ route('esave_dashboard') }}">
           <i class="icon-gauge text-orange" ></i>
           <p>{{ __('e-Save Dashboard') }}</p>
         </a>
@@ -139,15 +139,15 @@
 </div>
 
 <script>
-  function openRequestedSinglePopup(url) {
-    newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
-    // focus on the popup //
-    newWindow.focus();
-    // newWindow.close();
-    
-    // if you want to close it after some time (like for example open the popup print the receipt and close it) //
-    // setTimeout(function() {
-    //   newWindow.close();
-    // }, 5000);
+  window.onfocus = function() {  
+    newWindow.close();  
   }
+  // function close_prevWindow() {
+  //   newWindow.close();
+    
+  //   // if you want to close it after some time (like for example open the popup print the receipt and close it) //
+  //   // setTimeout(function() {
+  //   //   newWindow.close();
+  //   // }, 5000);
+  // }
 </script>

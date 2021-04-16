@@ -38,9 +38,6 @@
 </form>
 
 <script>
-  window.onload = function afterWebPageLoad() { 
-    // loginesaveag();
-  };
   function loginesaveag(){
     console.log("start login");
     document.getElementById("inspeakForm").submit();
