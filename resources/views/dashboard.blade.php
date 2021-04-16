@@ -44,7 +44,7 @@
                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                                     <script>
                                       // $(document).ready(function(){
-                                      $(document).load(function(){
+                                      $(document).ready(function(){
                                         $('#live360').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
                                       });
                                     </script>
