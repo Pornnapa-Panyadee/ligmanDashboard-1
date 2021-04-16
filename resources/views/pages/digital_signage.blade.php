@@ -38,8 +38,10 @@
 </div>
 
 <script>
-  var commandtoRun = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Nova Star\\ViPlex Express\\ViPlex Express.exe";
-  var oShell = new ActiveXObject("Shell.Application");
-  oShell.ShellExecute(commandtoRun,"","","open","1");
+  (function() {
+    var commandtoRun = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Nova Star\\ViPlex Express\\ViPlex Express.exe";
+    var oShell = new ActiveXObject("Shell.Application");
+    oShell.ShellExecute(commandtoRun,"","","open","1");
+  })();
 </script>
 @endsection
