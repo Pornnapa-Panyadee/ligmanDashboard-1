@@ -16,10 +16,6 @@
           <div class="col-md-12">
             <div class="card-body">
               <div class="iframe-container d-none d-lg-block">
-                {{-- <iframe src="https://www.google.com/" >
-                  <p>Your browser does not support iframes.</p>
-                </iframe> --}}
-                {{-- <iframe id="frame" src="https://www.esaveag.com/slcontrol/" width="100%" height="300"> --}}
                 <iframe name="myFrame" width="100%" height="100%">
                 </iframe>
                 <script>
@@ -37,9 +33,6 @@
     </div>
   </div>
 </div>
-<?php
-  shell_exec("start \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Nova Star\\ViPlex Express\\ViPlex Express.lnk\"");
-?>
 
 <script>
   (function() {
