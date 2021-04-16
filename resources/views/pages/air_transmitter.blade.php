@@ -14,18 +14,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="card-body">
-              <div class="iframe-container d-none d-lg-block">
-                {{-- <iframe src="https://www.google.com/" >
-                  <p>Your browser does not support iframes.</p>
-                </iframe> --}}
-                {{-- <iframe id="frame" src="https://www.esaveag.com/slcontrol/" width="100%" height="300"> --}}
-                <iframe name="myFrame" width="100%" height="100%">
-                </iframe>
-                <script>
-                  window.frames["myFrame"].location = "https://www.esaveag.com/slcontrol/"
-                </script>
 
-              </div>
               <div class="col-md-12 d-none d-sm-block d-md-block d-lg-none d-block d-sm-none text-center ml-auto mr-auto">
                 <h5>The icons are visible on Desktop mode inside an iframe. Since the iframe is not working on Mobile and Tablets please visit the icons on their original page on Google. Check the
                   
@@ -37,5 +26,12 @@
       </div>
     </div>
   </div>
+  {{-- <iframe name="airmap" width="100%" height="730px"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=98.93437385559082%2C18.775584605142356%2C98.99102210998537%2C18.811417924727678&amp;layer=mapnik&amp;marker=18.793502218224873%2C98.96269798278809">
+  </iframe> --}}
+  
+  <iframe width="100%" height="730px" frameborder="0" allowfullscreen 
+    src="//umap.openstreetmap.fr/th-th/map/air-transmitter_595019?scaleControl=true&miniMap=true&scrollWheelZoom=true&zoomControl=null&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false#16/18.7953/458.9519">
+  </iframe>
 </div>
 @endsection

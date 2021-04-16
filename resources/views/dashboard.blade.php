@@ -25,13 +25,13 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
-                                    <iframe id="myFrame" name="myFrame" width="200%" height="200%" style="
-                                      border:1px;
+                                    <iframe id="live360" name="live360" width="200%" height="200%" style="
+                                      border:0px;
                                       -webkit-transform: scale(0.56, 0.5) translate(-39%, -50%);">
                                       <p>Your browser does not support iframes.</p>
                                     </iframe>
 
-                                    {{-- <iframe id="myFrame" name="myFrame" width="200%" height="200%" style="
+                                    {{-- <iframe id="live360" name="live360" width="200%" height="200%" style="
                                       zoom: 0.5;
                                       -moz-transform: scale(0.5);
                                       -moz-transform-origin: 0 0;
@@ -43,8 +43,9 @@
                                     </iframe> --}}
                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                                     <script>
-                                      $(document).ready(function(){
-                                        $('#myFrame').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
+                                      // $(document).ready(function(){
+                                      $(document).load(function(){
+                                        $('#live360').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
                                       });
                                     </script>
                                   </div>
@@ -284,7 +285,11 @@
                                 <div class="col-md-12">
                                   <div class="card-dash">
                                     <div class="card-header card-header-white">
-                                      <div class="ct-chart" style="height:105px;"></div>
+                                      <div class="ct-chart" style="height:105px;">
+                                        <iframe width="100%" height="100%" frameborder="0" scrolling="no"
+                                          src="//umap.openstreetmap.fr/th-th/map/air-transmitter_595019?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=null&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false#16/18.7953/458.9519">
+                                        </iframe>
+                                      </div>
                                     </div>
                                     <div class="card-footer">
                                       <div class="stats">
@@ -480,6 +485,9 @@
                                     <div class="text-dash-online"> 11 </div>
                                     <div class="text-dash-onlineall"> /15 </div>
                                     <div class="text-dash-onlinetag"> devices </div>
+                                    <iframe width="100%" height="100%" frameborder="0"  
+                                      src="//umap.openstreetmap.fr/en/map/poles-map_595016?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=null&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false#14/18.7968/98.9639">
+                                    </iframe>
                                   </div>
                                 </div>
                               </div>
