@@ -26,8 +26,7 @@
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
                                     <iframe id="live360" name="live360" width="200%" height="200%" style="
-                                      /* border:0px; */
-                                      -webkit-transform: scale(0.5) translate(-50%, -50%);
+                                      -webkit-transform: scale(0.56, 0.5) translate(-39%, -50%);
                                       "><p>Your browser does not support iframes.</p>
                                     </iframe>
 

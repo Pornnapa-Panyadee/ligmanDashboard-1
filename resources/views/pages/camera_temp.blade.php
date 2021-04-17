@@ -22,7 +22,10 @@
                     margin-right: auto;
                   }
                 </style>
-                <iframe id="live360" name="live360" style="background-color: aqua;" width="80%" height="100%"><p>Your browser does not support iframes.</p>
+                <iframe id="live360" name="live360" width="100%" height="100%"
+                style="
+                -webkit-transform: translate(-39%);
+                "><p>Your browser does not support iframes.</p>
                 </iframe>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <script>
