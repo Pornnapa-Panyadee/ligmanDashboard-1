@@ -15,18 +15,6 @@
           <div class="col-md-12">
             <div class="card-body">
               <div class="iframe-container d-none d-lg-block">
-                <iframe id="live360" name="live360" width="40%" height="100%"
-                style="
-                border:0px;
-                -webkit-transform: translate(20%);
-                "><p>Your browser does not support iframes.</p>
-                </iframe>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                <script>
-                  $(document).ready(function(){
-                    $('#live360').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
-                  });
-                </script>
               </div>
               <div class="col-md-12 d-none d-sm-block d-md-block d-lg-none d-block d-sm-none text-center ml-auto mr-auto">
                 <h5>The icons are visible on Desktop mode inside an iframe. Since the iframe is not working on Mobile and Tablets please visit the icons on their original page on Google. Check the
@@ -39,5 +27,26 @@
       </div>
     </div>
   </div>
+  <iframe id="live360" name="live360" width="40%" height="100%"
+  style="
+  border:0px;
+  -moz-transform: translate(20%);
+  "><p>Your browser does not support iframes.</p>
+  </iframe>
+
+  <iframe id="live360" name="live360" width="40%" height="100%"
+  style="
+  border:0px;
+  -o-transform: translate(20%);
+  "><p>Your browser does not support iframes.</p>
+  </iframe>
 </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('#live360').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
+  });
+</script>
 @endsection
