@@ -6,10 +6,13 @@
     <div class="container-fluid">
       <div class="card card-plain">
         <div class="card-header card-header-primary">
-            <h4 class="card-title"> 
-                <i class="icon-In-loud text-orange"></i> 
-                 <b>Instreamer Loud Speaker</b>
-            </h4>
+          <h4 class="card-title"> 
+            <p class="card-category">If you never login to "INSTREAMER" click this button 
+              <button type="button" class="btn btn-success" onclick="logininspeaker()">Auto Login</button> only once. After this, it is not necessary.
+            </p>
+            <i class="icon-In-loud text-orange"></i> 
+            <b>Instreamer Loud Speaker</b>
+          </h4>
         </div>
         <div class="row">
           <div class="col-md-12">
@@ -29,16 +32,16 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://admin:ligman@10.2.4.53/";
+  window.frames["myFrame"].location = "http://10.2.4.53/";
 </script>
 
-<form name="inspeakForm" id="inspeakForm" method="POST" action="http://10.2.4.53" target="_blank"> 
+<form name="inspeakForm" id="inspeakForm" method="POST" action="http://admin:ligman@10.2.4.53" target="_blank"> 
   <input type=hidden id="usrname" name="usrname" value="admin"/>
   <input type=hidden id="usrcode" name="usrcode" value="ligman"/>
 </form>
 
 <script>
-  function loginesaveag(){
+  function logininspeaker(){
     console.log("start login");
     document.getElementById("inspeakForm").submit();
   }

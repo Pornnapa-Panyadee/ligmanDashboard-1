@@ -6,10 +6,10 @@
     <div class="container-fluid">
       <div class="card card-plain">
         <div class="card-header card-header-primary">
-            <h4 class="card-title"> 
-                <i class="icon-temp text-orange"></i> 
-                 <b>Camera Temp Monitoring</b>
-            </h4>
+          <h4 class="card-title"> 
+            <i class="icon-temp text-orange"></i> 
+            <b>Camera Temp Monitoring</b>
+          </h4>
         </div>
         <div class="row">
           <div class="col-md-12">

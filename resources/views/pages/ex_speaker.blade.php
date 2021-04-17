@@ -6,10 +6,13 @@
     <div class="container-fluid">
       <div class="card card-plain">
         <div class="card-header card-header-primary">
-            <h4 class="card-title"> 
-                <i class="icon-bullhorn text-orange"></i> 
-                 <b>Exstreamer Loud Speaker</b>
-            </h4>
+          <h4 class="card-title"> 
+            <p class="card-category">If you never login to "EXSTREAMER" click this button 
+              <button type="button" class="btn btn-success" onclick="loginexspeaker()">Auto Login</button> only once. After this, it is not necessary.
+            </p>
+            <i class="icon-bullhorn text-orange"></i> 
+            <b>Exstreamer Loud Speaker</b>
+          </h4>
         </div>
         <div class="row">
           <div class="col-md-12">
@@ -29,18 +32,18 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://admin:ligman@10.2.4.52/";
+  window.frames["myFrame"].location = "http://10.2.4.52/";
 </script>
 
-<form name="inspeakForm" id="inspeakForm" method="POST" action="http://10.2.4.52" target="_blank"> 
+<form name="exspeakForm" id="exspeakForm" method="POST" action="http://admin:ligman@10.2.4.52" target="_blank"> 
   <input type=hidden id="usrname" name="usrname" value="admin"/>
   <input type=hidden id="usrcode" name="usrcode" value="ligman"/>
 </form>
 
 <script>
-  function loginesaveag(){
+  function loginexspeaker(){
     console.log("start login");
-    document.getElementById("inspeakForm").submit();
+    document.getElementById("exspeakForm").submit();
   }
 </script>
 @endsection
