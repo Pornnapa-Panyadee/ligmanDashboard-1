@@ -29,12 +29,12 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://10.2.4.53/index.html";
+  window.frames["myFrame"].location = "http://admin:ligman@10.2.4.53/index.html";
 </script>
 
 <form name="inspeakForm" id="inspeakForm" method="POST" action="http://10.2.4.53/index.html" target="_blank"> 
   <input type=hidden id="usrname" name="usrname" value="admin"/>
-  <input type=hidden id="usrcode" name="usrcode" value="ligman@cmU1"/>
+  <input type=hidden id="usrcode" name="usrcode" value="ligman"/>
 </form>
 
 <script>
