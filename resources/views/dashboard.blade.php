@@ -26,9 +26,10 @@
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
                                     <iframe id="live360" name="live360" width="200%" height="200%" style="
-                                      border:0px;
-                                      -webkit-transform: scale(0.56, 0.5) translate(-39%, -50%);">
-                                      <p>Your browser does not support iframes.</p>
+                                      /* border:0px; */
+                                      -webkit-transform: scale(0.5);
+                                      -webkit-align-content:center;
+                                      "><p>Your browser does not support iframes.</p>
                                     </iframe>
 
                                     {{-- <iframe id="live360" name="live360" width="200%" height="200%" style="
@@ -171,7 +172,7 @@
                                 <div class="card-dash">
                                   <div class="card-header">
                                     <div class="icon_dash" >
-                                      <a class="dash-link" href="{{ route('meteodata') }}">
+                                      <a class="dash-link" href="{{ route('esave_dashboard') }}">
                                         <i class="icon-gauge text-orange"  style="font-size:65px;"></i>
                                         <p style="margin-top:-5px;">{{ __('E-Save Dashboard') }}</p>
                                       </a>
