@@ -29,7 +29,7 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://admin:ligman@10.2.4.53";
+  window.frames["myFrame"].location = "http://admin:ligman@10.2.4.53/";
 </script>
 
 <form name="inspeakForm" id="inspeakForm" method="POST" action="http://10.2.4.53" target="_blank"> 
