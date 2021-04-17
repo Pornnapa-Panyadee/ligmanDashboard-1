@@ -28,7 +28,7 @@
                 <script>
                   $(document).ready(function(){
                     $('#live360').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
-                    $('#live360').attr('width', '100%');
+                    $("#live360")[0].setAttribute("width", "200");
                     $('#live360').attr('height', '100%');
                   });
                 </script>
