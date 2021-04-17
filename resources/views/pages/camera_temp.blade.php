@@ -22,14 +22,12 @@
                     margin-right: auto;
                   }
                 </style>
-                <iframe class="iframe" id="live360" name="live360"><p>Your browser does not support iframes.</p>
+                <iframe id="live360" name="live360" style="background-color: aqua;" width="80%" height="100%"><p>Your browser does not support iframes.</p>
                 </iframe>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <script>
                   $(document).ready(function(){
                     $('#live360').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
-                    $("#live360").attr("width", "100%");
-                    $('#live360').attr("height", "100%");
                   });
                 </script>
               </div>
