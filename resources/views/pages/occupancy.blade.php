@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'meteodata', 'titlePage' => __('e-Save Meteodata')])
+@extends('layouts.app', ['activePage' => 'occupancy', 'titlePage' => __('Occupancy Sensor')])
 
 @section('content')
 <div class="content">
