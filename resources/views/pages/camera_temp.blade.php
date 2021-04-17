@@ -27,14 +27,14 @@
       </div>
     </div>
   </div>
-  <iframe id="live360" name="live360" width="40%" height="100%"
+  <iframe id="live360" name="live360" width="100%" height="100%"
   style="
   border:0px;
   -moz-transform: translate(20%);
   "><p>Your browser does not support iframes.</p>
   </iframe>
 
-  <iframe id="live360" name="live360" width="40%" height="100%"
+  <iframe id="live360_2" name="live360_2" width="100%" height="100%"
   style="
   border:0px;
   -o-transform: translate(20%);
@@ -47,6 +47,7 @@
 <script>
   $(document).ready(function(){
     $('#live360').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
+    $('#live360_2').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
   });
 </script>
 @endsection
