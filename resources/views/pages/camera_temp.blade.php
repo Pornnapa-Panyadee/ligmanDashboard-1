@@ -15,8 +15,14 @@
           <div class="col-md-12">
             <div class="card-body">
               <div class="iframe-container d-none d-lg-block">
-                <iframe class="talign-center" id="live360" name="live360" width="100%" height="100%"
-                ><p>Your browser does not support iframes.</p>
+                <style>
+                  img {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                  }
+                </style>
+                <iframe class="iframe" id="live360" name="live360"><p>Your browser does not support iframes.</p>
                 </iframe>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <script>
@@ -37,4 +43,33 @@
     </div>
   </div>
 </div>
+
+<script>
+  (function() {
+    var iFrames = $('iframe');
+
+    function iResize() {
+      for (var i = 0, j = iFrames.length; i < j; i++) {
+        iFrames[i].style.height = iFrames[i].contentWindow.document.body.offsetHeight + 'px';
+      }
+    }
+
+    if ($.browser.safari || $.browser.opera) { 
+      iFrames.load(function(){
+          setTimeout(iResize, 0);
+        });
+      
+      for (var i = 0, j = iFrames.length; i < j; i++) {
+        var iSource = iFrames[i].src;
+        iFrames[i].src = '';
+        iFrames[i].src = iSource;
+      }
+          
+    } else {
+      iFrames.load(function() { 
+          this.style.height = this.contentWindow.document.body.offsetHeight + 'px';
+      });
+    }
+  })();
+</script>
 @endsection
