@@ -15,10 +15,10 @@
           <div class="col-md-12">
             <div class="card-body">
               <div class="iframe-container d-none d-lg-block">
-                <iframe id="live360" name="live360" width="100%" height="100%" style="
+                <iframe id="live360" name="live360" height="100%" style="
                   /* border:0px; */
                   /* -webkit-transform: scale(0.56, 0.5) translate(-39%, -50%); */
-                  -webkit-align-content:center;
+                  -webkit-align-box:center;
                   "><p>Your browser does not support iframes.</p>
                 </iframe>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
