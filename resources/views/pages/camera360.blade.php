@@ -6,10 +6,10 @@
     <div class="container-fluid">
       <div class="card card-plain">
         <div class="card-header card-header-primary">
-            <h4 class="card-title"> 
-                <i class="icon-dome-camera text-orange"></i> 
-                 <b>Speed Dome Camera 360°</b>
-            </h4>
+          <h4 class="card-title"> 
+            <i class="icon-dome-camera text-orange"></i> 
+            <b>Speed Dome Camera 360°</b>
+          </h4>
         </div>
         <div class="card-header card-header-primary">
           <h4 class="card-title">First Entry</h4>
