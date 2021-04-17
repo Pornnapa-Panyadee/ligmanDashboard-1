@@ -118,7 +118,7 @@
       <li class="nav-item {{ $activePage == 'cluster_projector_lador' ? ' active' : '' }}">
         <a class="nav-link " href="{{ route('cluster_projector_lador') }}">
           <i class="icon-cluster_projectors_ladar text-orange"></i>
-          <p>{{ __('Cluster Projectors Lador ') }}</p>
+          <p>{{ __('Cluster Projectors Lador') }}</p>
         </a>
       </li>
       
@@ -131,7 +131,7 @@
       <li class="nav-item {{ $activePage == 'upgrade' ? ' active' : '' }}">
         <a class="nav-link " href="{{ route('upgrade') }}">
           <i class="icon-imergency text-orange"></i>
-          <p>{{ __('Emergency Beacon ') }}</p>
+          <p>{{ __('Emergency Beacon') }}</p>
         </a>
       </li>      
     </ul>

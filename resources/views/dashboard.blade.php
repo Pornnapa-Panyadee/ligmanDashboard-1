@@ -49,13 +49,13 @@
                                     </script>
                                   </div>
                                 </div>
-                                <div class="card-footer">
+                                <div class="card-footer" onclick="window.location='{{ url('camera360') }}'">
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>1</span></div> 
                                     <span class="text_font">{{ __('Speed Dome Camera 360°') }}</span>
                                     <div class="absolute">
-                                      <button class="btn btn-success btn-sm1 ">Online</button>
+                                      <button class="btn btn-success btn-sm1">Online</button>
                                     </div>
                                   </div>
                                 </div>
@@ -68,7 +68,7 @@
                                     <img id="interimg" src="http://10.2.4.50:8080/video.cgi" height="290px">
                                   </div>
                                 </div>
-                                <div class="card-footer">
+                                <div class="card-footer" onclick="window.location='{{ url('intercom') }}'">
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>4</span></div> 
@@ -90,11 +90,11 @@
                                     <img id="tempimg" src="http://10.2.4.50:8080/video.cgi" height="180px">
                                   </div>
                                 </div>
-                                <div class="card-footer">
+                                <div class="card-footer" onclick="window.location='{{ url('camera_temp') }}'">
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>4</span></div> 
-                                    <span class="text_font">{{ __('Camera Temp ') }}</span>
+                                    <span class="text_font">{{ __('Camera Temp') }}</span>
                                     <div class="absolute1">
                                       <button class="btn btn-success btn-sm1 ">Online</button>
                                     </div>
@@ -109,7 +109,7 @@
                                     <img id="plateimg" src="http://10.2.4.50:8080/video.cgi" height="180px">
                                   </div>
                                 </div>
-                                <div class="card-footer">
+                                <div class="card-footer" onclick="window.location='{{ url('camera_license') }}'">
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>1</span></div> 
@@ -128,7 +128,7 @@
                                     <img id="faceimg" src="http://10.2.4.50:8080/video.cgi" height="180px">
                                   </div>
                                 </div>
-                                <div class="card-footer">
+                                <div class="card-footer" onclick="window.location='{{ url('camera_face') }}'">
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>4</span></div> 
