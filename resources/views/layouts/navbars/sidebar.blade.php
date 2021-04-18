@@ -20,7 +20,7 @@
       </div>
       <li class="nav-item{{ $activePage == 'camera360' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('camera360') }}">
-            <i class="icon-dome-camera text-orange"></i>
+            <i class="icon-dome-camera text-orange" ></i>
             <p>{{ __('Speed Dome Camera 360°') }}</p>
         </a>
       </li>
@@ -81,12 +81,12 @@
       </li>
       <li class="nav-item {{ $activePage == 'air_transmitter' ? ' active' : '' }}">
         <a class="nav-link " href="{{ route('air_transmitter') }}">
-          <i class="icon-pm text-orange" ></i>
+          <i class="icon-pm text-orange" style="font-size:30px;"></i>
           <p>{{ __('Air Transmitter') }}</p>
         </a>
       </li>
       <div id="group">
-        <li class="menu-title text-head ">Control System</li>
+        <li class="menu-title text-head ">Control</li>
       </div>
       <li class="nav-item {{ $activePage == 'occupancy' ? ' active' : '' }}">
         <a class="nav-link " href="{{ route('occupancy') }}">
@@ -101,7 +101,7 @@
         </a>
       </li>
       <div id="group">
-        <li class="menu-title text-head ">Smart Lighting</li>
+        <li class="menu-title text-head ">Lighting</li>
       </div>
       <li class="nav-item {{ $activePage == 'esave_dashboard' ? ' active' : '' }}">
         <a class="nav-link " href="{{ route('esave_dashboard') }}">
@@ -118,11 +118,11 @@
       <li class="nav-item {{ $activePage == 'cluster_projector_lador' ? ' active' : '' }}">
         <a class="nav-link " href="{{ route('cluster_projector_lador') }}">
           <i class="icon-cluster_projectors_ladar text-orange"></i>
-          <p>{{ __('Cluster Projectors Lador') }}</p>
+          <p>{{ __('Cluster Projectors Lador ') }}</p>
         </a>
       </li>
       
-      <li class="nav-item {{ $activePage == 'upgrade' ? ' active' : '' }}">
+      <!-- <li class="nav-item {{ $activePage == 'upgrade' ? ' active' : '' }}">
         <a class="nav-link " href="{{ route('upgrade') }}">
           <i class="icon-imergency text-orange"></i>
           <p>{{ __('Beacon Glow Blue') }}</p>
@@ -131,9 +131,9 @@
       <li class="nav-item {{ $activePage == 'upgrade' ? ' active' : '' }}">
         <a class="nav-link " href="{{ route('upgrade') }}">
           <i class="icon-imergency text-orange"></i>
-          <p>{{ __('Emergency Beacon') }}</p>
+          <p>{{ __('Emergency Beacon ') }}</p>
         </a>
-      </li>      
+      </li>       -->
     </ul>
   </div>
 </div>
