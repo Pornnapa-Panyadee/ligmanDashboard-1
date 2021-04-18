@@ -24,7 +24,6 @@
             <p>{{ __('Speed Dome Camera 360°') }}</p>
         </a>
       </li>
-      
       <li class="nav-item{{ $activePage == 'camera_license' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('camera_license') }}">
           <i class="icon-car text-orange"></i>

@@ -1,11 +1,11 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+<nav class="navbar navbar-expand-lg  navbar-absolute fixed-top ">
   <div class="container-fluid">
     <div class="navbar-wrapper">
       <div class="navbar-minimize">
-        <button id="minimizeSidebar" class="btn btn-just-icon btn-orange  btn-round" style="position:fixed;z-index: -1;">
+        <button id="minimizeSidebar" class="btn btn-just-icon btn-orange  btn-round" >
             <i class="material-icons text_align-center text-orange visible-on-sidebar-regular" >arrow_left</i>
-            <i class="material-icons text-orange visible-on-sidebar-mini" style="position:fixed;z-index: -1;">arrow_right</i>
+            <i class="material-icons text-orange visible-on-sidebar-mini" >arrow_right</i>
             <div class="ripple-container" > </div>
         </button>
 
@@ -30,8 +30,12 @@
             </p>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+          
             <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Profile') }}</a>
-            <a class="dropdown-item" href="#">{{ __('Settings') }}</a>
+          <!-- for admin  -->
+            <a class="dropdown-item" href="{{ route('admin.list') }}">{{ __('Settings') }}</a>
+          <!-- for superadmin -->
+            <!-- <a class="dropdown-item" href="{{ route('superadmin.list') }}">{{ __('Settings') }}</a> -->
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
           </div>

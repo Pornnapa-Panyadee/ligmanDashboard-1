@@ -13,18 +13,33 @@
                       <div class="tab-pane active" id="profile">
                         <!-- head name -->
                           <div class="row">
+                            <div class="col-8">
                               <button class="btn btn-just-icon btn-github">
                                   <i class="icon-dome-camera text-white"></i>
                               </button>
-                              <h1 class="text_dash" style="">Camera</h1>
-                              <hr class="dash">
+                              <h1 class="text_dashCam" style="">Camera</h1>
+                              <hr class="dashCam">
+                            </div>
+                            <div class="col-2">
+                              <div class="icon_dash" >
+                                <i class="material-icons text-primary" style="font-size:50px;"> notifications</i>
+                                <p style="margin-top:-5px;">{{ __('Beacon Glow Blue') }}</p>
+                              </div>
+                            </div>
+                            <div class="col-2">
+                              <div class="icon_dash" >
+                                <i class="material-icons text-success" style="font-size:50px;"> notifications</i>
+                                <p style="margin-top:-5px;">{{ __('Emergency Beacon') }}</p>
+                              </div>
+                            </div>
                           </div>
+
                         <!--  camera 2 devices -->
                           <div class="row">
                             <div class="col-md-6">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
+                                  <div class="ct-chart" style="height:350px;text-align:center;vertical-align:middle;">
                                     <iframe id="live360" name="live360" width="200%" height="200%" style="
                                       border:0px;
                                       -webkit-transform: scale(0.56, 0.5) translate(-39%, -50%);
@@ -64,8 +79,8 @@
                             <div class="col-md-6">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:290px;text-align:center;vertical-align:middle;">
-                                    <img id="interimg" src="http://10.2.4.50:8080/video.cgi" height="290px">
+                                  <div class="ct-chart" style="height:350px;text-align:center;vertical-align:middle;">
+                                    <img id="interimg" src="http://10.2.4.50:8080/video.cgi" height="350px">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('intercom') }}'">
@@ -86,8 +101,8 @@
                             <div class="col-md-4">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:180px;text-align:center;vertical-align:middle;">
-                                    <img id="tempimg" src="http://10.2.4.50:8080/video.cgi" height="180px">
+                                  <div class="ct-chart" style="height:240px;text-align:center;vertical-align:middle;">
+                                    <img id="tempimg" src="http://10.2.4.50:8080/video.cgi" height="240px">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_temp') }}'">
@@ -105,8 +120,8 @@
                             <div class="col-md-4">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:180px;text-align:center;vertical-align:middle;">
-                                    <img id="plateimg" src="http://10.2.4.50:8080/video.cgi" height="180px">
+                                  <div class="ct-chart" style="height:240px;text-align:center;vertical-align:middle;">
+                                    <img id="plateimg" src="http://10.2.4.50:8080/video.cgi" height="240px">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_license') }}'">
@@ -124,8 +139,8 @@
                             <div class="col-md-4">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:180px;text-align:center;vertical-align:middle;">
-                                    <img id="faceimg" src="http://10.2.4.50:8080/video.cgi" height="180px">
+                                  <div class="ct-chart" style="height:240px;;text-align:center;vertical-align:middle;">
+                                    <img id="faceimg" src="http://10.2.4.50:8080/video.cgi" height="240px">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_face') }}'">
@@ -170,10 +185,10 @@
                               <div class="col-md-3">
                                 <div class="card-dash">
                                   <div class="card-header">
-                                    <div class="icon_dash" >
+                                    <div class="icon_dashEs" >
                                       <a class="dash-link" href="{{ route('esave_dashboard') }}">
                                         <i class="icon-gauge text-orange"  style="font-size:65px;"></i>
-                                        <p style="margin-top:-5px;">{{ __('E-Save Dashboard') }}</p>
+                                        <p>E-Save <br> Dashboard</p>
                                       </a>
                                     </div>
                                   </div>
@@ -192,10 +207,10 @@
                               <div class="col-md-3">
                                 <div class="card-dash">
                                   <div class="card-header">
-                                    <div class="icon_dash" >
+                                    <div class="icon_dashEs" >
                                       <a class="dash-link " href="{{ route('cluster_projector') }}">
                                         <i class="icon-cluster_projectors text-orange"  style="font-size:65px;"></i>
-                                        <p style="margin-top:-2px;">Cluster <br> Projectors</p>
+                                        <p>Cluster <br> Projectors</p>
                                       </a>
                                     </div>
                                   </div>
@@ -214,10 +229,10 @@
                               <div class="col-md-3">
                                 <div class="card-dash">
                                   <div class="card-header">
-                                    <div class="icon_dash" >
+                                    <div class="icon_dashEs" >
                                       <a class="dash-link " href="{{ route('cluster_projector_lador') }}">
                                         <i class="icon-cluster_projectors_ladar text-orange"  style="font-size:65px;"></i>
-                                        <p style="margin-top:-2px;">{{ __('Cluster Projectors Lador') }}</p>
+                                        <p>Cluster <br> Projectors Lador</p>
                                       </a>
                                     </div>
                                   </div>
@@ -236,10 +251,10 @@
                               <div class="col-md-3">
                                 <div class="card-dash">
                                   <div class="card-header">
-                                    <div class="icon_dash" >
+                                    <div class="icon_dashEs" >
                                       <a class="dash-link " href="{{ route('meteodata') }}">
                                         <i class="icon-cloudy1 text-orange"  style="font-size:65px;"></i>
-                                        <p style="margin-top:-2px;">{{ __('E-Save Meteodata') }}</p>
+                                        <p>E-Save <br> Meteodata </p>
                                       </a>
                                     </div>
                                   </div>
@@ -283,7 +298,7 @@
                                 <div class="col-md-12">
                                   <div class="card-dash">
                                     <div class="card-header card-header-white">
-                                      <div class="ct-chart" style="height:105px;">
+                                      <div class="ct-chart" style="height:185px;">
                                         <iframe width="100%" height="100%" frameborder="0" scrolling="no"
                                           src="//umap.openstreetmap.fr/th-th/map/air-transmitter_595019?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=null&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false#16/18.7953/458.9519">
                                         </iframe>
@@ -330,8 +345,8 @@
                                     <div class="card-header">
                                       <div class="icon_dashCS" >
                                         <a class="dash-link " href="{{ route('occupancy') }}">
-                                          <i class="icon-occupancy text-orange"  style="font-size:40px;"></i>
-                                          <p class="icon_dashCS">{{ __('Occupancy Sensor') }}</p>
+                                          <i class="icon-occupancy text-orange"  style="font-size:80px;"></i>
+                                          <p class="icon_dashCS">Occupancy  <br> Sensor</p>
                                         </a>
                                       </div>
                                     </div>
@@ -351,8 +366,8 @@
                                     <div class="card-header">
                                       <div class="icon_dashCS" >
                                         <a class="dash-link " href="{{ route('power_socket') }}">
-                                          <i class="icon-power-plug text-orange"  style="font-size:40px;"></i>
-                                          <p class="icon_dashCS">{{ __('Roud Power Socket') }}</p>
+                                          <i class="icon-power-plug text-orange"  style="font-size:80px;"></i>
+                                          <p class="icon_dashCS">Roud <br> Power Socket</p>
                                         </a>
                                       </div>
                                     </div>
@@ -400,8 +415,8 @@
                                     <div class="card-header">
                                       <div class="icon_dashAd" >
                                         <a class="dash-link " href="{{ route('ex_speaker') }}">
-                                          <i class="icon-bullhorn text-orange"  style="font-size:40px;"></i>
-                                          <p class="icon_dashAd">{{ __('Exstreamer Loud Speaker') }}</p>
+                                          <i class="icon-bullhorn text-orange"  style="font-size:60px;"></i>
+                                          <p class="icon_dashAd">Exstreamer <br>Loud Speaker</p>
                                         </a>
                                       </div>
                                     </div>
@@ -421,8 +436,8 @@
                                     <div class="card-header ">
                                       <div class="icon_dashAd" >
                                         <a class="dash-link " href="{{ route('in_speaker') }}">
-                                          <i class="icon-In-loud text-orange"  style="font-size:40px;"></i>
-                                          <p class="icon_dashAd">{{ __('Instreamer Loud Speaker') }}</p>
+                                          <i class="icon-In-loud text-orange"  style="font-size:60px;"></i>
+                                          <p class="icon_dashAd">Instreamer <br>Loud Speaker </p>
                                         </a>
                                       </div>
                                     </div>
@@ -442,8 +457,8 @@
                                     <div class="card-header">
                                       <div class="icon_dashAd" >
                                         <a class="dash-link " href="{{ route('digital_signage') }}">
-                                          <i class="icon-Digital_Signage text-orange"  style="font-size:40px;"></i>
-                                          <p class="icon_dashAd">{{ __('Digital Signage') }}</p>
+                                          <i class="icon-Digital_Signage text-orange"  style="font-size:60px;"></i>
+                                          <p class="icon_dashAd">Digital <br> Signage</p>
                                         </a>
                                       </div>
                                     </div>
@@ -476,7 +491,7 @@
                             <!--  MAp -->
                               <div class="row">
                                 <div class="col-md-12">
-                                  <div class="card " style="height:190px;">
+                                  <div class="card " style="height:217px;">
                                     <div class="absoluteMap">
                                       <button class="btn btn-success btn-sm4">Online</button>
                                     </div>
@@ -505,12 +520,3 @@
   </div>
 @endsection
   
-
-<!-- @push('js')
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      md.initDashboardPageCharts();
-    });
-  </script>
-@endpush -->
