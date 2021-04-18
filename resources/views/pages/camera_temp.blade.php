@@ -15,15 +15,13 @@
           <div class="col-md-12">
             <div class="card-body">
               <div class="iframe-container d-none d-lg-block">
-                <iframe id="live360" name="live360" width="100%" height="100%"
-                style="
-                -moz-transform-origin: 20% 0;
-                "><p>Your browser does not support iframes.</p>
-                </iframe>
+                <div class="ct-chart" style="display: flex; justify-content: center; align-items: center;">
+                  <img id="interimg">
+                </div>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <script>
                   $(document).ready(function(){
-                    $('#live360').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
+                    $('#interimg').attr('src', 'http://10.2.4.50:8080/video.cgi');
                   });
                 </script>
               </div>

@@ -88,5 +88,13 @@
         </div>
     </div>
 </div>
-       
+
+<style>
+    .g-recaptcha {
+        text-align: -webkit-center;
+        text-align: -moz-center;
+        text-align: -o-center;
+        text-align: -ms-center;
+    }
+</style>
 @endsection
