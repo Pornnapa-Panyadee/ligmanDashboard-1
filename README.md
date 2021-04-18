@@ -28,6 +28,7 @@ docker-compose — https://docs.docker.com/compose/install/#install-compose<br>
 
 # install laravel package
 <code>composer update</code><br>
+<code>php artisan key:generate</code><br>
 
 # test command add user admin in /var/www workspace
 <code>php artisan migrate --seed</code><br>

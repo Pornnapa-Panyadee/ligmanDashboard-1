@@ -68,9 +68,9 @@
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>1</span></div> 
-                                    <span class="text_font">{{ __('Speed Dome Camera 360°') }}</sapn>
+                                    <span class="text_font">{{ __('Speed Dome Camera 360°') }}</span>
                                     <div class="absolute">
-                                      <button class="btn btn-success btn-sm1 ">Online</button>
+                                      <button class="btn btn-success btn-sm1">Online</button>
                                     </div>
                                   </div>
                                 </div>
@@ -87,7 +87,7 @@
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>4</span></div> 
-                                    <span class="text_font">{{ __('Intercom') }}</sapn>
+                                    <span class="text_font">{{ __('Intercom') }}</span>
                                     <div class="absolute">
                                       <button class="btn btn-success btn-sm1 ">Online</button>
                                     </div>
@@ -105,11 +105,11 @@
                                     <img id="tempimg" src="http://10.2.4.50:8080/video.cgi" height="240px">
                                   </div>
                                 </div>
-                                <div class="card-footer">
+                                <div class="card-footer" onclick="window.location='{{ url('camera_temp') }}'">
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>4</span></div> 
-                                    <span class="text_font">{{ __('Camera Temp ') }}</sapn>
+                                    <span class="text_font">{{ __('Camera Temp') }}</span>
                                     <div class="absolute1">
                                       <button class="btn btn-success btn-sm1 ">Online</button>
                                     </div>
@@ -128,7 +128,7 @@
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>1</span></div> 
-                                    <span class="text_font">{{ __('Licence Plate') }}</sapn>
+                                    <span class="text_font">{{ __('Licence Plate') }}</span>
                                     <div class="absolute1">
                                       <button class="btn btn-success btn-sm1 ">Online</button>
                                     </div>
@@ -147,7 +147,7 @@
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>4</span></div> 
-                                    <span class="text_font">{{ __('Face') }}</sapn>
+                                    <span class="text_font">{{ __('Face') }}</span>
                                     <div class="absolute1">
                                       <button class="btn btn-success btn-sm1 ">Online</button>
                                     </div>
