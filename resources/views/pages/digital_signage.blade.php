@@ -35,12 +35,12 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "https://edsbox.net/CMService/FreeLogin";
+  window.frames["myFrame"].location = "https://edsbox.net/CMService/Dashboard";
 </script>
 
 <form name="digitalForm" id="digitalForm" method="POST" action="https://edsbox.net/CMService/FreeLogin" target="_blank"> 
-  <input type=hidden id="email" name="email" value="admin"/>
-  <input type=hidden id="password" name="password" value="ligman"/>
+  <input type=hidden id="email" name="email" value="step\ligman"/>
+  <input type=hidden id="password" name="password" value="Ligman123?"/>
 </form>
 
 <script>
@@ -52,6 +52,10 @@
 
 <script>
   (function() {
+    var url = 'https://edsbox.net/CMService/Dashboard';
+    newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
+    // focus on the popup //
+    newWindow.focus();
     // CMD
     // "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Nova Star\ViPlex Express\ViPlex Express.lnk"
 

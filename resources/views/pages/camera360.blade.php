@@ -35,12 +35,12 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://user:123456789A@10.2.4.54/doc/page/preview.asp";
+  window.frames["myFrame"].location = "http://10.2.4.54/doc/page/preview.asp";
 </script>
 
 <form name="hikvisionForm" id="hikvisionForm" method="POST" action="http://10.2.4.54/doc/page/login.asp?_1618488065777&page=preview" target="_blank"> 
-  <input type=hidden id="username" name="username" value="user"/>
-  <input type=hidden id="password" name="password" value="123456789A"/>
+  <input type=hidden id="username" value="user"/>
+  <input type=hidden id="password" value="123456789A"/>
 </form>
 
 <script>

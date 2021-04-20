@@ -42,20 +42,9 @@
                                   <div class="ct-chart" style="height:350px;text-align:center;vertical-align:middle;">
                                     <iframe id="live360" name="live360" width="200%" height="200%" style="
                                       border:0px;
-                                      -webkit-transform: scale(0.56, 0.5) translate(-39%, -50%);
+                                      -webkit-transform: scale(0.58) translate(-37%, -34%);
                                       "><p>Your browser does not support iframes.</p>
                                     </iframe>
-
-                                    {{-- <iframe id="live360" name="live360" width="200%" height="200%" style="
-                                      zoom: 0.5;
-                                      -moz-transform: scale(0.5);
-                                      -moz-transform-origin: 0 0;
-                                      -o-transform: scale(0.5);
-                                      -o-transform-origin: 0 0;
-                                      -webkit-transform: scale(0.5);
-                                      -webkit-transform-origin: 0 0;">
-                                      <p>Your browser does not support iframes.</p>
-                                    </iframe> --}}
                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                                     <script>
                                       $(document).ready(function(){
@@ -79,8 +68,11 @@
                             <div class="col-md-6">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:350px;text-align:center;vertical-align:middle;">
-                                    <img id="interimg" src="http://10.2.4.50:8080/video.cgi" height="350px" width=100%>
+                                  <div class="ct-chart" style="
+                                  height:350px;display: flex;
+                                  justify-content: center;
+                                  align-items: center;"
+                                  ><img id="interimg" src="http://10.2.4.50:8080/video.cgi" height="300px">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('intercom') }}'">
@@ -101,8 +93,11 @@
                             <div class="col-md-4">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:240px;text-align:center;vertical-align:middle;">
-                                    <img id="tempimg" src="http://10.2.4.50:8080/video.cgi" height="240px" width=100%>
+                                  <div class="ct-chart" style="
+                                  height:240px;display: flex;
+                                  justify-content: center;
+                                  align-items: center;"
+                                  ><img id="tempimg" src="http://10.2.4.50:8080/video.cgi" height="190px">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_temp') }}'">
@@ -120,8 +115,11 @@
                             <div class="col-md-4">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:240px;text-align:center;vertical-align:middle;">
-                                    <img id="plateimg" src="http://10.2.4.50:8080/video.cgi" height="240px" width=100%>
+                                  <div class="ct-chart" style="
+                                  height:240px;display: flex;
+                                  justify-content: center;
+                                  align-items: center;"
+                                  ><img id="plateimg" src="http://10.2.4.50:8080/video.cgi" height="190px">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_license') }}'">
@@ -139,8 +137,11 @@
                             <div class="col-md-4">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:240px;;text-align:center;vertical-align:middle;">
-                                    <img id="faceimg" src="http://10.2.4.50:8080/video.cgi" height="240px" width=100%>
+                                  <div class="ct-chart" style="
+                                  height:240px;display: flex;
+                                  justify-content: center;
+                                  align-items: center;"
+                                  ><img id="faceimg" src="http://10.2.4.50:8080/video.cgi" height="190px">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_face') }}'">
