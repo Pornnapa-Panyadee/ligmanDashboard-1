@@ -397,7 +397,7 @@ hr.dash1 {
   width:230px;
 }
 hr.dash2 {
-  margin-left: -190px;
+  margin-left: -100px;
   margin-top:27px;
   border: 2px solid #54565a;
   border-radius: 1px;
@@ -475,21 +475,22 @@ div.absoluteMap{
   transform:rotate(180deg);
   display:block;
 }
+
 .text-dash-online{
-  font-size:52px;
+  font-size:72px;
   color:#4caf50;
   font-weight: bold;
   position:absolute;
-  left: 45%;
+  left: 55%;
   top:10%;
   /* transform: translate(-50%,-50%) ; */
 }
 .text-dash-onlineall{
-  font-size:28px;
+  font-size:38px;
   color:#54565a;
   font-weight: bold;
   position:absolute;
-  left: 65%;
+  left: 75%;
   top:25%;
  
 }
@@ -498,7 +499,7 @@ div.absoluteMap{
   font-weight: bold;
   color:#54565a;
   position:absolute;
-  left: 80%;
+  left: 85%;
   top:40%;
   
 }
@@ -518,7 +519,7 @@ div.absoluteMap{
   color:e8e8e8;
 }
 .icon_dashAd{
-  font-size:14px;
+  font-size:16px;
   font-weight: bold;
   height:120px;
   text-align:center;

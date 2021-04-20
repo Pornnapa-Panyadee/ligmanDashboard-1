@@ -180,10 +180,10 @@
                               <h1 class="text_dash" style="">E-save</h1>
                               <hr class="dash">
                             </div>
-                          <!-- esave 4 device -->
+                          <!-- esave 5 device -->
                             <div class="row">
                             <!-- 1 -->
-                              <div class="col-md-3">
+                              <div class="col-md-4">
                                 <div class="card-dash">
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
@@ -205,7 +205,7 @@
                                 </div>
                               </div>
                             <!-- 2 -->
-                              <div class="col-md-3">
+                              <div class="col-md-2">
                                 <div class="card-dash">
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
@@ -227,7 +227,7 @@
                                 </div>
                               </div>
                             <!-- 3 -->
-                              <div class="col-md-3">
+                              <div class="col-md-2">
                                 <div class="card-dash">
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
@@ -249,7 +249,7 @@
                                 </div>
                               </div>
                             <!-- 4 -->
-                              <div class="col-md-3">
+                              <div class="col-md-2">
                                 <div class="card-dash">
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
@@ -257,6 +257,28 @@
                                         <i class="icon-cloudy1 text-orange"  style="font-size:65px;"></i>
                                         <p>E-Save <br> Meteodata </p>
                                       </a>
+                                    </div>
+                                  </div>
+                                  <div class="card-footer">
+                                    <div class="stats">
+                                      <hr class="dash_status1">
+                                      <div class="dash-tri"><span>2</span></div> 
+                                      <div class="absolute1">
+                                        <button class="btn btn-success btn-sm2 ">Online</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <!-- 5 -->
+                            <div class="col-md-2">
+                                <div class="card-dash">
+                                  <div class="card-header">
+                                    <div class="icon_dashEs" >
+                                        <a class="dash-link " href="{{ route('occupancy') }}">
+                                          <i class="icon-occupancy text-orange"  style="font-size:65px;"></i>
+                                          <p>Occupancy  <br> Sensor</p>
+                                        </a>
                                     </div>
                                   </div>
                                   <div class="card-footer">
@@ -278,6 +300,122 @@
                   </div>
                 </div>
               <!-- end E-save -->
+            </div>
+            <div class="row">
+              <!-- Facility -->
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="profile">
+                            <!-- head name -->
+                              <div class="row">
+                                <button class="btn btn-just-icon btn-github">
+                                    <i class="icon-bullhorn   text-white"></i>
+                                </button>
+                                <h1 class="text_dash" style="">Facility</h1>
+                                <hr class="dash2">
+                              </div>
+                            <!--  Facility 4 devices -->
+                              <div class="row">
+                                <!-- 1 -->
+                                <div class="col-md-3">
+                                  <div class="card-dash ">
+                                    <div class="card-header">
+                                      <div class="icon_dashAd" >
+                                        <a class="dash-link " href="{{ route('ex_speaker') }}">
+                                          <i class="icon-bullhorn text-orange"  style="font-size:60px;"></i>
+                                          <p class="icon_dashAd">Exstreamer <br>Loud Speaker</p>
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div class="card-footer">
+                                      <div class="stats">
+                                          <hr class="dash_status1">
+                                          <div class="dash-tri"><span>4</span></div> 
+                                          <div class="absolute1">
+                                            <button class="btn btn-success btn-sm3">Online</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </div>
+                                <!-- 2 -->
+                                <div class="col-md-3">
+                                  <div class="card-dash">
+                                    <div class="card-header ">
+                                      <div class="icon_dashAd" >
+                                        <a class="dash-link " href="{{ route('in_speaker') }}">
+                                          <i class="icon-In-loud text-orange"  style="font-size:60px;"></i>
+                                          <p class="icon_dashAd">Instreamer <br>Loud Speaker </p>
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div class="card-footer">
+                                      <div class="stats">
+                                        <hr class="dash_status1">
+                                        <div class="dash-tri"><span>4</span></div> 
+                                        <div class="absolute1">
+                                          <button class="btn btn-success btn-sm3">Online</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- 3 -->
+                                <div class="col-md-3">
+                                  <div class="card-dash">
+                                    <div class="card-header">
+                                      <div class="icon_dashAd" >
+                                        <a class="dash-link " href="{{ route('digital_signage') }}">
+                                          <i class="icon-Digital_Signage text-orange"  style="font-size:60px;"></i>
+                                          <p class="icon_dashAd">Digital <br> Signage</p>
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div class="card-footer">
+                                      <div class="stats">
+                                        <hr class="dash_status1">
+                                        <div class="dash-tri"><span>4</span></div> 
+                                        <div class="absolute1">
+                                          <button class="btn btn-success btn-sm3">Online</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- 4 -->
+                                <div class="col-md-3">
+                                  <div class="card-dash">
+                                    <div class="card-header">
+                                      <div class="icon_dashAd" >
+                                        <a class="dash-link " href="{{ route('power_socket') }}">
+                                          <i class="icon-power-plug text-orange"  style="font-size:60px;"></i>
+                                          <p class="icon_dashAd">Roud <br> Power Socket
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div class="card-footer">
+                                      <div class="stats">
+                                        <hr class="dash_status1">
+                                        <div class="dash-tri"><span>4</span></div> 
+                                        <div class="absolute1">
+                                          <button class="btn btn-success btn-sm3">Online</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          
+                          </div>
+                            
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              <!-- end Facility -->
+             
             </div>
             <div class="row">
               <!-- Weather -->
@@ -325,164 +463,6 @@
                     </div>
                 </div>
               <!-- end Weather -->
-              <!-- Control  -->
-                <div class="col-lg-5 col-md-12">
-                  <div class="card">
-                      <div class="card-body">
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="profile">
-                            <!-- head name -->
-                              <div class="row">
-                                <button class="btn btn-just-icon btn-github">
-                                    <i class="icon-equalizer2  text-white"></i>
-                                </button>
-                                <h1 class="text_dash" style="">Control System</h1>
-                                <hr class="dash1">
-                              </div>
-                            <!--  Control 2 devices -->
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="card-dash ">
-                                    <div class="card-header">
-                                      <div class="icon_dashCS" >
-                                        <a class="dash-link " href="{{ route('occupancy') }}">
-                                          <i class="icon-occupancy text-orange"  style="font-size:80px;"></i>
-                                          <p class="icon_dashCS">Occupancy  <br> Sensor</p>
-                                        </a>
-                                      </div>
-                                    </div>
-                                    <div class="card-footer">
-                                      <div class="stats">
-                                        <hr class="dash_status3">
-                                        <div class="dash-tri"><span>2</span></div> 
-                                        <div class="absolute1">
-                                          <button class="btn btn-success btn-sm3">Online</button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="card-dash ">
-                                    <div class="card-header">
-                                      <div class="icon_dashCS" >
-                                        <a class="dash-link " href="{{ route('power_socket') }}">
-                                          <i class="icon-power-plug text-orange"  style="font-size:80px;"></i>
-                                          <p class="icon_dashCS">Roud <br> Power Socket</p>
-                                        </a>
-                                      </div>
-                                    </div>
-                                    <div class="card-footer">
-                                      <div class="stats">
-                                        <hr class="dash_status3">
-                                        <div class="dash-tri"><span>2</span></div> 
-                                        <div class="absolute1">
-                                          <button class="btn btn-offline btn-sm3">{{ __('offline') }} </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                          
-                          </div>
-                            
-                        </div>
-                      </div>
-                    </div>
-                </div>
-              <!-- End control  -->
-            </div>
-          
-            <div class="row">
-              <!-- Advertisement -->
-                <div class="col-lg-7 col-md-12">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="profile">
-                            <!-- head name -->
-                              <div class="row">
-                                <button class="btn btn-just-icon btn-github">
-                                    <i class="icon-bullhorn   text-white"></i>
-                                </button>
-                                <h1 class="text_dash" style="">Advertisement</h1>
-                                <hr class="dash2">
-                              </div>
-                            <!--  Advertisement 3 devices -->
-                              <div class="row">
-                                <div class="col-md-4">
-                                  <div class="card-dash ">
-                                    <div class="card-header">
-                                      <div class="icon_dashAd" >
-                                        <a class="dash-link " href="{{ route('ex_speaker') }}">
-                                          <i class="icon-bullhorn text-orange"  style="font-size:60px;"></i>
-                                          <p class="icon_dashAd">Exstreamer <br>Loud Speaker</p>
-                                        </a>
-                                      </div>
-                                    </div>
-                                    <div class="card-footer">
-                                      <div class="stats">
-                                          <hr class="dash_status3">
-                                          <div class="dash-tri"><span>4</span></div> 
-                                          <div class="absolute1">
-                                            <button class="btn btn-success btn-sm3">Online</button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-4">
-                                  <div class="card-dash">
-                                    <div class="card-header ">
-                                      <div class="icon_dashAd" >
-                                        <a class="dash-link " href="{{ route('in_speaker') }}">
-                                          <i class="icon-In-loud text-orange"  style="font-size:60px;"></i>
-                                          <p class="icon_dashAd">Instreamer <br>Loud Speaker </p>
-                                        </a>
-                                      </div>
-                                    </div>
-                                    <div class="card-footer">
-                                      <div class="stats">
-                                        <hr class="dash_status3">
-                                        <div class="dash-tri"><span>4</span></div> 
-                                        <div class="absolute1">
-                                          <button class="btn btn-success btn-sm3">Online</button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-4">
-                                  <div class="card-dash">
-                                    <div class="card-header">
-                                      <div class="icon_dashAd" >
-                                        <a class="dash-link " href="{{ route('digital_signage') }}">
-                                          <i class="icon-Digital_Signage text-orange"  style="font-size:60px;"></i>
-                                          <p class="icon_dashAd">Digital <br> Signage</p>
-                                        </a>
-                                      </div>
-                                    </div>
-                                    <div class="card-footer">
-                                      <div class="stats">
-                                        <hr class="dash_status3">
-                                        <div class="dash-tri"><span>4</span></div> 
-                                        <div class="absolute1">
-                                          <button class="btn btn-success btn-sm3">Online</button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                          
-                          </div>
-                            
-                        </div>
-                      </div>
-                    </div>
-                </div>
-              <!-- end Advertisement -->
               <!-- Map  -->
                 <div class="col-lg-5 col-md-12">
                   <div class="card">
@@ -492,13 +472,13 @@
                             <!--  MAp -->
                               <div class="row">
                                 <div class="col-md-12">
-                                  <div class="card " style="height:217px;">
+                                  <div class="card " style="height:277px;">
                                     <div class="absoluteMap">
                                       <button class="btn btn-success btn-sm4">Online</button>
                                     </div>
-                                    <div class="text-dash-online"> 11 </div>
-                                    <div class="text-dash-onlineall"> /15 </div>
-                                    <div class="text-dash-onlinetag"> devices </div>
+                                      <div class="text-dash-online"> 11 </div>
+                                      <div class="text-dash-onlineall"> /15 </div>
+                                      <div class="text-dash-onlinetag"> devices </div>
                                     <iframe width="100%" height="100%" frameborder="0"  
                                       src="//umap.openstreetmap.fr/en/map/poles-map_595016?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=null&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false#14/18.7968/98.9639">
                                     </iframe>
@@ -510,10 +490,13 @@
                             
                         </div>
                       </div>
-                    </div>
+                  </div>
+                
                 </div>
-              <!-- End control  -->
+              <!-- End Map  -->
             </div>
+          
+            
 
           </div> 
       </div>
