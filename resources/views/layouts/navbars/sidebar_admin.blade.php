@@ -10,16 +10,16 @@
       
       <ul class="nav">
         <li class="nav-item{{ $activePage == 'list' ? ' active' : '' }}">
-          <a class="nav-link" href="{{ route('admin.list') }}">
+          <a class="nav-link" href="{{ route('adminForm.admin.create') }}">
             <i class="material-icons text-orange">settings_applications</i>
               <p>{{ __('My Device settings') }}</p>
           </a>
         </li>
         
         <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
-          <a class="nav-link" href="{{ route('home') }}">
-              <i class="material-icons text-orange">dashboard</i>
-              <p>{{ __('Dashboard') }}</p>
+          <a class="nav-link" href="{{ route('admin.list') }}">
+            <i class="material-icons text-orange">people</i>
+            <p>{{ __('User List') }}</p>
           </a>
         </li>
       </ul>

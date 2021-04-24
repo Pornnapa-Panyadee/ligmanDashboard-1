@@ -17,9 +17,9 @@
         </li>
         
         <li class="nav-item{{ $activePage == 'superadminlist' ? ' active' : '' }}">
-          <a class="nav-link" href="list">
-              <i class="material-icons text-orange">dashboard</i>
-              <p>{{ __('Dashboard') }}</p>
+          <a class="nav-link" href="{{ route('superadmin.list') }}">
+            <i class="material-icons text-orange">people</i>
+            <p>{{ __('User List') }}</p>
           </a>
         </li>
       </ul>
