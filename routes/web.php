@@ -86,7 +86,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
+	// Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
@@ -94,7 +94,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('superadmin/list', function () {return view('adminForm.superadmin.list');})->name('superadmin.list');
-	Route::get('superadmin/create', function () {return view('adminForm.superadmin.create');})->name('superadmin.create');
+	// Route::get('superadmin/create', function () {return view('adminForm.superadmin.create');})->name('superadmin.create');
+	Route::get('superadmin/create', ['as' => 'adminForm.superadmin.create', 'uses' => 'App\Http\Controllers\CreateController@filldata']);
+	Route::post('superadmin/create', ['as' => 'adminForm.superadmin.insert', 'uses' => 'App\Http\Controllers\CreateController@create']);
+
 	Route::get('admin/list', function () {return view('adminForm.admin.list');})->name('admin.list');
 	Route::get('admin/create_device', function () {return view('adminForm.admin/create_device');})->name('admin.create_device');
 	Route::get('admin/create_location', function () {return view('adminForm.admin/location');})->name('admin.create_location');
