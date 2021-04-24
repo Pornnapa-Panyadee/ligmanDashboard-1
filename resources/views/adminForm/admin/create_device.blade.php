@@ -31,14 +31,14 @@
                                                         </span>
                                                     </div>
                                                     <!-- query from db -->
-                                                    <select class="selectpicker" id="devices" data-style="select-with-transition" title="{{ __('Device...') }}" required>
+                                                    <select class="selectpicker" id="devices" name="devices" data-style="select-with-transition" title="{{ __('Device...') }}" required>
                                                         <option value="{{__('Speed Dome Camera 360°')}}">{{__('Speed Dome Camera 360°')}}</option>
                                                         <option value="{{ __('Camera Fix Lens (plate)') }}">{{ __('Camera Fix Lens (plate)') }}</option>
                                                     </select>
                                                 </div>
-                                                @if ($errors->has('name'))
-                                                    <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
-                                                        <strong>{{ $errors->first('name') }}</strong>
+                                                @if ($errors->has('devices'))
+                                                    <div id="devices-error" class="error text-danger pl-3" for="devices" style="display: block;">
+                                                        <strong>{{ $errors->first('devices') }}</strong>
                                                     </div>
                                                 @endif
                                             </div>
@@ -92,8 +92,8 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <!-- Under  -->
-                                            <div class="bmd-form-group{{ $errors->has('under') ? ' has-danger' : '' }} mt-3">
+                                            <!-- Pole  -->
+                                            <div class="bmd-form-group{{ $errors->has('pole') ? ' has-danger' : '' }} mt-3">
                                                     
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
@@ -104,7 +104,7 @@
                                                     <div class="checkbox-radios">
                                                             <div class="form-check">
                                                                 <label class="form-check-label">
-                                                                <input class="form-check-input" type="radio" name="exampleRadios" value="1" checked> Pole 1
+                                                                <input class="form-check-input" type="radio" name="pole" value="1" checked> Pole 1
                                                                 <span class="circle">
                                                                     <span class="check"></span>
                                                                 </span>
@@ -112,7 +112,7 @@
                                                             </div>
                                                             <div class="form-check">
                                                                 <label class="form-check-label">
-                                                                <input class="form-check-input" type="radio" name="exampleRadios" value="2"> Pole 2
+                                                                <input class="form-check-input" type="radio" name="pole" value="2"> Pole 2
                                                                 <span class="circle">
                                                                     <span class="check"></span>
                                                                 </span>
@@ -120,7 +120,7 @@
                                                             </div>
                                                             <div class="form-check">
                                                                 <label class="form-check-label">
-                                                                <input class="form-check-input" type="radio" name="exampleRadios" value="3"> Pole 3 
+                                                                <input class="form-check-input" type="radio" name="pole" value="3"> Pole 3 
                                                                 <span class="circle">
                                                                     <span class="check"></span>
                                                                 </span>
@@ -128,7 +128,7 @@
                                                             </div>
                                                             <div class="form-check">
                                                                 <label class="form-check-label">
-                                                                <input class="form-check-input" type="radio" name="exampleRadios" value="4"> Pole 4
+                                                                <input class="form-check-input" type="radio" name="pole" value="4"> Pole 4
                                                                 <span class="circle">
                                                                     <span class="check"></span>
                                                                 </span>
