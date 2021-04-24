@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body">
                     <div class="toolbar">
-                        <a class="btn btn-warning mr-4"  href="{{ route('admin.create_device') }}">
+                        <a class="btn btn-warning mr-4"  href="{{ route('adminForm.admin.create_device') }}">
                         <i class="material-icons">add_circle_outline</i>
                             <span>Add Device</span>
                         </a>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="card-body">
                     <div class="toolbar">
-                        <a class="btn btn-warning mr-4"  href="{{ route('admin.create_location') }}">
+                        <a class="btn btn-warning mr-4"  href="{{ route('adminForm.admin.location') }}">
                         <i class="material-icons">add_circle_outline</i>
                             <span>Add Location</span>
                         </a>

@@ -24,7 +24,19 @@
                                         <img src="{{ asset('material/img/create-1.png')}}" width=100% >
                                     </div>
                                     <div class="col-6" style="margin-top:30px;">
-                                        <div class="card-body ">
+                                        <div class="card-body">
+                                            @if (session('status'))
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                    <div class="alert alert-success">
+                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <i class="material-icons">close</i>
+                                                        </button>
+                                                        <span>{{ session('status') }}</span>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            @endif
                                             <!-- name -->
                                             <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                                 <div class="input-group">
@@ -89,22 +101,22 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <!-- status -->
-                                            <div class="bmd-form-group{{ $errors->has('status') ? ' has-danger' : '' }} mt-3">
+                                            <!-- role -->
+                                            <div class="bmd-form-group{{ $errors->has('role') ? ' has-danger' : '' }} mt-3">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                     <span class="input-group-text">
                                                         <i class="material-icons">check_circle_outline</i>
                                                     </span>
                                                     </div>
-                                                    <select class="selectpicker" id="status" name="status" data-style="select-with-transition" title="{{ __('Status...') }}" data-size="7" style="width: 400px" required>
+                                                    <select class="selectpicker" id="role" name="role" data-style="select-with-transition" title="{{ __('status...') }}" data-size="7" style="width: 400px" required>
                                                         <option value="admin">admin </option>
                                                         <option value="user">user</option>
                                                     </select>                                                   
                                                 </div>
-                                                @if ($errors->has('status'))
-                                                    <div id="status-error" class="error text-danger pl-3" for="status" style="display: block;">
-                                                    <strong>{{ $errors->first('status') }}</strong>
+                                                @if ($errors->has('role'))
+                                                    <div id="role-error" class="error text-danger pl-3" for="role" style="display: block;">
+                                                    <strong>{{ $errors->first('role') }}</strong>
                                                     </div>
                                                 @endif
                                             </div>
