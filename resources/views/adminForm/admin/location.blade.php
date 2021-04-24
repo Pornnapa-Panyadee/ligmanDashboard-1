@@ -23,7 +23,7 @@
                                     <div class="col-10" style="margin-top:50px;">
                                         <div class="card-body ">
                                             <!-- pole  -->
-                                            <div class="bmd-form-group{{ $errors->has('under') ? ' has-danger' : '' }} mt-3">
+                                            <div class="bmd-form-group{{ $errors->has('pole') ? ' has-danger' : '' }} mt-3">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">
@@ -33,19 +33,19 @@
                                                     <div class="checkbox-radios">
                                                             <div class="form-check">
                                                                 <label class="form-check-label">
-                                                                    <input class="form-check-input" type="radio" name="exampleRadios" value="1" checked> Pole 1
+                                                                    <input class="form-check-input" type="radio" name="pole" value="1" checked> Pole 1
                                                                     <span class="circle"> <span class="check"></span></span>
                                                                 </label>
                                                                 <label class="form-check-label">
-                                                                    <input class="form-check-input" type="radio" name="exampleRadios" value="2"> Pole 2
+                                                                    <input class="form-check-input" type="radio" name="pole" value="2"> Pole 2
                                                                     <span class="circle"> <span class="check"></span> </span>
                                                                 </label>
                                                                 <label class="form-check-label">
-                                                                    <input class="form-check-input" type="radio" name="exampleRadios" value="3"> Pole 3 
+                                                                    <input class="form-check-input" type="radio" name="pole" value="3"> Pole 3 
                                                                     <span class="circle"> <span class="check"></span></span>
                                                                 </label>
                                                                     <label class="form-check-label">
-                                                                    <input class="form-check-input" type="radio" name="exampleRadios" value="4"> Pole 4
+                                                                    <input class="form-check-input" type="radio" name="pole" value="4"> Pole 4
                                                                      <span class="circle"><span class="check"></span></span>
                                                                 </label>
                                                             </div>
