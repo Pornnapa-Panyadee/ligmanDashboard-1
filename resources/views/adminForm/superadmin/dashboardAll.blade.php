@@ -1,4 +1,4 @@
-@extends('layouts.app_superadmin', ['activePage' => 'superadminlist', 'titlePage' => __('Dashboard List')])
+@extends('layouts.app_superadmin', ['activePage' => 'superadminDashboard', 'titlePage' => __('Dashboard List')])
 
 @section('content')
 <div class="content">
