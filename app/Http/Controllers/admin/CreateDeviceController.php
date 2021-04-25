@@ -20,10 +20,10 @@ class CreateDeviceController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],  // unique:table,column,except,idColumn
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'role' => ['required', 'string'],
+            'devices' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255'],
+            'link' => ['required', 'string', 'min:6', 'confirmed'],
+            'pole' => ['required', 'string'],
         ]);
     }
 

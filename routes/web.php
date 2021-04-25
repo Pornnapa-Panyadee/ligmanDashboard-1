@@ -104,6 +104,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('admin/device', ['as' => 'adminForm.admin.create_device', 'uses' => 'App\Http\Controllers\admin\CreateDeviceController@get']);
 	Route::post('admin/device', ['as' => 'adminForm.admin.insert', 'uses' => 'App\Http\Controllers\admin\CreateDeviceController@post']);
 
-	Route::get('admin/pole', ['as' => 'adminForm.admin.location', 'uses' => 'App\Http\Controllers\admin\CreateController@get']);
-	Route::post('admin/pole', ['as' => 'adminForm.admin.insert', 'uses' => 'App\Http\Controllers\admin\CreateController@post']);
+	Route::get('admin/pole', ['as' => 'adminForm.admin.location', 'uses' => 'App\Http\Controllers\admin\CreatePoleController@get']);
+	Route::post('admin/pole', ['as' => 'adminForm.admin.insert_pole', 'uses' => 'App\Http\Controllers\admin\CreatePoleController@post']);
 });
