@@ -10,7 +10,7 @@
             </div>
             <div class="card-body">
                 <div class="toolbar">
-                    <a class="btn btn-warning mr-4"  href="{{ route('superadmin.create') }}">
+                    <a class="btn btn-warning mr-4"  href="{{ route('adminForm.superadmin.create') }}">
                     <i class="material-icons">add_circle_outline</i>
                         <span>Create Account</span>
                     </a>

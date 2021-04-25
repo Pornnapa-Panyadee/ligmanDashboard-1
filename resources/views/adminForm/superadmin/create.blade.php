@@ -13,7 +13,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form" method="POST" action="{{ route('register') }}">
+                        <form class="form" method="POST" action="{{ route('adminForm.superadmin.insert') }}">
                             @csrf
                             <div class="card mb-3">
                                 <div class="card-header  text-center" style="margin-top:-20px;background-color: #e8e8e8;">
@@ -24,7 +24,19 @@
                                         <img src="{{ asset('material/img/create-1.png')}}" width=100% >
                                     </div>
                                     <div class="col-6" style="margin-top:30px;">
-                                        <div class="card-body ">
+                                        <div class="card-body">
+                                            @if (session('status'))
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                    <div class="alert alert-success">
+                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <i class="material-icons">close</i>
+                                                        </button>
+                                                        <span>{{ session('status') }}</span>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            @endif
                                             <!-- name -->
                                             <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                                 <div class="input-group">
@@ -41,19 +53,19 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <!-- Username -->
-                                            <div class="bmd-form-group{{ $errors->has('username') ? ' has-danger' : '' }} mt-3">
+                                            <!-- email -->
+                                            <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }} mt-3">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                     <span class="input-group-text">
                                                         <i class="material-icons">face</i>
                                                     </span>
                                                     </div>
-                                                    <input type="text" name="username" class="form-control" placeholder="{{ __('username...') }}" value="{{ old('username') }}" required>
+                                                    <input type="text" name="email" class="form-control" placeholder="{{ __('email...') }}" value="{{ old('email') }}" required>
                                                 </div>
-                                                @if ($errors->has('username'))
-                                                    <div id="username-error" class="error text-danger pl-3" for="username" style="display: block;">
-                                                    <strong>{{ $errors->first('username') }}</strong>
+                                                @if ($errors->has('email'))
+                                                    <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
+                                                    <strong>{{ $errors->first('email') }}</strong>
                                                     </div>
                                                 @endif
                                             </div>
@@ -89,23 +101,22 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <!-- status -->
-                                            <div class="bmd-form-group{{ $errors->has('status') ? ' has-danger' : '' }} mt-3">
+                                            <!-- role -->
+                                            <div class="bmd-form-group{{ $errors->has('role') ? ' has-danger' : '' }} mt-3">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                     <span class="input-group-text">
                                                         <i class="material-icons">check_circle_outline</i>
                                                     </span>
                                                     </div>
-                                                    <select class="selectpicker" id="status" data-style="select-with-transition" title="{{ __('Status...') }}" data-size="7" style="width: 400px" >
+                                                    <select class="selectpicker" id="role" name="role" data-style="select-with-transition" title="{{ __('status...') }}" data-size="7" style="width: 400px" required>
                                                         <option value="admin">admin </option>
                                                         <option value="user">user</option>
-                                                    </select>
-                                                   
+                                                    </select>                                                   
                                                 </div>
-                                                @if ($errors->has('status'))
-                                                    <div id="status-error" class="error text-danger pl-3" for="status" style="display: block;">
-                                                    <strong>{{ $errors->first('status') }}</strong>
+                                                @if ($errors->has('role'))
+                                                    <div id="role-error" class="error text-danger pl-3" for="role" style="display: block;">
+                                                    <strong>{{ $errors->first('role') }}</strong>
                                                     </div>
                                                 @endif
                                             </div>
@@ -118,7 +129,7 @@
                                                         </span>
                                                     </div>
                                                     <!-- query from db -->
-                                                    <select class="selectpicker" id="under" data-style="select-with-transition" title="{{ __('Under...') }}" >
+                                                    <select class="selectpicker" id="under" name="under" data-style="select-with-transition" title="{{ __('Under...') }}" >
                                                         <option value="admin1">admin1 </option>
                                                         <option value="admin2">admin2</option>
                                                     </select>
