@@ -95,11 +95,16 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('superadmin/list', function () {return view('adminForm.superadmin.list');})->name('superadmin.list');
 	// Route::get('superadmin/create', function () {return view('adminForm.superadmin.create');})->name('superadmin.create');
-	Route::get('superadmin/create', ['as' => 'adminForm.superadmin.create', 'uses' => 'App\Http\Controllers\CreateController@filldata']);
-	Route::post('superadmin/create', ['as' => 'adminForm.superadmin.insert', 'uses' => 'App\Http\Controllers\CreateController@create']);
+	Route::get('superadmin/create', ['as' => 'adminForm.superadmin.create', 'uses' => 'App\Http\Controllers\superadmin\CreateUserController@get']);
+	Route::post('superadmin/create', ['as' => 'adminForm.superadmin.insert', 'uses' => 'App\Http\Controllers\superadmin\CreateUserController@post']);
 	Route::get('superadmin/dashboard', function () {return view('adminForm.superadmin.dashboardAll');})->name('superadmin.dashboard');
 
 	Route::get('admin/list', function () {return view('adminForm.admin.list');})->name('admin.list');
-	Route::get('admin/create_device', function () {return view('adminForm.admin/create_device');})->name('admin.create_device');
-	Route::get('admin/create_location', function () {return view('adminForm.admin/location');})->name('admin.create_location');
+	// Route::get('admin/create_device', function () {return view('adminForm.admin/create_device');})->name('admin.create_device');
+	// Route::get('admin/create_location', function () {return view('adminForm.admin/location');})->name('admin.create_location');
+	Route::get('admin/device', ['as' => 'adminForm.admin.create_device', 'uses' => 'App\Http\Controllers\admin\CreateDeviceController@get']);
+	Route::post('admin/device', ['as' => 'adminForm.admin.insert', 'uses' => 'App\Http\Controllers\admin\CreateDeviceController@post']);
+
+	Route::get('admin/pole', ['as' => 'adminForm.admin.location', 'uses' => 'App\Http\Controllers\admin\CreateController@get']);
+	Route::post('admin/pole', ['as' => 'adminForm.admin.insert', 'uses' => 'App\Http\Controllers\admin\CreateController@post']);
 });
