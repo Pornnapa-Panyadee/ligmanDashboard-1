@@ -13,7 +13,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form" method="POST" action="{{ route('register') }}">
+                        <form class="form" method="POST" action="{{ route('adminForm.admin.insert') }}">
                             @csrf
                             <div class="card">
                                 <div class="card-header  text-center" style="margin-top:-20px;background-color: #e8e8e8;">
@@ -22,6 +22,18 @@
                                 <div class="row justify-content-center">
                                     <div class="col-10" style="margin-top:50px;">
                                         <div class="card-body ">
+                                            @if (session('status'))
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                    <div class="alert alert-success">
+                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <i class="material-icons">close</i>
+                                                        </button>
+                                                        <span>{{ session('status') }}</span>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            @endif
                                             <!-- devices -->
                                             <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                                 <div class="input-group">
@@ -33,7 +45,7 @@
                                                     <!-- query from db -->
                                                     <select class="selectpicker" id="devices" name="devices" data-style="select-with-transition" title="{{ __('Device...') }}" required>
                                                         @foreach ($device_list as $device)
-                                                        <option value={{ $device->device_name }}>{{ $device->device_name }}</option>
+                                                        <option value={{ $device->id }}>{{ $device->device_name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -103,38 +115,16 @@
                                                         </span>
                                                     </div>
                                                     <div class="checkbox-radios">
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                <input class="form-check-input" type="radio" name="pole" value="1" checked> Pole 1
-                                                                <span class="circle">
-                                                                    <span class="check"></span>
-                                                                </span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                <input class="form-check-input" type="radio" name="pole" value="2"> Pole 2
-                                                                <span class="circle">
-                                                                    <span class="check"></span>
-                                                                </span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                <input class="form-check-input" type="radio" name="pole" value="3"> Pole 3 
-                                                                <span class="circle">
-                                                                    <span class="check"></span>
-                                                                </span>
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                <input class="form-check-input" type="radio" name="pole" value="4"> Pole 4
-                                                                <span class="circle">
-                                                                    <span class="check"></span>
-                                                                </span>
-                                                                </label>
-                                                            </div>
+                                                        @foreach ($pole_list as $pole)                                                        
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                            <input class="form-check-input" type="radio" name="pole_id" value={{$pole->id}}> Pole {{$pole->id}}
+                                                            <span class="circle">
+                                                                <span class="check"></span>
+                                                            </span>
+                                                            </label>
+                                                        </div>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Device extends Authenticatable
+class DeviceUsers extends Authenticatable
 {
     use HasFactory, Notifiable;
 
@@ -16,9 +16,9 @@ class Device extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'device_username',
-        'device_password',
-        'api_link',
+        'username',
+        'password',
+        'link',
     ];
 
     /**
@@ -27,8 +27,7 @@ class Device extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'device_id',
-        'user_id',
+        'device',
         'pole_id',
     ];
 }
