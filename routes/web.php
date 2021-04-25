@@ -97,7 +97,7 @@ Route::group(['middleware' => 'auth'], function () {
 	// Route::get('superadmin/create', function () {return view('adminForm.superadmin.create');})->name('superadmin.create');
 	Route::get('superadmin/create', ['as' => 'adminForm.superadmin.create', 'uses' => 'App\Http\Controllers\superadmin\CreateUserController@get']);
 	Route::post('superadmin/create', ['as' => 'adminForm.superadmin.insert', 'uses' => 'App\Http\Controllers\superadmin\CreateUserController@post']);
-	Route::get('superadmin/dashboard', function () {return view('adminForm.superadmin.dashboardAll');})->name('superadmin.dashboard');
+	Route::get('superadmin/dashboard', function () {return view('adminForm.superadmin.dashboardAll');})->name('adminForm.superadmin.dashboard');
 
 	Route::get('admin/list', function () {return view('adminForm.admin.list');})->name('admin.list');
 	// Route::get('admin/create_device', function () {return view('adminForm.admin/create_device');})->name('admin.create_device');
