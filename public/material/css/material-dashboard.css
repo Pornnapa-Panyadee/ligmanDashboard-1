@@ -3458,6 +3458,25 @@ tbody.collapse.show {
   border-radius: 0.25rem;
 }
 
+.card-dashList {
+  text-align: center;
+  margin: 20px;;
+  position: relative;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #54565a;
+  background-clip: border-box;
+  /* border: 3px solid #bb1919; */
+  border-radius: 0.35rem;
+  box-shadow: 0 5px  #FFC932;
+}
+.text_dashList{
+  font-family: "Roboto";
+  color: #fff;
+  margin-top: -10px;
+}
+
 .card>hr {
   margin-right: 0;
   margin-left: 0;
