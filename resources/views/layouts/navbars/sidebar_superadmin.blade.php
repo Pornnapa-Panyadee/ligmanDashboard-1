@@ -9,17 +9,17 @@
     <div class="sidebar-wrapper">
       
       <ul class="nav">
-        <li class="nav-item{{ $activePage == 'superadminlist' ? ' active' : '' }}">
-          <a class="nav-link" href="{{ route('superadmin.list') }}">
+        <li class="nav-item{{ $activePage == 'superadmincreate' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('adminForm.superadmin.create') }}">
             <i class="material-icons text-orange">person_add_alt</i>
               <p>{{ __('Create Account') }}</p>
           </a>
         </li>
         
-        <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
-          <a class="nav-link" href="">
-              <i class="material-icons text-orange">dashboard</i>
-              <p>{{ __('Dashboard') }}</p>
+        <li class="nav-item{{ $activePage == 'superadminlist' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('superadmin.list') }}">
+            <i class="material-icons text-orange">people</i>
+            <p>{{ __('User List') }}</p>
           </a>
         </li>
       </ul>
