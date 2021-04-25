@@ -32,8 +32,9 @@
                                                     </div>
                                                     <!-- query from db -->
                                                     <select class="selectpicker" id="devices" name="devices" data-style="select-with-transition" title="{{ __('Device...') }}" required>
-                                                        <option value="{{__('Speed Dome Camera 360°')}}">{{__('Speed Dome Camera 360°')}}</option>
-                                                        <option value="{{ __('Camera Fix Lens (plate)') }}">{{ __('Camera Fix Lens (plate)') }}</option>
+                                                        @foreach ($device_list as $device)
+                                                        <option value={{ $device->device_name }}>{{ $device->device_name }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 @if ($errors->has('devices'))
