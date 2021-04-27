@@ -13,7 +13,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form" method="POST" action="{{ route('adminForm.admin.insert') }}">
+                        <form class="form" method="POST" action="{{ route('adminForm.admin.update_device') }}">
                             @csrf
                             <div class="card">
                                 <div class="card-header  text-center" style="margin-top:-20px;background-color: #e8e8e8;">
@@ -34,8 +34,9 @@
                                                     </div>
                                                 </div>
                                             @endif
+                                            <input type="hidden" id="id" name="id" value={{$device_user->id}}>
                                             <!-- devices -->
-                                            <div class="bmd-form-group{{ $errors->has('device_id') ? ' has-danger' : '' }}">
+                                            <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">
@@ -45,13 +46,17 @@
                                                     <!-- query from db -->
                                                     <select class="selectpicker" id="device_id" name="device_id" data-style="select-with-transition" title="{{ __('Device...') }}" required>
                                                         @foreach ($devices_list as $device)
-                                                        <option value={{ $device->id }}>{{ $device->device_name }}</option>
+                                                            @if($device_user->device_id == $device->id)
+                                                                <option value={{ $device->id }} selected="selected">{{ $device->device_name }}</option>
+                                                            @else
+                                                                <option value={{ $device->id }}>{{ $device->device_name }}</option>
+                                                            @endif
                                                         @endforeach
                                                     </select>
                                                 </div>
-                                                @if ($errors->has('device_id'))
-                                                    <div id="device_id-error" class="error text-danger pl-3" for="device_id" style="display: block;">
-                                                        <strong>{{ $errors->first('device_id') }}</strong>
+                                                @if ($errors->has('devices'))
+                                                    <div id="devices-error" class="error text-danger pl-3" for="devices" style="display: block;">
+                                                        <strong>{{ $errors->first('devices') }}</strong>
                                                     </div>
                                                 @endif
                                             </div>
@@ -63,7 +68,7 @@
                                                         <i class="material-icons">face</i>
                                                     </span>
                                                     </div>
-                                                    <input type="text" id="device_username" name="device_username" class="form-control" placeholder="{{ __('username...') }}"  required>
+                                                    <input type="text" id="device_username" name="device_username" class="form-control" placeholder="{{ __('username...') }}" value={{$device_user->device_username}} required>
                                                 </div>
                                                 @if ($errors->has('device_username'))
                                                     <div id="device_username-error" class="error text-danger pl-3" for="device_username" style="display: block;">
@@ -72,14 +77,14 @@
                                                 @endif
                                             </div>
                                             <!-- Password -->
-                                            <div class="bmd-form-group{{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
+                                            <div class="bmd-form-group{{ $errors->has('device_password') ? ' has-danger' : '' }} mt-3">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                     <span class="input-group-text">
                                                         <i class="material-icons">lock_outline</i>
                                                     </span>
                                                     </div>
-                                                    <input type="password" name="device_password" id="device_password" class="form-control" placeholder="{{ __('Password...') }}" required>
+                                                    <input type="password" name="device_password" id="device_password" class="form-control" placeholder="{{ __('Password...') }}" value={{$device_user->device_password}} required>
                                                 </div>
                                                 @if ($errors->has('device_password'))
                                                     <div id="device_password-error" class="error text-danger pl-3" for="device_password" style="display: block;">
@@ -96,7 +101,7 @@
                                                             <i class="material-icons">link</i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" name="api_link" id="api_link" class="form-control" placeholder="{{ __('Link (url/ip/api)...') }}" required>
+                                                    <input type="text" name="api_link" id="api_link" class="form-control" placeholder="{{ __('Link (url/ip/api)...') }}" value={{$device_user->api_link}} required>
                                                                                                     
                                                 </div>
                                                 @if ($errors->has('api_link'))
@@ -117,7 +122,11 @@
                                                         @foreach ($poles_list as $pole)                                                        
                                                         <div class="form-check">
                                                             <label class="form-check-label">
-                                                                <input class="form-check-input" type="radio" name="pole_id" value={{$pole->id}}> Pole {{$pole->id}}
+                                                                @if($device_user->pole_id == $pole->id)
+                                                                    <input class="form-check-input" type="radio" name="pole_id" value={{$pole->id}} checked> Pole {{$pole->id}}
+                                                                @else
+                                                                    <input class="form-check-input" type="radio" name="pole_id" value={{$pole->id}}> Pole {{$pole->id}}
+                                                                @endif
                                                                 <span class="circle">
                                                                     <span class="check"></span>
                                                                 </span>
@@ -130,7 +139,7 @@
                                             
                                         </div>
                                         <div class="card-footer justify-content-end">
-                                            <button type="submit" class="btn btn-warning btn-link btn-lg">{{ __('Add Device') }}</button>
+                                            <button type="submit" class="btn btn-warning btn-link btn-lg">{{ __('Edit Device') }}</button>
                                         </div>
                                     </div>
                                 </div>

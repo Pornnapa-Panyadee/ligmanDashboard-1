@@ -93,18 +93,35 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('superadmin/list', function () {return view('adminForm.superadmin.list');})->name('superadmin.list');
-	// Route::get('superadmin/create', function () {return view('adminForm.superadmin.create');})->name('superadmin.create');
-	Route::get('superadmin/create', ['as' => 'adminForm.superadmin.create', 'uses' => 'App\Http\Controllers\superadmin\CreateUserController@get']);
-	Route::post('superadmin/create', ['as' => 'adminForm.superadmin.insert', 'uses' => 'App\Http\Controllers\superadmin\CreateUserController@post']);
-	Route::get('superadmin/dashboard', function () {return view('adminForm.superadmin.dashboardAll');})->name('adminForm.superadmin.dashboard');
+	// Route::get('superadmin/list', function () {return view('adminForm.superadmin.list');})->name('superadmin.list');
+	Route::get('superadmin/list', ['as' => 'adminForm.superadmin.list', 'uses' => 'App\Http\Controllers\ListController@getSuper']);
+  Route::get('superadmin/dashboard', function () {return view('adminForm.superadmin.dashboardAll');})->name('adminForm.superadmin.dashboard');
+	// Delete
+	Route::post('superadmin/delaccount{user_id}', ['as' => 'adminForm.admin.delete_account', 'uses' => 'App\Http\Controllers\ListController@deleteAccount']);
+	// Add Account
+	Route::get('superadmin/create', ['as' => 'adminForm.superadmin.create', 'uses' => 'App\Http\Controllers\superadmin\UserController@getIndex']);
+	Route::post('superadmin/create', ['as' => 'adminForm.superadmin.insert', 'uses' => 'App\Http\Controllers\superadmin\UserController@postInsert']);
+	// Edit Account
+	Route::get('superadmin/editaccount/{device_id}', ['as' => 'adminForm.superadmin.edit_account', 'uses' => 'App\Http\Controllers\superadmin\UserController@getEdit']);
+	Route::post('superadmin/editaccount', ['as' => 'adminForm.superadmin.update_account', 'uses' => 'App\Http\Controllers\superadmin\UserController@postUpdate']);
+	
+	// List Device and Pole
+	Route::get('admin/list', ['as' => 'adminForm.admin.list', 'uses' => 'App\Http\Controllers\ListController@getIndex']);
+	// Delete
+	Route::post('admin/deldevice{device_id}', ['as' => 'adminForm.admin.delete_device', 'uses' => 'App\Http\Controllers\ListController@deleteDevice']);
+	Route::post('admin/delpole{pole_id}', ['as' => 'adminForm.admin.delete_pole', 'uses' => 'App\Http\Controllers\ListController@deletePole']);
 
-	Route::get('admin/list', function () {return view('adminForm.admin.list');})->name('admin.list');
-	// Route::get('admin/create_device', function () {return view('adminForm.admin/create_device');})->name('admin.create_device');
-	// Route::get('admin/create_location', function () {return view('adminForm.admin/location');})->name('admin.create_location');
-	Route::get('admin/device', ['as' => 'adminForm.admin.create_device', 'uses' => 'App\Http\Controllers\admin\CreateDeviceController@get']);
-	Route::post('admin/device', ['as' => 'adminForm.admin.insert', 'uses' => 'App\Http\Controllers\admin\CreateDeviceController@post']);
+	// Add Device
+	Route::get('admin/device', ['as' => 'adminForm.admin.create_device', 'uses' => 'App\Http\Controllers\admin\DeviceController@getIndex']);
+	Route::post('admin/device', ['as' => 'adminForm.admin.insert', 'uses' => 'App\Http\Controllers\admin\DeviceController@postInsert']);
+	// Edit Device
+	Route::get('admin/editdevice/{device_id}', ['as' => 'adminForm.admin.edit_device', 'uses' => 'App\Http\Controllers\admin\DeviceController@getEdit']);
+	Route::post('admin/editdevice', ['as' => 'adminForm.admin.update_device', 'uses' => 'App\Http\Controllers\admin\DeviceController@postUpdate']);
 
-	Route::get('admin/pole', ['as' => 'adminForm.admin.location', 'uses' => 'App\Http\Controllers\admin\CreateController@get']);
-	Route::post('admin/pole', ['as' => 'adminForm.admin.insert', 'uses' => 'App\Http\Controllers\admin\CreateController@post']);
+	// Add Pole
+	Route::get('admin/pole', ['as' => 'adminForm.admin.location', 'uses' => 'App\Http\Controllers\admin\PoleController@getIndex']);
+	Route::post('admin/pole', ['as' => 'adminForm.admin.insert_pole', 'uses' => 'App\Http\Controllers\admin\PoleController@postInsert']);
+	// Edit Pole
+	Route::get('admin/editpole/{pole_id}', ['as' => 'adminForm.admin.edit_pole', 'uses' => 'App\Http\Controllers\admin\PoleController@getEdit']);
+	Route::post('admin/editpole', ['as' => 'adminForm.admin.update_pole', 'uses' => 'App\Http\Controllers\admin\PoleController@postUpdate']);
 });

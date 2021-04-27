@@ -1,4 +1,4 @@
-@extends('layouts.app_superadmin', ['activePage' => 'superadmincreate', 'titlePage' => __('Create Account')])
+@extends('layouts.app_superadmin', ['activePage' => 'superadminedit', 'titlePage' => __('Edit Account')])
 
 @section('content')
 
@@ -6,14 +6,14 @@
     <div class="pagehead-link">
         <a class="head-link" href="{{ route('adminForm.superadmin.list') }}"> List  </a>
         &#10095;&#10095;
-        <a class="head-link" href="#"> Create Account </a>
+        <a class="head-link" href="#"> Edit Account </a>
     </div>
     <div class="container-fluid">
         <div class="row justify-content-md-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form" method="POST" action="{{ route('adminForm.superadmin.insert') }}">
+                        <form class="form" method="POST" action="{{ route('adminForm.superadmin.update_account') }}">
                             @csrf
                             <div class="card mb-3">
                                 <div class="card-header  text-center" style="margin-top:-20px;background-color: #e8e8e8;">
@@ -37,6 +37,7 @@
                                                     </div>
                                                 </div>
                                             @endif
+                                            <input type="hidden" id="id" name="id" value={{$user->id}}>
                                             <!-- name -->
                                             <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                                 <div class="input-group">
@@ -45,7 +46,7 @@
                                                             <i class="material-icons">face</i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" name="name" class="form-control" placeholder="{{ __('Name...') }}" value="{{ old('name') }}" required>
+                                                    <input type="text" name="name" class="form-control" placeholder="{{ __('Name...') }}" value="{{ $user->name }}" required>
                                                 </div>
                                                 @if ($errors->has('name'))
                                                     <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
@@ -61,7 +62,7 @@
                                                         <i class="material-icons">face</i>
                                                     </span>
                                                     </div>
-                                                    <input type="text" name="email" class="form-control" placeholder="{{ __('email...') }}" value="{{ old('email') }}" required>
+                                                    <h2 type="text" class="form-control"> {{ $user->email }} </h2>
                                                 </div>
                                                 @if ($errors->has('email'))
                                                     <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
@@ -110,8 +111,13 @@
                                                     </span>
                                                     </div>
                                                     <select class="selectpicker" id="role" name="role" data-style="select-with-transition" title="{{ __('status...') }}" data-size="7" style="width: 400px" required>
-                                                        <option value="admin">admin </option>
-                                                        <option value="user">user</option>
+                                                        @if($user->role=="admin")
+                                                            <option value="admin" selected>admin </option>
+                                                            <option value="user">user</option>
+                                                        @else
+                                                            <option value="admin">admin </option>
+                                                            <option value="user" selected>user</option>
+                                                        @endif
                                                     </select>                                                   
                                                 </div>
                                                 @if ($errors->has('role'))
@@ -131,7 +137,7 @@
                                                     <!-- query from db -->
                                                     <select class="selectpicker" id="under" name="under" data-style="select-with-transition" title="{{ __('Under...') }}" >
                                                         @foreach($admins_list as $admin)
-                                                            <option value={{ $admin->name }}>{{ $admin->name }}</option>
+                                                            <option value="{{ $admin->name }}">{{ $admin->name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -143,7 +149,7 @@
                                             </div>
                                         </div>
                                         <div class="card-footer justify-content-center">
-                                            <button type="submit" class="btn btn-warning btn-link btn-lg">{{ __('Create account') }}</button>
+                                            <button type="submit" class="btn btn-warning btn-link btn-lg">{{ __('Edit account') }}</button>
                                         </div>
                                     </div>
                                 </div>

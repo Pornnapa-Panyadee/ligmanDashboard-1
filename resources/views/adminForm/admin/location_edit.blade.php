@@ -1,4 +1,4 @@
-@extends('layouts.app_admin', ['activePage' => 'create_location', 'titlePage' => __('Add Location')])
+@extends('layouts.app_admin', ['activePage' => 'create_location', 'titlePage' => __('Edit Location')])
 
 @section('content')
 
@@ -13,7 +13,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form" method="POST" action="{{ route('adminForm.admin.insert_pole') }}">
+                        <form class="form" method="POST" action="{{ route('adminForm.admin.update_pole') }}">
                             @csrf
                             <div class="card">
                                 <div class="card-header  text-center" style="margin-top:-20px;background-color: #e8e8e8;">
@@ -33,7 +33,19 @@
                                                     </div>
                                                     </div>
                                                 </div>
-                                            @endif                                            
+                                            @endif
+                                            <!-- pole  -->
+                                            <div class="bmd-form-group{{ $errors->has('pole') ? ' has-danger' : '' }} mt-3">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="material-icons">push_pin</i>
+                                                        </span>
+                                                        <h1>Pole {{$pole->id}}</h1>
+                                                        <input type="hidden" id="id" name="id" value={{$pole->id}}>
+                                                    </div>                                                    
+                                                </div>
+                                            </div>
                                             <!-- Location -->
                                             <div class="bmd-form-group{{ $errors->has('location') ? ' has-danger' : '' }} mt-3">
                                                 <div class="input-group">
@@ -42,7 +54,7 @@
                                                         <i class="material-icons">location_city</i>
                                                     </span>
                                                     </div>
-                                                    <input type="text" name="location" class="form-control" placeholder="{{ __('Location...') }}" value="{{ old('location') }}" required>
+                                                    <input type="text" name="location" class="form-control" placeholder="{{ __('Location...') }}" value="{{ $pole->location }}" required>
                                                 </div>
                                                 @if ($errors->has('location'))
                                                     <div id="location-error" class="error text-danger pl-3" for="location" style="display: block;">
@@ -58,14 +70,15 @@
                                                         <i class="material-icons">gps_fixed</i>
                                                     </span>
                                                     </div>
-                                                    <input type="text" name="latitude" id="latitude" class="form-control" placeholder="{{ __('Latitude...') }}" required>
+                                                    <input type="text" name="latitude" id="latitude" class="form-control" placeholder="{{ __('Latitude...') }}" value={{ $pole->latitude }} required>
                                                 </div>
                                                 @if ($errors->has('latitude'))
                                                     <div id="latitude-error" class="error text-danger pl-3" for="latitude" style="display: block;">
                                                     <strong>{{ $errors->first('latitude') }}</strong>
                                                     </div>
                                                 @endif
-                                            </div>                                            
+                                            </div>
+                                            
                                             <!-- Longitude -->
                                             <div class="bmd-form-group{{ $errors->has('longitude') ? ' has-danger' : '' }} mt-3">
                                                 <div class="input-group">
@@ -74,7 +87,7 @@
                                                             <i class="material-icons">gps_fixed</i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" name="longitude" id="longitude" class="form-control" placeholder="{{ __('Longitude...') }}" required>
+                                                    <input type="text" name="longitude" id="longitude" class="form-control" placeholder="{{ __('Longitude...') }}" value={{ $pole->longitude }} required>
                                                                                                     
                                                 </div>
                                                 @if ($errors->has('longitude'))
@@ -86,7 +99,7 @@
                                             
                                         </div>
                                         <div class="card-footer justify-content-end">
-                                            <button type="submit" class="btn btn-warning btn-link btn-lg">{{ __('Add Device') }}</button>
+                                            <button type="submit" class="btn btn-warning btn-link btn-lg">{{ __('Edit Device') }}</button>
                                         </div>
                                     </div>
                                 </div>

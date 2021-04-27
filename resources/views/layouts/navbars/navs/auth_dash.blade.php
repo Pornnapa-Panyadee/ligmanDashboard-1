@@ -24,9 +24,9 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
             <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Profile') }}</a>
             <!-- for admin  -->
-            <a class="dropdown-item" href="{{ route('admin.list') }}">{{ __('Settings') }}</a>
+            {{-- <a class="dropdown-item" href="{{ route('adminForm.admin.list') }}">{{ __('Settings') }}</a> --}}
             <!-- for superadmin -->
-            <!-- <a class="dropdown-item" href="{{ route('superadmin.list') }}">{{ __('Settings') }}</a> -->
+            <a class="dropdown-item"  href="{{ route('adminForm.superadmin.list') }}">{{ __('Settings') }}</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
           </div>
