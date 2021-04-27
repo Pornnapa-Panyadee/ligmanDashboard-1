@@ -95,6 +95,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'auth'], function () {
 	// Route::get('superadmin/list', function () {return view('adminForm.superadmin.list');})->name('superadmin.list');
 	Route::get('superadmin/list', ['as' => 'adminForm.superadmin.list', 'uses' => 'App\Http\Controllers\ListController@getSuper']);
+  Route::get('superadmin/dashboard', function () {return view('adminForm.superadmin.dashboardAll');})->name('adminForm.superadmin.dashboard');
 	// Delete
 	Route::post('superadmin/delaccount{user_id}', ['as' => 'adminForm.admin.delete_account', 'uses' => 'App\Http\Controllers\ListController@deleteAccount']);
 	// Add Account

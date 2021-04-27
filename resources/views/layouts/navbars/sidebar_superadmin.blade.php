@@ -22,6 +22,13 @@
             <p>{{ __('User List') }}</p>
           </a>
         </li>
+
+        <li class="nav-item{{ $activePage == 'superadminDashboard' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('adminForm.superadmin.dashboard') }}">
+            <i class="material-icons text-orange">dashboard</i>
+            <p>{{ __('Dashboard') }}</p>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
