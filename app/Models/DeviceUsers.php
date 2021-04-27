@@ -16,9 +16,9 @@ class DeviceUsers extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username',
-        'password',
-        'link',
+        'device_username',
+        'device_password',
+        'api_link',
     ];
 
     /**
@@ -27,7 +27,7 @@ class DeviceUsers extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'device',
+        'device_id',
         'pole_id',
     ];
 }

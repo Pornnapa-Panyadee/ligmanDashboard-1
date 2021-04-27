@@ -3,6 +3,18 @@
 @section('content')
 <div class="content">
     <div class="container-fluid">
+        @if (session('status'))
+            <div class="row">
+                <div class="col-sm-12">
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="material-icons">close</i>
+                    </button>
+                    <span>{{ session('status') }}</span>
+                </div>
+                </div>
+            </div>
+        @endif
     <!-- add Device -->
         <div class="row justify-content-center">
             <div class="col-md-10">
@@ -30,27 +42,30 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php for($i=0;$i<8;$i++){ ?>
+                                <?php $i=0 ?>
+                                @foreach ($devices_list as $device)
                                 <tr>
-                                    <td>{{$i+1}}</td>
-                                    <td>admin</td>
-                                    <td>admin</td>
-                                    <td>{{$i+1}}</td>
-                                    <td>15/15</td>
+                                    <td><?php echo ++$i ?></td>
+                                    <td>{{ $device->device_name }}</td>
+                                    <td>{{ $device->device_username }}</td>
+                                    <td>{{ $device->pole_id }}</td>
+                                    <td>{{ $device->api_link }}</td>
                                     <td class="td-actions text-right">
-                                        <button class="btn btn-warning">
-                                            <i class="material-icons">visibility</i> View
-                                        </button>
-                                        <button class="btn btn-success">
-                                            <i class="material-icons">edit_note</i> Edit
-                                        </button>
-                                        <button class="btn btn-danger">
-                                            <i class="material-icons">delete_outline</i> Delete
-                                        </button>
+                                        <form action={{ url('admin/editdevice/'.$device->id) }} method="GET" style="display: inline;">
+                                            {{ csrf_field() }}  
+                                            <button class="btn btn-success">
+                                                <i class="material-icons">edit_note</i> Edit
+                                            </button>
+                                        </form>
+                                        <form action={{ url('admin/deldevice'.$device->id) }} method="POST" style="display: inline;">
+                                            {{ csrf_field() }}                           
+                                            <button class="btn btn-danger" onclick="if(confirm('Do you have sure ?')){}else{return false;};">
+                                                <i class="material-icons">delete_outline</i> Delete
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
-                            <?php } ?>
-                            
+                                @endforeach                            
                             </tbody>
                         </table>
                     </div>
@@ -85,26 +100,29 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php for($i=0;$i<4;$i++){ ?>
+                                <?php $i=0 ?>
+                                @foreach ($poles_list as $pole)
                                 <tr>
-                                    <td>{{$i+1}}</td>
-                                    <td>18.9697</td>
-                                    <td>99.9304</td>
-                                    <td> สถาบันพลังานงาน มช Erddi</td>
+                                    <td><?php echo ++$i ?></td>
+                                    <td>{{ $pole->latitude }}</td>
+                                    <td>{{ $pole->longitude }}</td>
+                                    <td>{{ $pole->location }}</td>
                                     <td class="td-actions text-right">
-                                        <button class="btn btn-warning">
-                                            <i class="material-icons">visibility</i> View
-                                        </button>
-                                        <button class="btn btn-success">
-                                            <i class="material-icons">edit_note</i> Edit
-                                        </button>
-                                        <button class="btn btn-danger">
-                                            <i class="material-icons">delete_outline</i> Delete
-                                        </button>
+                                        <form action={{ url('admin/editpole/'.$pole->id) }} method="GET" style="display: inline;">
+                                            {{ csrf_field() }}  
+                                            <button class="btn btn-success">
+                                                <i class="material-icons">edit_note</i> Edit
+                                            </button>
+                                        </form>
+                                        <form action={{ url('admin/delpole'.$pole->id) }} method="POST" style="display: inline;">
+                                            {{ csrf_field() }}                           
+                                            <button class="btn btn-danger">
+                                                <i class="material-icons">delete_outline</i> Delete
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
-                            <?php } ?>
-                            
+                                @endforeach                            
                             </tbody>
                         </table>
                     </div>
