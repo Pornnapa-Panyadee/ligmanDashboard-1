@@ -20,13 +20,13 @@
                               <h1 class="text_dashCam" style="">Camera</h1>
                               <hr class="dashCam">
                             </div>
-                            <div class="col-2">
+                            {{-- <div class="col-2">
                               <div class="icon_dash" >
                                 <i class="material-icons text-primary" style="font-size:50px;"> notifications</i>
                                 <p style="margin-top:-5px;">{{ __('Beacon Glow Blue') }}</p>
                               </div>
-                            </div>
-                            <div class="col-2">
+                            </div> --}}
+                            <div class="col-4">
                               <div class="icon_dash" >
                                 <i class="material-icons text-success" style="font-size:50px;"> notifications</i>
                                 <p style="margin-top:-5px;">{{ __('Emergency Beacon') }}</p>
@@ -43,7 +43,7 @@
                                   height:350px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="interimg" src="http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview" width="100%">
+                                  ><img id="interimg" src="http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview" width="100%" height="80%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera360') }}'">
@@ -90,7 +90,7 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="tempimg" src="http://10.2.4.50:8080/video.cgi" width="100%">
+                                  ><img id="tempimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_temp') }}'">
@@ -134,7 +134,7 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="faceimg" src="http://10.2.4.50:8080/video.cgi" width="100%">
+                                  ><img id="faceimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_face') }}'">
