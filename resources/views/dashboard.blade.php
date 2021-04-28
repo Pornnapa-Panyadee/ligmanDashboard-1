@@ -39,18 +39,11 @@
                             <div class="col-md-6">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:350px;text-align:center;vertical-align:middle;">
-                                    <iframe id="live360" name="live360" width="200%" height="200%" style="
-                                      border:0px;
-                                      -webkit-transform: scale(0.58) translate(-37%, -34%);
-                                      "><p>Your browser does not support iframes.</p>
-                                    </iframe>
-                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                                    <script>
-                                      $(document).ready(function(){
-                                        $('#live360').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
-                                      });
-                                    </script>
+                                  <div class="ct-chart" style="
+                                  height:350px;display: flex;
+                                  justify-content: center;
+                                  align-items: center;"
+                                  ><img id="interimg" src="http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview" width="100%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera360') }}'">
@@ -72,7 +65,7 @@
                                   height:350px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="interimg" src="http://10.2.4.50:8080/video.cgi" height="300px">
+                                  ><img id="interimg" src="http://10.2.4.50:8080/video.cgi" width="100%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('intercom') }}'">
@@ -97,7 +90,7 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="tempimg" src="http://10.2.4.50:8080/video.cgi" height="190px">
+                                  ><img id="tempimg" src="http://10.2.4.50:8080/video.cgi" width="100%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_temp') }}'">
@@ -141,7 +134,7 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="faceimg" src="http://10.2.4.50:8080/video.cgi" height="190px">
+                                  ><img id="faceimg" src="http://10.2.4.50:8080/video.cgi" width="100%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_face') }}'">

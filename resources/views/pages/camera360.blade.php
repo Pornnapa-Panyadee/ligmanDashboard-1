@@ -20,8 +20,12 @@
         <div class="row">
           <div class="col-md-12">
             <div class="card-body">
-              <div class="iframe-container d-none d-lg-block">
-                <iframe name="myFrame" width="100%" height="100%"><p>Your browser does not support iframes.</p></iframe>
+              <div class="ct-chart" style="
+                display: flex;
+                justify-content: center;
+                align-items: center;"
+                >        
+                <img id="licenseimg" src="http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview" width="45%">
               </div>
               <div class="col-md-12 d-none d-sm-block d-md-block d-lg-none d-block d-sm-none text-center ml-auto mr-auto">
                 <h5>The icons are visible on Desktop mode inside an iframe. Since the iframe is not working on Mobile and Tablets please visit the icons on their original page on Google.</h5>
@@ -33,10 +37,6 @@
     </div>
   </div>
 </div>
-
-<script>
-  window.frames["myFrame"].location = "http://10.2.4.54/doc/page/preview.asp";
-</script>
 
 <form name="hikvisionForm" id="hikvisionForm" method="POST" action="http://10.2.4.54/doc/page/login.asp?_1618488065777&page=preview" target="_blank"> 
   <input type=hidden id="username" value="user"/>
