@@ -119,7 +119,7 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="plateimg" src="http://10.2.4.50:8080/video.cgi" height="190px">
+                                  ><img id="licenseimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_license') }}'">
@@ -400,7 +400,7 @@
                                         <hr class="dash_status1">
                                         <div class="dash-tri"><span>4</span></div> 
                                         <div class="absolute1">
-                                          <button class="btn btn-success btn-sm3">Online</button>
+                                          <button class="btn btn-offline btn-sm3">Offline</button>
                                         </div>
                                       </div>
                                     </div>
