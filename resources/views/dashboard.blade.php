@@ -20,13 +20,13 @@
                               <h1 class="text_dashCam" style="">Camera</h1>
                               <hr class="dashCam">
                             </div>
-                            <div class="col-2">
+                            {{-- <div class="col-2">
                               <div class="icon_dash" >
                                 <i class="material-icons text-primary" style="font-size:50px;"> notifications</i>
                                 <p style="margin-top:-5px;">{{ __('Beacon Glow Blue') }}</p>
                               </div>
-                            </div>
-                            <div class="col-2">
+                            </div> --}}
+                            <div class="col-4">
                               <div class="icon_dash" >
                                 <i class="material-icons text-success" style="font-size:50px;"> notifications</i>
                                 <p style="margin-top:-5px;">{{ __('Emergency Beacon') }}</p>
@@ -39,18 +39,11 @@
                             <div class="col-md-6">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="height:350px;text-align:center;vertical-align:middle;">
-                                    <iframe id="live360" name="live360" width="200%" height="200%" style="
-                                      border:0px;
-                                      -webkit-transform: scale(0.58) translate(-37%, -34%);
-                                      "><p>Your browser does not support iframes.</p>
-                                    </iframe>
-                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                                    <script>
-                                      $(document).ready(function(){
-                                        $('#live360').attr('src', 'http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview');
-                                      });
-                                    </script>
+                                  <div class="ct-chart" style="
+                                  height:350px;display: flex;
+                                  justify-content: center;
+                                  align-items: center;"
+                                  ><img id="interimg" src="http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview" width="100%" height="80%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera360') }}'">
@@ -72,7 +65,7 @@
                                   height:350px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="interimg" src="http://10.2.4.50:8080/video.cgi" height="300px">
+                                  ><img id="interimg" src="http://10.2.4.50:8080/video.cgi" width="100%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('intercom') }}'">
@@ -97,7 +90,7 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="tempimg" src="http://10.2.4.50:8080/video.cgi" height="190px">
+                                  ><img id="tempimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_temp') }}'">
@@ -119,7 +112,7 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="plateimg" src="http://10.2.4.50:8080/video.cgi" height="190px">
+                                  ><img id="licenseimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_license') }}'">
@@ -141,7 +134,7 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="faceimg" src="http://10.2.4.50:8080/video.cgi" height="190px">
+                                  ><img id="faceimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_face') }}'">
@@ -400,7 +393,7 @@
                                         <hr class="dash_status1">
                                         <div class="dash-tri"><span>4</span></div> 
                                         <div class="absolute1">
-                                          <button class="btn btn-success btn-sm3">Online</button>
+                                          <button class="btn btn-offline btn-sm3">Offline</button>
                                         </div>
                                       </div>
                                     </div>
