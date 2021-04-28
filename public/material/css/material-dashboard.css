@@ -7194,16 +7194,16 @@ a.text-dark:focus {
 
 .btn.btn-offline:hover {
   color: #fff;
-  background-color: #494b4b;
-  border-color: #595a5a;
+  background-color: #999999;
+  border-color: #999999;
 }
 
 .btn.btn-offline:focus,
 .btn.btn-offline.focus,
 .btn.btn-offline:hover {
   color: #fff;
-  background-color: #00aec5;
-  border-color: #008697;
+  background-color: #999999;
+  border-color: #999999;
 }
 
 .btn.btn-offline:active,
@@ -7211,8 +7211,8 @@ a.text-dark:focus {
 .open>.btn.btn-offline.dropdown-toggle,
 .show>.btn.btn-offline.dropdown-toggle {
   color: #fff;
-  background-color: #00aec5;
-  border-color: #008697;
+  background-color: #999999;
+  border-color: #999999;
   box-shadow: 0 2px 2px 0 rgba(0, 188, 212, 0.14), 0 3px 1px -2px rgba(0, 188, 212, 0.2), 0 1px 5px 0 rgba(0, 188, 212, 0.12);
 }
 
