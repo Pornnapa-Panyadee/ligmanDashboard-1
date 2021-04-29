@@ -41,11 +41,11 @@
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="
                                   height:350px;
-                                  /* display: flex; */
+                                  display: flex;
                                   justify-content: center;
                                   align-items: center;"
                                   >
-                                  <iframe id="live360" name="live360" width="200%" height="200%" height="200%" style="
+                                  {{-- <iframe id="live360" name="live360" width="200%" height="200%" height="200%" style="
                                   zoom: 0.5;
                                   -moz-transform: scale(0.5);
                                   -moz-transform-origin: 0 0;
@@ -60,8 +60,9 @@
                                     $(document).ready(function(){
                                         $('#live360').attr('src', 'http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview');
                                       });
-                                  </script>
-                                  {{-- <img id="live360" src="http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview" width="100%" height="80%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'"> --}}
+                                  </script> --}}
+                                  <iframe src="http://10.2.4.54/ISAPI/Streaming/channels/101" style="display: none;"></iframe>
+                                  <img id="live360" src="http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview" width="100%" height="80%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera360') }}'">
