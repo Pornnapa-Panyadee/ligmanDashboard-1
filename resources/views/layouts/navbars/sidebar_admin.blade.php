@@ -19,7 +19,7 @@
         <li class="nav-item{{ $activePage == 'listadmin' ? ' active' : '' }}">
           <a class="nav-link" href="{{ route('adminForm.admin.list') }}">
             <i class="material-icons text-orange">people</i>
-            <p>{{ __('User List') }}</p>
+            <p>{{ __('List') }}</p>
           </a>
         </li>
       </ul>

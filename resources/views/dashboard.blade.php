@@ -40,10 +40,28 @@
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
                                   <div class="ct-chart" style="
-                                  height:350px;display: flex;
+                                  height:350px;
+                                  /* display: flex; */
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="interimg" src="http://10.2.4.54:80/ISAPI/Streaming/channels/101/httpPreview" width="100%" height="80%">
+                                  >
+                                  <iframe id="live360" name="live360" width="200%" height="200%" height="200%" style="
+                                  zoom: 0.5;
+                                  -moz-transform: scale(0.5);
+                                  -moz-transform-origin: 0 0;
+                                  -o-transform: scale(0.5);
+                                  -o-transform-origin: 0 0;
+                                  -webkit-transform: scale(0.5);
+                                  -webkit-transform-origin: 0 0;
+                                  margin: 0 auto;
+                                  display:block;"><p>Your browser does not support iframes.</p></iframe>
+                                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                                  <script>
+                                    $(document).ready(function(){
+                                        $('#live360').attr('src', 'http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview');
+                                      });
+                                  </script>
+                                  {{-- <img id="live360" src="http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview" width="100%" height="80%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'"> --}}
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera360') }}'">
@@ -52,7 +70,7 @@
                                     <div class="dash-tri"><span>1</span></div> 
                                     <span class="text_font">{{ __('Speed Dome Camera 360°') }}</span>
                                     <div class="absolute">
-                                      <button class="btn btn-success btn-sm1">Online</button>
+                                      <button class="btn btn-offline btn-sm3">Offline</button>
                                     </div>
                                   </div>
                                 </div>
@@ -65,7 +83,7 @@
                                   height:350px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="interimg" src="http://10.2.4.50:8080/video.cgi" width="100%">
+                                  ><img id="interimg" src="http://10.2.4.50:8080/video.cgi" width="100%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('intercom') }}'">
@@ -74,7 +92,7 @@
                                     <div class="dash-tri"><span>4</span></div> 
                                     <span class="text_font">{{ __('Intercom') }}</span>
                                     <div class="absolute">
-                                      <button class="btn btn-success btn-sm1 ">Online</button>
+                                      <button class="btn btn-offline btn-sm3">Offline</button>
                                     </div>
                                   </div>
                                 </div>
@@ -90,7 +108,7 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="tempimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%">
+                                  ><img id="tempimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_temp') }}'">
@@ -99,7 +117,7 @@
                                     <div class="dash-tri"><span>4</span></div> 
                                     <span class="text_font">{{ __('Camera Temp') }}</span>
                                     <div class="absolute1">
-                                      <button class="btn btn-success btn-sm1 ">Online</button>
+                                      <button class="btn btn-offline btn-sm3">Offline</button>
                                     </div>
                                   </div>
                                 </div>
@@ -112,7 +130,7 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="licenseimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%">
+                                  ><img id="licenseimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_license') }}'">
@@ -134,7 +152,7 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="faceimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%">
+                                  ><img id="faceimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'">
                                   </div>
                                 </div>
                                 <div class="card-footer" onclick="window.location='{{ url('camera_face') }}'">
