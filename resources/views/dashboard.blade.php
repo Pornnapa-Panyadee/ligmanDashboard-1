@@ -28,7 +28,7 @@
                             </div> --}}
                             <div class="col-4">
                               <div class="icon_dash" >
-                                <i class="material-icons text-success" style="font-size:50px;"> notifications</i>
+                                <i id="emergency" class="material-icons text-success" style="font-size:50px;">notifications</i>
                                 <p style="margin-top:-5px;">{{ __('Emergency Beacon') }}</p>
                               </div>
                             </div>
@@ -61,17 +61,19 @@
                                         $('#live360').attr('src', 'http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview');
                                       });
                                   </script> --}}
-                                  <iframe src="http://10.2.4.54/ISAPI/Streaming/channels/101" style="display: none;"></iframe>
-                                  <img id="live360" src="http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview" width="100%" height="80%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'">
+                                  {{-- <iframe src="http://10.2.4.54/ISAPI/Streaming/channels/101" style="display: none;"></iframe> --}}
+                                  {{-- <img id="live360" src="http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview" width="100%" height="80%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'"> --}}
+                                  <iframe id="loginlive360" style="display: none;"></iframe>
+                                  <img id="live360" width="100%" height="80%">
                                   </div>
                                 </div>
-                                <div class="card-footer" onclick="window.location='{{ url('camera360') }}'">
+                                <div class="card-footer">
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>1</span></div> 
                                     <span class="text_font">{{ __('Speed Dome Camera 360°') }}</span>
                                     <div class="absolute">
-                                      <button class="btn btn-offline btn-sm3">Offline</button>
+                                      <button id="btnlive360" class="btn btn-offline btn-sm1">Offline</button>
                                     </div>
                                   </div>
                                 </div>
@@ -84,16 +86,17 @@
                                   height:350px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="interimg" src="http://10.2.4.50:8080/video.cgi" width="100%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'">
+                                  >
+                                  <img id="interimg" width="100%">
                                   </div>
                                 </div>
-                                <div class="card-footer" onclick="window.location='{{ url('intercom') }}'">
+                                <div class="card-footer">
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>4</span></div> 
                                     <span class="text_font">{{ __('Intercom') }}</span>
                                     <div class="absolute">
-                                      <button class="btn btn-offline btn-sm3">Offline</button>
+                                      <button id="btninter" class="btn btn-offline btn-sm1">Offline</button>
                                     </div>
                                   </div>
                                 </div>
@@ -109,16 +112,16 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="tempimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'">
+                                  ><img id="tempimg" width="100%">
                                   </div>
                                 </div>
-                                <div class="card-footer" onclick="window.location='{{ url('camera_temp') }}'">
+                                <div class="card-footer">
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>4</span></div> 
                                     <span class="text_font">{{ __('Camera Temp') }}</span>
                                     <div class="absolute1">
-                                      <button class="btn btn-offline btn-sm3">Offline</button>
+                                      <button id="btntemp" class="btn btn-offline btn-sm1">Offline</button>
                                     </div>
                                   </div>
                                 </div>
@@ -131,16 +134,16 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="licenseimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'">
+                                  ><img id="licenseimg" width="100%">
                                   </div>
                                 </div>
-                                <div class="card-footer" onclick="window.location='{{ url('camera_license') }}'">
+                                <div class="card-footer">
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>1</span></div> 
                                     <span class="text_font">{{ __('Licence Plate') }}</span>
                                     <div class="absolute1">
-                                      <button class="btn btn-success btn-sm1 ">Online</button>
+                                      <button id="btnlicense" class="btn btn-offline btn-sm1">Offline</button>
                                     </div>
                                   </div>
                                 </div>
@@ -153,16 +156,16 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="faceimg" src="http://202.28.247.117/axis-cgi/mjpg/video.cgi" width="100%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'">
+                                  ><img id="faceimg" width="100%">
                                   </div>
                                 </div>
-                                <div class="card-footer" onclick="window.location='{{ url('camera_face') }}'">
+                                <div class="card-footer">
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>4</span></div> 
                                     <span class="text_font">{{ __('Face') }}</span>
                                     <div class="absolute1">
-                                      <button class="btn btn-success btn-sm1 ">Online</button>
+                                      <button id="btnface" class="btn btn-offline btn-sm1">Offline</button>
                                     </div>
                                   </div>
                                 </div>
@@ -199,7 +202,7 @@
                                 <div class="card-dash">
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
-                                      <a class="dash-link" href="{{ route('esave_dashboard') }}">
+                                      <a id="esave1" class="dash-link" href="#">
                                         <i class="icon-gauge text-orange"  style="font-size:65px;"></i>
                                         <p>E-Save <br> Dashboard</p>
                                       </a>
@@ -210,7 +213,7 @@
                                       <hr class="dash_status1">
                                       <div class="dash-tri"><span>1</span></div> 
                                       <div class="absolute1">
-                                        <button class="btn btn-success btn-sm2 ">{{ ('Online') }}</button>
+                                        <button id="btnesave1" class="btn btn-offline btn-sm2">Offline</button>
                                       </div>
                                     </div>
                                   </div>
@@ -221,7 +224,7 @@
                                 <div class="card-dash">
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
-                                      <a class="dash-link " href="{{ route('cluster_projector') }}">
+                                      <a id="esave2" class="dash-link " href="#">
                                         <i class="icon-cluster_projectors text-orange"  style="font-size:65px;"></i>
                                         <p>Cluster <br> Projectors</p>
                                       </a>
@@ -232,7 +235,7 @@
                                       <hr class="dash_status1">
                                       <div class="dash-tri"><span>1</span></div> 
                                       <div class="absolute1">
-                                        <button class="btn btn-success btn-sm2 ">Online</button>
+                                        <button id="btnesave2" class="btn btn-offline btn-sm2">Offline</button>
                                       </div>
                                     </div>
                                   </div>
@@ -243,7 +246,7 @@
                                 <div class="card-dash">
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
-                                      <a class="dash-link " href="{{ route('cluster_projector_lador') }}">
+                                      <a id="esave3" class="dash-link " href="#">
                                         <i class="icon-cluster_projectors_ladar text-orange"  style="font-size:65px;"></i>
                                         <p>Cluster <br> Projectors Lador</p>
                                       </a>
@@ -254,7 +257,7 @@
                                       <hr class="dash_status1">
                                       <div class="dash-tri"><span>3</span></div> 
                                       <div class="absolute1">
-                                        <button class="btn btn-success btn-sm2 ">Online</button>
+                                        <button id="btnesave3" class="btn btn-offline btn-sm2">Offline</button>
                                       </div>
                                     </div>
                                   </div>
@@ -265,7 +268,7 @@
                                 <div class="card-dash">
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
-                                      <a class="dash-link " href="{{ route('meteodata') }}">
+                                      <a id="esave4" class="dash-link " href="#">
                                         <i class="icon-cloudy1 text-orange"  style="font-size:65px;"></i>
                                         <p>E-Save <br> Meteodata </p>
                                       </a>
@@ -276,7 +279,7 @@
                                       <hr class="dash_status1">
                                       <div class="dash-tri"><span>2</span></div> 
                                       <div class="absolute1">
-                                        <button class="btn btn-success btn-sm2 ">Online</button>
+                                        <button id="btnesave4" class="btn btn-offline btn-sm2">Offline</button>
                                       </div>
                                     </div>
                                   </div>
@@ -287,7 +290,7 @@
                                 <div class="card-dash">
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
-                                        <a class="dash-link " href="{{ route('occupancy') }}">
+                                        <a id="esave5" class="dash-link " href="{{ route('occupancy') }}">
                                           <i class="icon-occupancy text-orange"  style="font-size:65px;"></i>
                                           <p>Occupancy  <br> Sensor</p>
                                         </a>
@@ -298,7 +301,7 @@
                                       <hr class="dash_status1">
                                       <div class="dash-tri"><span>2</span></div> 
                                       <div class="absolute1">
-                                        <button class="btn btn-success btn-sm2 ">Online</button>
+                                        <button id="btnesave5" class="btn btn-offline btn-sm2">Offline</button>
                                       </div>
                                     </div>
                                   </div>
@@ -335,7 +338,7 @@
                                   <div class="card-dash ">
                                     <div class="card-header">
                                       <div class="icon_dashAd" >
-                                        <a class="dash-link " href="{{ route('ex_speaker') }}">
+                                        <a id="exstreamer" class="dash-link " href="#">
                                           <i class="icon-bullhorn text-orange"  style="font-size:60px;"></i>
                                           <p class="icon_dashAd">Exstreamer <br>Loud Speaker</p>
                                         </a>
@@ -346,7 +349,7 @@
                                           <hr class="dash_status1">
                                           <div class="dash-tri"><span>4</span></div> 
                                           <div class="absolute1">
-                                            <button class="btn btn-success btn-sm3">Online</button>
+                                            <button id="btnexstreamer" class="btn btn-offline btn-sm3">Offline</button>
                                           </div>
                                         </div>
                                       </div>
@@ -357,7 +360,7 @@
                                   <div class="card-dash">
                                     <div class="card-header ">
                                       <div class="icon_dashAd" >
-                                        <a class="dash-link " href="{{ route('in_speaker') }}">
+                                        <a id="instreamer" class="dash-link " href="#">
                                           <i class="icon-In-loud text-orange"  style="font-size:60px;"></i>
                                           <p class="icon_dashAd">Instreamer <br>Loud Speaker </p>
                                         </a>
@@ -368,7 +371,7 @@
                                         <hr class="dash_status1">
                                         <div class="dash-tri"><span>4</span></div> 
                                         <div class="absolute1">
-                                          <button class="btn btn-success btn-sm3">Online</button>
+                                          <button id="btninstreamer" class="btn btn-offline btn-sm3">Offline</button>
                                         </div>
                                       </div>
                                     </div>
@@ -379,7 +382,7 @@
                                   <div class="card-dash">
                                     <div class="card-header">
                                       <div class="icon_dashAd" >
-                                        <a class="dash-link " href="{{ route('digital_signage') }}">
+                                        <a id="digital" class="dash-link " href="#">
                                           <i class="icon-Digital_Signage text-orange"  style="font-size:60px;"></i>
                                           <p class="icon_dashAd">Digital <br> Signage</p>
                                         </a>
@@ -390,7 +393,7 @@
                                         <hr class="dash_status1">
                                         <div class="dash-tri"><span>4</span></div> 
                                         <div class="absolute1">
-                                          <button class="btn btn-success btn-sm3">Online</button>
+                                          <button id="btndigital" class="btn btn-offline btn-sm3">Online</button>
                                         </div>
                                       </div>
                                     </div>
@@ -401,9 +404,9 @@
                                   <div class="card-dash">
                                     <div class="card-header">
                                       <div class="icon_dashAd" >
-                                        <a class="dash-link " href="{{ route('power_socket') }}">
+                                        <a id="plug" class="dash-link " href="#">
                                           <i class="icon-power-plug text-orange"  style="font-size:60px;"></i>
-                                          <p class="icon_dashAd">Roud <br> Power Socket
+                                          <p class="icon_dashAd">Round <br> Power Socket
                                         </a>
                                       </div>
                                     </div>
@@ -412,7 +415,7 @@
                                         <hr class="dash_status1">
                                         <div class="dash-tri"><span>4</span></div> 
                                         <div class="absolute1">
-                                          <button class="btn btn-offline btn-sm3">Offline</button>
+                                          <button id="btnplug" class="btn btn-offline btn-sm3">Offline</button>
                                         </div>
                                       </div>
                                     </div>
@@ -459,8 +462,9 @@
                                       <div class="stats">
                                         <hr class="dash_status1">
                                         <div class="dash-tri"><span>3</span></div> 
+                                        <span class="text_font">{{ __('Air Transmitter') }}</span>
                                         <div class="absolute1">
-                                          <button class="btn btn-success btn-sm2 ">Online</button>
+                                          <button id="btnpmair" class="btn btn-offline btn-sm3">Offline</button>
                                         </div>
                                       </div>
                                     </div>
@@ -488,7 +492,7 @@
                                     <div class="absoluteMap">
                                       <button class="btn btn-success btn-sm4">Online</button>
                                     </div>
-                                      <div class="text-dash-online"> 11 </div>
+                                      <div class="text-dash-online"> 7 </div>
                                       <div class="text-dash-onlineall"> /15 </div>
                                       <div class="text-dash-onlinetag"> devices </div>
                                     <iframe width="100%" height="100%" frameborder="0"  
@@ -514,5 +518,213 @@
       </div>
     </div>
   </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  (function() {
+    // camera360
+    $.ajax({
+      type: "GET",
+      url: "http://10.2.4.54",
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        document.getElementById('loginlive360').src = "http://10.2.4.54/ISAPI/Streaming/channels/101";
+        document.getElementById('live360').src = "http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview";
+        document.getElementById('btnlive360').className = "btn btn-success btn-sm1";
+        document.getElementById('btnlive360').onclick = function(ev) {window.location="{{ url('camera360') }}";};
+        document.getElementById('btnlive360').innerHTML = 'Online';
+      },
+      error: function() {
+        console.log("live camera360 error");
+        document.getElementById('live360').src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png";        
+      },
+    });
+    // intercom
+    $.ajax({
+      type: "GET",
+      url: "http://10.2.4.50",
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        document.getElementById('interimg').src = "http://10.2.4.50:8080/video.cgi";
+        document.getElementById('btninter').className = "btn btn-success btn-sm1";
+        document.getElementById('btninter').onclick = function(ev) {window.location="{{ url('intercom') }}";};
+        document.getElementById('btninter').innerHTML = 'Online';
+      },
+      error: function() {
+        console.log("live intercom error");     
+        document.getElementById('interimg').src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png"; 
+      },
+    });
+    // temp camera
+    $.ajax({
+      type: "GET",
+      url: "http://202.28.247.117",
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        document.getElementById('tempimg').src = "http://202.28.247.117/axis-cgi/mjpg/video.cgi";
+        document.getElementById('btntemp').className = "btn btn-success btn-sm1";
+        document.getElementById('btntemp').onclick = function(ev) {window.location="{{ url('camera_temp') }}";};
+        document.getElementById('btntemp').innerHTML = 'Online';
+      },
+      error: function() {
+        console.log("temp camera error");      
+        document.getElementById('tempimg').src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png"; 
+      },
+    });
+    // LPR
+    $.ajax({
+      type: "GET",
+      url: "http://202.28.247.117",
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        document.getElementById('licenseimg').src = "http://202.28.247.117/axis-cgi/mjpg/video.cgi";
+        document.getElementById('btnlicense').className = "btn btn-success btn-sm1";
+        document.getElementById('btnlicense').onclick = function(ev) {window.location="{{ url('camera_license') }}";};
+        document.getElementById('btnlicense').innerHTML = 'Online';
+      },
+      error: function() {
+        console.log("LPR error");  
+        document.getElementById('licenseimg').src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png";     
+      },
+    });
+    // face camera
+    $.ajax({
+      type: "GET",
+      url: "http://202.28.247.117",
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        document.getElementById('faceimg').src = "http://202.28.247.117/axis-cgi/mjpg/video.cgi";
+        document.getElementById('btnface').className = "btn btn-success btn-sm1";
+        document.getElementById('btnface').onclick = function(ev) {window.location="{{ url('camera_face') }}";};
+        document.getElementById('btnface').innerHTML = 'Online';
+      },
+      error: function() {
+        console.log("face camera error");      
+        document.getElementById('faceimg').src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png"; 
+      },
+    });
+    // e-save
+    $.ajax({
+      type: "GET",
+      url: "https://www.esaveag.com/slcontrol/",
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        document.getElementById('esave1').href = "{{ route('esave_dashboard') }}";
+        document.getElementById('btnesave1').className = "btn btn-success btn-sm2";
+        document.getElementById('btnesave1').onclick = function(ev) {window.location="{{ url('esave_dashboard') }}";};
+        document.getElementById('btnesave1').innerHTML = 'Online';
+
+        document.getElementById('esave2').href = "{{ route('cluster_projector') }}";
+        document.getElementById('btnesave2').className = "btn btn-success btn-sm2";
+        document.getElementById('btnesave2').onclick = function(ev) {window.location="{{ url('cluster_projector') }}";};
+        document.getElementById('btnesave2').innerHTML = 'Online';
+
+        document.getElementById('esave3').href = "{{ route('cluster_projector_lador') }}";
+        document.getElementById('btnesave3').className = "btn btn-success btn-sm2";
+        document.getElementById('btnesave3').onclick = function(ev) {window.location="{{ url('cluster_projector_lador') }}";};
+        document.getElementById('btnesave3').innerHTML = 'Online';
+
+        document.getElementById('esave4').href = "{{ route('meteodata') }}";
+        document.getElementById('btnesave4').className = "btn btn-success btn-sm2";
+        document.getElementById('btnesave4').onclick = function(ev) {window.location="{{ url('meteodata') }}";};
+        document.getElementById('btnesave4').innerHTML = 'Online';
+
+        document.getElementById('esave5').href = "{{ route('occupancy') }}";
+        document.getElementById('btnesave5').className = "btn btn-success btn-sm2";
+        document.getElementById('btnesave5').onclick = function(ev) {window.location="{{ url('occupancy') }}";};
+        document.getElementById('btnesave5').innerHTML = 'Online';
+      },
+      error: function() {
+        console.log("e-save error");      
+      },
+    });
+    // exstreamer
+    $.ajax({
+      type: "GET",
+      url: "https://10.2.4.52",
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        document.getElementById('exstreamer').href = "{{ route('ex_speaker') }}";
+        document.getElementById('btnexstreamer').className = "btn btn-success btn-sm3";
+        document.getElementById('btnexstreamer').onclick = function(ev) {window.location="{{ url('ex_speaker') }}";};
+        document.getElementById('btnexstreamer').innerHTML = 'Online';
+      },
+      error: function() {
+        console.log("exstreamer error");      
+      },
+    });
+    // instreamer
+    $.ajax({
+      type: "GET",
+      url: "https://10.2.4.53",
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        document.getElementById('instreamer').href = "{{ route('in_speaker') }}";
+        document.getElementById('btninstreamer').className = "btn btn-success btn-sm3";
+        document.getElementById('btninstreamer').onclick = function(ev) {window.location="{{ url('in_speaker') }}";};
+        document.getElementById('btninstreamer').innerHTML = 'Online';
+      },
+      error: function() {
+        console.log("instreamer error");      
+      },
+    });
+    // digital signage
+    $.ajax({
+      type: "GET",
+      url: "https://edsbox.net/CMService/FreeLogin",
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        document.getElementById('digital').href = "{{ route('digital_signage') }}";
+        document.getElementById('btndigital').className = "btn btn-success btn-sm3";
+        document.getElementById('btndigital').onclick = function(ev) {window.location="{{ url('digital_signage') }}";};
+        document.getElementById('btndigital').innerHTML = 'Online';
+      },
+      error: function() {
+        console.log("digital signage error");      
+      },
+    });
+    // round plug
+    $.ajax({
+      type: "GET",
+      url: "http://147.50.41.133",
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        document.getElementById('plug').href = "{{ route('power_socket') }}";
+        document.getElementById('btnplug').className = "btn btn-success btn-sm3";
+        document.getElementById('btnplug').onclick = function(ev) {window.location="{{ url('power_socket') }}";};
+        document.getElementById('btnplug').innerHTML = 'Online';
+      },
+      error: function() {
+        console.log("round plug error");      
+      },
+    });
+    // Air Transmitter
+    $.ajax({
+      type: "GET",
+      url: "https://umap.openstreetmap.fr/th-th/",
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        document.getElementById('plug').href = "{{ route('air_transmitter') }}";
+        document.getElementById('btnpmair').className = "btn btn-success btn-sm3";
+        document.getElementById('btnpmair').onclick = function(ev) {window.location="{{ url('air_transmitter') }}";};
+        document.getElementById('btnpmair').innerHTML = 'Online';
+      },
+      error: function() {
+        console.log("Air Transmitter error");      
+      },
+    });
+  })();
+</script>
 @endsection
   

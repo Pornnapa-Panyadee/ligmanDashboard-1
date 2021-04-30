@@ -10,7 +10,11 @@
                 <i class="icon-power-plug text-orange"></i> 
                  <b>Roud Power Socket</b>
             </h4>
-        </div>
+        </div>        
+        <h2 id="status_1">Offline</h2>
+        <br>
+        <h2 id="status_2">Offline</h2>
+        <br>
         <div class="row">
           <div class="col-md-12">
             <div class="card-body">
@@ -31,37 +35,44 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
   (function() {
-    var reqTimeout = setTimeout(function()
-    {
-      alert("Request timed out.");
-    }, 5000);
+    // var reqTimeout = setTimeout(function()
+    // {
+    //   alert("Request timed out.");
+    // }, 5000);
     
-    var xhr = $.ajax({
+    var xhr_1 = $.ajax({
       type: "GET",
-      url: "http://10.2.4.54/",
+      url: "https://www.esaveag.com/slcontrol/",
       dataType: "script",
+      timeout:6000,
       success: function() {
-        alert("success");
+        console.log("xhr_1 success");
+        document.getElementById('status_1').innerHTML = 'Online';
       },
       error: function() {
-        alert("error");        
+        console.log("xhr_1 error");
+        document.getElementById('status_1').innerHTML = 'Offline';        
       },
-      complete: function() {
-        clearTimeout(reqTimeout);
-      }
+      // complete: function() {
+      //   clearTimeout(reqTimeout);
+      // }
     });
-    // $.ajax({
-    //         url: "http://10.2.4.54/",
-    //         type: "GET",
-    //         dataType: "html",
-    //         crossDomain: true,
-    //         success:function(json){
-    //             console.log('message: ' + "success"+ JSON.stringify(json));                     
-    //         },
-    //         error:function(error){
-    //             console.log('message Error' + JSON.stringify(error));
-    //         }  
-    //     });
+
+    var xhr_2 = $.ajax({
+      type: "GET",
+      url: "http://10.2.4.53/",
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        console.log("xhr_2 success");
+        document.getElementById('status_2').innerHTML = 'Online';
+      },
+      error: function() {
+        console.log("xhr_2 error");
+        document.getElementById('status_2').innerHTML = 'Offline';        
+      },
+    });
+
     // $.ajax({url: "https://www.esaveag.com/slcontrol/",
     //     type: "HEAD",
     //     timeout:6000,
@@ -79,6 +90,5 @@
     //     }
     // });
   })();
-
 </script>
 @endsection
