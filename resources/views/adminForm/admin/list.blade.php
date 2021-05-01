@@ -116,7 +116,7 @@
                                         </form>
                                         <form action={{ url('admin/delpole'.$pole->id) }} method="POST" style="display: inline;">
                                             {{ csrf_field() }}                           
-                                            <button class="btn btn-danger">
+                                            <button class="btn btn-danger" onclick="if(confirm('Do you have sure ?')){}else{return false;};">
                                                 <i class="material-icons">delete_outline</i> Delete
                                             </button>
                                         </form>

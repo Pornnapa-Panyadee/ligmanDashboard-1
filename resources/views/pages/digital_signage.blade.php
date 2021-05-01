@@ -12,9 +12,14 @@
           </h4>
         </div>
         <div class="card-header card-header-primary">
-          <h4 class="card-title">First Entry</h4>
-          <p class="card-category">If you never login to "edsbox" click this button 
-            <button type="button" class="btn btn-success" onclick="logindigital()">Auto Login</button> only once. After this, it is not necessary.
+          <h4 class="card-title">Download Software</h4>      
+          <p class="card-category" style="font-size: 50px;">Download ViPlex Express Here
+            <a href="https://novastar.shop/wp-content/uploads/2021/02/ViPlex%20Express%20V2.6.2.0201%20Setup(x64).zip" >ViPlex Express V2.6.2</a>
+            <img src="http://cdn.apk-cloud.com/detail/image/nova.priv.hand.easypluto.google-w250.png" width="50px">   
+          </p>
+          <p class="card-category" style="font-size: 36px;">Open ViPlex 
+            <i class="fa fa-windows" style="font-size:36px"></i> -> 
+            <img src="http://cdn.apk-cloud.com/detail/image/nova.priv.hand.easypluto.google-w250.png" width="36px"> ViPlex Express
           </p>
         </div>
         <div class="row">
