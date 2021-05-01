@@ -14,13 +14,14 @@
         <div class="card-header card-header-primary">
           <h4 class="card-title">First Entry</h4>
           <p class="card-category">If you never login to "erdi" click this button 
-            <button type="button" class="btn btn-success" onclick="loginface()">Auto Login</button> only once. After this, it is not necessary.
+            <button type="button" class="btn btn-success" onclick="loginerdi()">Auto Login</button> only once. After this, it is not necessary.
           </p>
         </div>
         <div class="row">
           <div class="col-md-12">
             <div class="card-body">
               <div class="iframe-container d-none d-lg-block">
+                <iframe name="myFrame" width="100%" height="100%"><p>Your browser does not support iframes.</p></iframe>
               </div>
               <div class="col-md-12 d-none d-sm-block d-md-block d-lg-none d-block d-sm-none text-center ml-auto mr-auto">
                 <h5>The icons are visible on Desktop mode inside an iframe. Since the iframe is not working on Mobile and Tablets please visit the icons on their original page on Google.</h5>
@@ -31,29 +32,28 @@
       </div>
     </div>
   </div>
-  <iframe name="myFrame" width="100%" height="650px"><p>Your browser does not support iframes.</p></iframe>
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://face.erdi.cmu.ac.th/";
+  window.frames["myFrame"].location = "http://202.28.247.117";
 </script>
 
-<form name="faceForm" id="faceForm" method="POST" action="http://face.erdi.cmu.ac.th/" target="_blank"> 
-  <input type=hidden id="username" name="username" value="ligmanproject"/>
-  <input type=hidden id="password" name="password" value="123456"/>
+<form name="erdiForm" id="erdiForm" method="POST" action="http://root:vk0kipNgxuUpd@202.28.247.117/#view" target="_blank"> 
+  <input type=hidden id="usrname" name="usrname" value="cmu-ligman@ligman.com"/>
+  <input type=hidden id="usrcode" name="usrcode" value="ligman@cmU1"/>
 </form>
 
 <script>
   (function() {
-    var url = 'http://face.erdi.cmu.ac.th/';
-    newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
-    // focus on the popup //
-    newWindow.focus();
+    // var url = 'http://202.28.247.117/#view';
+    // newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
+    // // focus on the popup //
+    // newWindow.focus();
   })();
-
-  function loginface(){
+  
+  function loginerdi() {
     console.log("start login");
-    document.getElementById("faceForm").submit();
+    document.getElementById("erdiForm").submit();
   }
 </script>
 @endsection
