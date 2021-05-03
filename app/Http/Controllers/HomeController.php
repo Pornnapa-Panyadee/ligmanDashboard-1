@@ -35,7 +35,8 @@ class HomeController extends Controller
                 WHERE device_users.user_id=".$user_id.") table_1 ON devices.id=table_1.device_id";
 
         $devices_list = DB::select($sql);
-        return view('dashboard', ['devices_list' => $devices_list]);
+        $poles_list = DB::select("SELECT * FROM `poles`");
+        return view('dashboard', ['devices_list' => $devices_list, 'poles_list' => $poles_list]);
     }
 
     protected function index_i($admin_id)
@@ -46,6 +47,7 @@ class HomeController extends Controller
                 WHERE device_users.user_id=".$admin_id.") table_1 ON devices.id=table_1.device_id";
 
         $devices_list = DB::select($sql);
-        return view('dashboard', ['devices_list' => $devices_list]);
+        $poles_list = DB::select("SELECT * FROM `poles`");
+        return view('dashboard', ['devices_list' => $devices_list, 'poles_list' => $poles_list]);
     }
 }
