@@ -341,6 +341,20 @@ template {
   display: none !important;
 }
 
+div.text_username {
+  font-family: "Roboto";
+  color: #fcaf17;
+  font-size:18px;
+}
+
+div.text_usernameadmin {
+  font-family: "Roboto";
+  color: #54565a;
+  font-size:18px;
+  font-weight: bold;
+}
+
+
 h1.text_dash{
   padding-top: 2px;
   padding-left: 20px;
@@ -356,6 +370,7 @@ h1.text_dashCam{
   font-weight: bold;
   color: #fcaf17;
 }
+
 
 hr.dashCam {
   margin-left: 5px;
@@ -464,7 +479,7 @@ div.absoluteMap{
   color:#4caf50;
   font-weight: bold;
   position:absolute;
-  left: 55%;
+  right: 30%;
   top:10%;
   /* transform: translate(-50%,-50%) ; */
 }
@@ -473,8 +488,9 @@ div.absoluteMap{
   color:#54565a;
   font-weight: bold;
   position:absolute;
-  left: 75%;
   top:25%;
+  right: 15%;
+  
  
 }
 .text-dash-onlinetag{
@@ -7229,8 +7245,8 @@ a.text-dark:focus {
 .show>.btn.btn-offline.dropdown-toggle:focus,
 .show>.btn.btn-offline.dropdown-toggle.focus {
   color: #fff;
-  background-color: #00aec5;
-  border-color: #004b55;
+  background-color: #999999;
+  border-color: #999999;
 }
 
 .open>.btn.btn-offline.dropdown-toggle.bmd-btn-icon {
@@ -7239,7 +7255,7 @@ a.text-dark:focus {
 }
 
 .open>.btn.btn-offline.dropdown-toggle.bmd-btn-icon:hover {
-  background-color: #00aec5;
+  background-color: #999999;
 }
 
 .btn.btn-offline.disabled:focus,
