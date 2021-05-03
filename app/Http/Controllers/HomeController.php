@@ -25,8 +25,8 @@ class HomeController extends Controller
     {
         $user_id = auth()->user()->id;
         if($user_id == 1){
-            $admins_list = DB::select("SELECT `id`, `name` FROM `users` WHERE role='admin'");
-            return view('adminForm.superadmin.dashboardAll', ['admin_list' => $admins_list]);
+            $admins_list = DB::select("SELECT `id`, `name` FROM `users` WHERE role!='user'");
+            return view('adminForm.superadmin.dashboardAll', ['admins_list' => $admins_list]);
         }
 
         $sql = "SELECT * FROM devices
@@ -38,8 +38,14 @@ class HomeController extends Controller
         return view('dashboard', ['devices_list' => $devices_list]);
     }
 
-    protected function postIndex(Request $request)
+    protected function index_i($admin_id)
     {
-        $data = $request->input();
+        $sql = "SELECT * FROM devices
+                LEFT OUTER JOIN (
+                SELECT * FROM device_users
+                WHERE device_users.user_id=".$admin_id.") table_1 ON devices.id=table_1.device_id";
+
+        $devices_list = DB::select($sql);
+        return view('dashboard', ['devices_list' => $devices_list]);
     }
 }
