@@ -137,7 +137,11 @@
                                                     <!-- query from db -->
                                                     <select class="selectpicker" id="under" name="under" data-style="select-with-transition" title="{{ __('Under...') }}" >
                                                         @foreach($admins_list as $admin)
+                                                        @if($admin->name==$user->under)
+                                                            <option value="{{ $admin->name }}" selected>{{ $admin->name }}</option>
+                                                        @else
                                                             <option value="{{ $admin->name }}">{{ $admin->name }}</option>
+                                                        @endif
                                                         @endforeach
                                                     </select>
                                                 </div>

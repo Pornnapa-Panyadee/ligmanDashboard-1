@@ -39,7 +39,7 @@ class UserController extends Controller
     protected function getEdit($user_id)
     {
         $user = DB::select('SELECT * FROM `users` WHERE `id`='.$user_id);
-        $admins_list = DB::select("SELECT name FROM `users` WHERE role='admin'");
+        $admins_list = DB::select("SELECT `name` FROM `users` WHERE role='admin'");
         return view('adminForm.superadmin.edit', ['admins_list' => $admins_list, 'user' => $user[0]]);
     }
 

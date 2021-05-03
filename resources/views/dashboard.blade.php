@@ -393,7 +393,7 @@
                                         <hr class="dash_status1">
                                         <div class="dash-tri"><span>{{$devices_list[12]->pole_id}}</span></div> 
                                         <div class="absolute1">
-                                          <button id="btndigital" class="btn btn-offline btn-sm3">Online</button>
+                                          <button id="btndigital" class="btn btn-offline btn-sm3">Offline</button>
                                         </div>
                                       </div>
                                     </div>
@@ -525,7 +525,7 @@
   console.log(devices_list);
   var restdevice = 0;
   var totaldevice = devices_list.length;
-  document.getElementById('totaldevice').innerHTML = "_/"+totaldevice;
+  document.getElementById('totaldevice').innerHTML = "/"+totaldevice;
 
   (function() {
     // camera360
