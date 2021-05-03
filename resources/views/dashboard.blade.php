@@ -633,10 +633,9 @@
         // document.getElementById('faceimg').src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png"; 
       },
     });
-    // e-save
+    // esave dashboard
     $.ajax({
       type: "GET",
-      // url: "https://www.esaveag.com/slcontrol/",
       url: devices_list[5]['api_link'],
       dataType: "script",
       timeout:5000,
@@ -646,32 +645,92 @@
           document.getElementById('btnesave1').className = "btn btn-success btn-sm2";
           document.getElementById('btnesave1').onclick = function(ev) {window.location="{{ url('esave_dashboard') }}";};
           document.getElementById('btnesave1').innerHTML = 'Online';
-
-          document.getElementById('esave2').href = "{{ route('cluster_projector') }}";
-          document.getElementById('btnesave2').className = "btn btn-success btn-sm2";
-          document.getElementById('btnesave2').onclick = function(ev) {window.location="{{ url('cluster_projector') }}";};
-          document.getElementById('btnesave2').innerHTML = 'Online';
-
-          document.getElementById('esave3').href = "{{ route('cluster_projector_lador') }}";
-          document.getElementById('btnesave3').className = "btn btn-success btn-sm2";
-          document.getElementById('btnesave3').onclick = function(ev) {window.location="{{ url('cluster_projector_lador') }}";};
-          document.getElementById('btnesave3').innerHTML = 'Online';
-
-          document.getElementById('esave4').href = "{{ route('meteodata') }}";
-          document.getElementById('btnesave4').className = "btn btn-success btn-sm2";
-          document.getElementById('btnesave4').onclick = function(ev) {window.location="{{ url('meteodata') }}";};
-          document.getElementById('btnesave4').innerHTML = 'Online';
-
-          document.getElementById('esave5').href = "{{ route('occupancy') }}";
-          document.getElementById('btnesave5').className = "btn btn-success btn-sm2";
-          document.getElementById('btnesave5').onclick = function(ev) {window.location="{{ url('occupancy') }}";};
-          document.getElementById('btnesave5').innerHTML = 'Online';
-          restdevice+=5;
+          restdevice++;
           document.getElementById('restdevice').innerHTML = restdevice;
         }
       },
       error: function() {
-        console.log("e-save error");      
+        console.log("esave dashboard error");      
+      },
+    });
+    // cluster projector
+    $.ajax({
+      type: "GET",
+      url: devices_list[6]['api_link'],
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        if(devices_list[6]['api_link'] != null){
+          document.getElementById('esave2').href = "{{ route('cluster_projector') }}";
+          document.getElementById('btnesave2').className = "btn btn-success btn-sm2";
+          document.getElementById('btnesave2').onclick = function(ev) {window.location="{{ url('cluster_projector') }}";};
+          document.getElementById('btnesave2').innerHTML = 'Online';
+          restdevice++;
+          document.getElementById('restdevice').innerHTML = restdevice;
+        }
+      },
+      error: function() {
+        console.log("cluster projector error");      
+      },
+    });
+    // cluster projector lador
+    $.ajax({
+      type: "GET",
+      url: devices_list[7]['api_link'],
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        if(devices_list[7]['api_link'] != null){
+          document.getElementById('esave3').href = "{{ route('cluster_projector_lador') }}";
+          document.getElementById('btnesave3').className = "btn btn-success btn-sm2";
+          document.getElementById('btnesave3').onclick = function(ev) {window.location="{{ url('cluster_projector_lador') }}";};
+          document.getElementById('btnesave3').innerHTML = 'Online';
+          restdevice++;
+          document.getElementById('restdevice').innerHTML = restdevice;
+        }
+      },
+      error: function() {
+        console.log("cluster projector lador error");      
+      },
+    });
+    // meteodata
+    $.ajax({
+      type: "GET",
+      url: devices_list[8]['api_link'],
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        if(devices_list[8]['api_link'] != null){
+          document.getElementById('esave4').href = "{{ route('meteodata') }}";
+          document.getElementById('btnesave4').className = "btn btn-success btn-sm2";
+          document.getElementById('btnesave4').onclick = function(ev) {window.location="{{ url('meteodata') }}";};
+          document.getElementById('btnesave4').innerHTML = 'Online';
+          restdevice++;
+          document.getElementById('restdevice').innerHTML = restdevice;
+        }
+      },
+      error: function() {
+        console.log("meteodata error");      
+      },
+    });
+    // occupancy
+    $.ajax({
+      type: "GET",
+      url: devices_list[9]['api_link'],
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        if(devices_list[9]['api_link'] != null){
+          document.getElementById('esave5').href = "{{ route('occupancy') }}";
+          document.getElementById('btnesave5').className = "btn btn-success btn-sm2";
+          document.getElementById('btnesave5').onclick = function(ev) {window.location="{{ url('occupancy') }}";};
+          document.getElementById('btnesave5').innerHTML = 'Online';
+          restdevice++;
+          document.getElementById('restdevice').innerHTML = restdevice;
+        }
+      },
+      error: function() {
+        console.log("occupancy error");      
       },
     });
     // exstreamer
