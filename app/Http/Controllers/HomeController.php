@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,10 @@ class HomeController extends Controller
     public function index()
     {
         $user_id = auth()->user()->id;
+        if($user_id == 1){
+            $admins_list = DB::select("SELECT `id`, `name` FROM `users` WHERE role='admin'");
+            return view('adminForm.superadmin.dashboardAll', ['admin_list' => $admins_list]);
+        }
 
         $sql = "SELECT * FROM devices
                 LEFT OUTER JOIN (
@@ -31,5 +36,10 @@ class HomeController extends Controller
 
         $devices_list = DB::select($sql);
         return view('dashboard', ['devices_list' => $devices_list]);
+    }
+
+    protected function postIndex(Request $request)
+    {
+        $data = $request->input();
     }
 }

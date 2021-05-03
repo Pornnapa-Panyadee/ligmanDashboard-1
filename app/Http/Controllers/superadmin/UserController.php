@@ -32,15 +32,25 @@ class UserController extends Controller
 
     public function getIndex()
     {
-        $admins_list = DB::select("SELECT name FROM `users` WHERE role='admin'");
-        return view('adminForm.superadmin.create', ['admins_list' => $admins_list]);
+        $user_id = auth()->user()->id;
+        if($user_id != 1){
+            return redirect('admin/list');
+        }else{
+            $admins_list = DB::select("SELECT name FROM `users` WHERE role='admin'");
+            return view('adminForm.superadmin.create', ['admins_list' => $admins_list]);
+        }
     }
 
     protected function getEdit($user_id)
     {
-        $user = DB::select('SELECT * FROM `users` WHERE `id`='.$user_id);
-        $admins_list = DB::select("SELECT `name` FROM `users` WHERE role='admin'");
-        return view('adminForm.superadmin.edit', ['admins_list' => $admins_list, 'user' => $user[0]]);
+        $user_id = auth()->user()->id;
+        if($user_id != 1){
+            return redirect('admin/list');
+        }else{
+            $user = DB::select('SELECT * FROM `users` WHERE `id`='.$user_id);
+            $admins_list = DB::select("SELECT `name` FROM `users` WHERE role='admin'");
+            return view('adminForm.superadmin.edit', ['admins_list' => $admins_list, 'user' => $user[0]]);
+        }
     }
 
     protected function postInsert(Request $request)
