@@ -415,15 +415,7 @@
                                         <hr class="dash_status1">
                                         <div class="dash-tri"><span>{{$devices_list[13]->pole_id}}</span></div> 
                                         <div class="absolute1">
-<<<<<<< Updated upstream
                                           <button id="btnplug" class="btn btn-offline btn-sm3">Offline</button>
-=======
-<<<<<<< Updated upstream
-                                          <button class="btn btn-offline btn-sm3">Offline</button>
-=======
-                                          <button class="btn btn-offline btn-sm3">offline</button>
->>>>>>> Stashed changes
->>>>>>> Stashed changes
                                         </div>
                                       </div>
                                     </div>
@@ -533,7 +525,7 @@
   console.log(devices_list);
   var restdevice = 0;
   var totaldevice = devices_list.length;
-  document.getElementById('totaldevice').innerHTML = "_/"+totaldevice;
+  document.getElementById('totaldevice').innerHTML = "/"+totaldevice;
 
   (function() {
     // camera360
