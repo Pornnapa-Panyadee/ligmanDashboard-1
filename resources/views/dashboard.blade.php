@@ -452,7 +452,8 @@
                                 <div class="col-md-12">
                                   <div class="card-dash">
                                     <div class="card-header card-header-white">
-                                      <div class="ct-chart" style="height:185px;">
+                                      {{-- <div class="ct-chart" style="height:185px;"> --}}
+                                        <div class="card" style="height:175px;">
                                         {{-- <iframe width="100%" height="100%" frameborder="0" scrolling="no"
                                           src="//umap.openstreetmap.fr/th-th/map/air-transmitter_595019?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=null&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false#16/18.7953/458.9519">
                                         </iframe> --}}
@@ -862,76 +863,53 @@
 </style>
 
 <script>
-  const air_map;
-  const pole_map;
-
-  const locations = [
-        { lat: -31.56391, lng: 147.154312 },
-        { lat: -33.718234, lng: 150.363181 },
-        { lat: -33.727111, lng: 150.371124 },
-        { lat: -33.848588, lng: 151.209834 },
-        { lat: -33.851702, lng: 151.216968 },
-        { lat: -34.671264, lng: 150.863657 },
-        { lat: -35.304724, lng: 148.662905 },
-        { lat: -36.817685, lng: 175.699196 },
-        { lat: -36.828611, lng: 175.790222 },
-        { lat: -37.75, lng: 145.116667 },
-        { lat: -37.759859, lng: 145.128708 },
-        { lat: -37.765015, lng: 145.133858 },
-        { lat: -37.770104, lng: 145.143299 },
-        { lat: -37.7737, lng: 145.145187 },
-        { lat: -37.774785, lng: 145.137978 },
-        { lat: -37.819616, lng: 144.968119 },
-        { lat: -38.330766, lng: 144.695692 },
-        { lat: -39.927193, lng: 175.053218 },
-        { lat: -41.330162, lng: 174.865694 },
-        { lat: -42.734358, lng: 147.439506 },
-        { lat: -42.734358, lng: 147.501315 },
-        { lat: -42.735258, lng: 147.438 },
-        { lat: -43.999792, lng: 170.463352 },
-      ];
-  
-  function initMap() {
+  function initMap() {    
+    var airs_list = {!! json_encode($poles_list) !!};
+    console.log(airs_list);
     var poles_list = {!! json_encode($poles_list) !!};
     console.log(poles_list);
 
-    // const cur_pos = { lat: poles_list[0]['latitude'], lng: poles_list[0]['longitude'] };
-
-    // air_map = new google.maps.Map(document.getElementById("air_map"), {
-    //   zoom: 15,
-    //   center: cur_pos,
-    // });
-    // const m1 = new google.maps.Marker({
-    //   position: cur_pos,
-    //   map: air_map,
-    // });
-
-    // pole_map = new google.maps.Map(document.getElementById("pole_map"), {
-    //   zoom: 15,
-    //   center: cur_pos,
-    // });
-
-    const map = new google.maps.Map(document.getElementById("pole_map"), {
-      zoom: 3,
-      center: { lat: -28.024, lng: 140.887 },
+    const air_map = new google.maps.Map(document.getElementById("air_map"), {
+      zoom: 12,
+      center: new google.maps.LatLng(poles_list[0]['latitude'], poles_list[0]['longitude']),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
     });
-    // Create an array of alphabetical characters used to label the markers.
-    const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    // Add some markers to the map.
-    // Note: The code uses the JavaScript Array.prototype.map() method to
-    // create an array of markers based on a given "locations" array.
-    // The map() method here has nothing to do with the Google Maps API.
-    const markers = locations.map((location, i) => {
-      return new google.maps.Marker({
-        position: location,
-        label: labels[i % labels.length],
+
+    const pole_map = new google.maps.Map(document.getElementById("pole_map"), {
+      zoom: 12,
+      center: new google.maps.LatLng(poles_list[0]['latitude'], poles_list[0]['longitude']),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    for (var i=0; i<airs_list.length; i++) {  
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(airs_list[i]['latitude'], airs_list[i]['longitude']),
+        map: air_map,
       });
-    });
-    // Add a marker clusterer to manage the markers.
-    new MarkerClusterer(map, markers, {
-      imagePath:
-        "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
-    });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(airs_list[i]['location']);
+          infowindow.open(air_map, marker);
+        }
+      })(marker, i));
+    }
+
+    for (var i=0; i<poles_list.length; i++) {  
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(poles_list[i]['latitude'], poles_list[i]['longitude']),
+        map: pole_map,
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(poles_list[i]['location']);
+          infowindow.open(pole_map, marker);
+        }
+      })(marker, i));
+    }
   }
 </script>
 @endsection
