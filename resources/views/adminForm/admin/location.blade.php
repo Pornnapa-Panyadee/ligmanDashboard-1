@@ -1,4 +1,4 @@
-@extends('layouts.app_admin', ['activePage' => 'create_location', 'titlePage' => __('Add Location')])
+@extends('layouts.app_admin', ['activePage' => 'create_location', 'titlePage' => __('Create Pole Location')])
 
 @section('content')
 
@@ -6,7 +6,7 @@
     <div class="pagehead-link">
         <a class="head-link" href="{{ route('adminForm.admin.list') }}"> List  </a>
         &#10095;&#10095;
-        <a class="head-link" href="#"> Add Location </a>
+        <a class="head-link" href="#"> Create Pole Location </a>
     </div>
     <div class="container-fluid">
         <div class="row justify-content-md-center">
@@ -17,7 +17,7 @@
                             @csrf
                             <div class="card">
                                 <div class="card-header  text-center" style="margin-top:-20px;background-color: #e8e8e8;">
-                                    <h4 class="card-title"><strong>{{ __('Add Location') }}</strong></h4>
+                                    <h4 class="card-title"><strong>{{ __('Create Pole Location') }}</strong></h4>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-10" style="margin-top:50px;">

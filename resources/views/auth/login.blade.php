@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </form>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-4"></div>
                     <div class="col-8 text-right">
                         @if (Route::has('password.request'))
@@ -83,7 +83,7 @@
                             </a>
                         @endif
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

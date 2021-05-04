@@ -13,6 +13,9 @@
     <div class="collapse navbar-collapse justify-content-end">
      
       <ul class="navbar-nav">
+        <li class="nav-item active">
+          <div class="text_username" >{{ __('Username') }}</div>
+        </li>
       
         <li class="nav-item dropdown">
           <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

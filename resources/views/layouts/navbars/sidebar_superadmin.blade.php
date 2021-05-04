@@ -9,6 +9,13 @@
     <div class="sidebar-wrapper">
       
       <ul class="nav">
+        <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('profile.edit') }}">
+            <i class="material-icons text-orange">person</i>
+              <p>{{ __('Profile') }}</p>
+          </a>
+        </li>
+
         <li class="nav-item{{ $activePage == 'superadmincreate' ? ' active' : '' }}">
           <a class="nav-link" href="{{ route('adminForm.superadmin.create') }}">
             <i class="material-icons text-orange">person_add_alt</i>
