@@ -26,37 +26,65 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->
 
 Route::group(['middleware' => 'auth'], function () {
 	// 1
-	Route::get('camera360', function () {return view('pages.camera360');})->name('camera360');
+	Route::get('camera360', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=1");
+		return view('pages.camera360', ['data' => $data[0]]);})->name('camera360');
 	// 2
-	Route::get('camera_license', function () {return view('pages.camera_license');})->name('camera_license');
+	Route::get('camera_license', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=4");
+		return view('pages.camera_license', ['data' => $data[0]]);})->name('camera_license');
 	// 3
-	Route::get('camera_temp', function () {return view('pages.camera_temp');})->name('camera_temp');
+	Route::get('camera_temp', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=3");
+		return view('pages.camera_temp', ['data' => $data[0]]);})->name('camera_temp');
 	// 4
-	Route::get('camera_face', function () {return view('pages.camera_face');})->name('camera_face');
+	Route::get('camera_face', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=5");
+		return view('pages.camera_face', ['data' => $data[0]]);})->name('camera_face');
 	// 5
-	Route::get('intercom', function () {return view('pages.intercom');})->name('intercom');
+	Route::get('intercom', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=2");
+		return view('pages.intercom', ['data' => $data[0]]);})->name('intercom');
 	// 6
-	Route::get('exstreamer_loud_speaker', function () {return view('pages.ex_speaker');})->name('ex_speaker');
+	Route::get('exstreamer_loud_speaker', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=11");
+		return view('pages.ex_speaker', ['data' => $data[0]]);})->name('ex_speaker');
 	// 7
-	Route::get('instreamer_loud_speaker', function () {return view('pages.in_speaker');})->name('in_speaker');
+	Route::get('instreamer_loud_speaker', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=12");
+		return view('pages.in_speaker', ['data' => $data[0]]);})->name('in_speaker');
 	// 8
-	Route::get('digital_signage', function () {	return view('pages.digital_signage');})->name('digital_signage');
+	Route::get('digital_signage', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=13");
+		return view('pages.digital_signage', ['data' => $data[0]]);})->name('digital_signage');
 	// 9
 	Route::get('meteodata', function () {
 		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=9");
 		return view('pages.meteodata', ['data' => $data[0]]);})->name('meteodata');
 	// 10
-	Route::get('air_transmitter', function () {return view('pages.air_transmitter');})->name('air_transmitter');
+	Route::get('air_transmitter', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=15");
+		return view('pages.air_transmitter', ['data' => $data[0]]);})->name('air_transmitter');
 	// 11
-	Route::get('occupancy', function () {return view('pages.occupancy');})->name('occupancy');
+	Route::get('occupancy', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=10");
+		return view('pages.occupancy', ['data' => $data[0]]);})->name('occupancy');
 	// 12
-	Route::get('power_socket', function () {return view('pages.power_socket');})->name('power_socket');
+	Route::get('power_socket', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=14");
+		return view('pages.power_socket', ['data' => $data[0]]);})->name('power_socket');
 	// 13
-	Route::get('esave_dashboard', function () {return view('pages.esave_dashboard');})->name('esave_dashboard');
+	Route::get('esave_dashboard', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=6");
+		return view('pages.esave_dashboard', ['data' => $data[0]]);})->name('esave_dashboard');
 	// 14
-	Route::get('cluster_projector', function () {return view('pages.cluster_projector');})->name('cluster_projector');
+	Route::get('cluster_projector', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=7");
+		return view('pages.cluster_projector', ['data' => $data[0]]);})->name('cluster_projector');
 	// 15
-	Route::get('cluster_projector_lador', function () {return view('pages.cluster_projector_lador');})->name('cluster_projector_lador');
+	Route::get('cluster_projector_lador', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=8");
+		return view('pages.cluster_projector_lador', ['data' => $data[0]]);})->name('cluster_projector_lador');
 
 	// old template
 		Route::get('table-list', function () {
