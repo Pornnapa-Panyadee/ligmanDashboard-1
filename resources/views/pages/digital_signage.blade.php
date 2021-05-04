@@ -42,10 +42,10 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "https://edsbox.net/CMService/Dashboard";
+  window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
 </script>
 
-<form name="digitalForm" id="digitalForm" method="POST" action="https://edsbox.net/CMService/FreeLogin" target="_blank"> 
+<form name="digitalForm" id="digitalForm" method="POST" action={{$data->api_link}} target="_blank"> 
   <input type=hidden id="usrname" name="usrname" value="{{ $data->device_username }}"/>
   <input type=hidden id="usrcode" name="usrcode" value="{{	$data->device_password }}"/>
 </form>
@@ -59,7 +59,7 @@
 
 <script>
   (function() {
-    var url = 'https://edsbox.net/CMService/Dashboard';
+    var url = {!! json_encode($data->api_link) !!};
     newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
     // focus on the popup //
     newWindow.focus();

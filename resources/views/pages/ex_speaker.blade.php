@@ -37,10 +37,10 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://10.2.4.52/";
+  window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
 </script>
 
-<form name="exspeakForm" id="exspeakForm" method="POST" action="http://admin:ligman@10.2.4.52" target="_blank"> 
+<form name="exspeakForm" id="exspeakForm" method="POST" action={{$data->api_link}} target="_blank"> 
   <input type=hidden id="usrname" name="usrname" value="admin"/>
   <input type=hidden id="usrcode" name="usrcode" value="ligman"/>
 </form>
