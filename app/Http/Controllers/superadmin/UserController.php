@@ -43,8 +43,7 @@ class UserController extends Controller
 
     protected function getEdit($user_id)
     {
-        $user_id = auth()->user()->id;
-        if($user_id != 1){
+        if(auth()->user()->id != 1){
             return redirect('admin/list');
         }else{
             $user = DB::select('SELECT * FROM `users` WHERE `id`='.$user_id);
