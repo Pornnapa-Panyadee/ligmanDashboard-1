@@ -1,5 +1,5 @@
-@extends('layouts.app_superadmin', ['activePage' => 'profile', 'titlePage' => __('User Profile')])
-<!-- @extends('layouts.app_admin', ['activePage' => 'profile', 'titlePage' => __('User Profile')]) -->
+
+@extends($slidebar, ['activePage' => 'profile', 'titlePage' => __('User Profile')])
 
 @section('content')
   <div class="content">
@@ -12,6 +12,7 @@
 
             <div class="card ">
               <div class="card-header card-header-primary">
+                <h5>{{$slidebar}}</h5>
                 <h4 class="card-title">{{ __('Edit Profile') }}</h4>
                 <p class="card-category">{{ __('User information') }}</p>
               </div>

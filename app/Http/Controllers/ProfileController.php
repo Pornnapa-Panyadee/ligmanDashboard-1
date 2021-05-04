@@ -15,7 +15,9 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('profile.edit');
+        if(auth()->user()->id==1) $slidebar = 'layouts.app_superadmin';
+        else $slidebar = 'layouts.app_admin';
+        return view('profile.edit', ['slidebar'=>$slidebar]);
     }
 
     /**
