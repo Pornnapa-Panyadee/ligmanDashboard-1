@@ -47,15 +47,15 @@
 </style>
 
 <script>
+  var locations = [
+    ["device_id: 15<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.890542, 151.274856, 4],
+    ["device_id: 17<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.923036, 151.259052, 5],
+    ["device_id: 18<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -34.028249, 151.157507, 3],
+    ["device_id: 20<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.80010128657071, 151.28747820854187, 2],
+    ["device_id: 45<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.950198, 151.259302, 1]
+  ];
   // Initialize and add the map
   function initMap() {
-    var locations = [
-      ['Bondi Beach', -33.890542, 151.274856, 4],
-      ['Coogee Beach', -33.923036, 151.259052, 5],
-      ['Cronulla Beach', -34.028249, 151.157507, 3],
-      ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-      ['Maroubra Beach', -33.950198, 151.259302, 1]
-    ];
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 10,
       center: new google.maps.LatLng(locations[0][1], locations[0][2]),

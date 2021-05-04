@@ -37,17 +37,17 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://10.2.4.50/fcgi/do?id=1";
+  window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
 </script>
 
-<form name="intercomForm" id="intercomForm" method="POST" action="http://10.2.4.50/fcgi/do?id=1" target="_blank"> 
+<form name="intercomForm" id="intercomForm" method="POST" action={{$data->api_link}} target="_blank"> 
   <input type=hidden id="username" value="admin"/>
   <input type=hidden id="password" value="ligman"/>
 </form>
 
 <script>
   (function() {
-    var url = 'http://10.2.4.50/fcgi/do?id=1';
+    var url = {!! json_encode($data->api_link) !!};
     newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
     // focus on the popup //
     newWindow.focus();

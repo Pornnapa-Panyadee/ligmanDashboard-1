@@ -12,6 +12,8 @@
           </h4>
         </div>
         <div class="card-header card-header-primary">
+          <h5>username: {{$data->device_username}}</h5>
+          <h5>password: {{$data->device_password}}</h5>
           <h4 class="card-title">First Entry</h4>
           <p class="card-category">If you never login to "erdi" click this button 
             <button type="button" class="btn btn-success" onclick="loginerdi()">Auto Login</button> only once. After this, it is not necessary.
@@ -35,20 +37,20 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://202.28.247.117";
+  window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
 </script>
 
-<form name="erdiForm" id="erdiForm" method="POST" action="http://root:vk0kipNgxuUpd@202.28.247.117/#view" target="_blank"> 
-  <input type=hidden id="usrname" name="usrname" value="cmu-ligman@ligman.com"/>
-  <input type=hidden id="usrcode" name="usrcode" value="ligman@cmU1"/>
+<form name="erdiForm" id="erdiForm" method="POST" action={{$data->api_link}} target="myFrame"> 
+  <input type=hidden id="username" name="username" value="{{$data->device_username}}"/>
+  <input type=hidden id="password" name="password" value="{{$data->device_password}}"/>
 </form>
 
 <script>
   (function() {
-    // var url = 'http://202.28.247.117/#view';
-    // newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
-    // // focus on the popup //
-    // newWindow.focus();
+    var url = {!! json_encode($data->api_link) !!};
+    newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
+    // focus on the popup //
+    newWindow.focus();
   })();
   
   function loginerdi() {
