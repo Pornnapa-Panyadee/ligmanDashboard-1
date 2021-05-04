@@ -63,7 +63,7 @@
                                   </script> --}}
                                   {{-- <iframe src="http://10.2.4.54/ISAPI/Streaming/channels/101" style="display: none;"></iframe> --}}
                                   {{-- <img id="live360" src="http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview" width="100%" height="80%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'"> --}}
-                                  <iframe id="loginlive360" style="display: none;"></iframe>
+                                  <iframe id="loginlive360" style="display: none;" src={{$devices_list[0]->api_link}}></iframe>
                                   <img id="live360" width="100%" height="80%" src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png">
                                   </div>
                                 </div>
@@ -349,6 +349,7 @@
                                           <hr class="dash_status1">
                                           <div class="dash-tri"><span>{{$devices_list[10]->pole_id}}</span></div> 
                                           <div class="absolute1">
+                                            {{-- <iframe id="loginexstreamer" style="display: none;" src={{$devices_list[10]->api_link}}></iframe> --}}
                                             <button id="btnexstreamer" class="btn btn-offline btn-sm3">Offline</button>
                                           </div>
                                         </div>
@@ -371,6 +372,7 @@
                                         <hr class="dash_status1">
                                         <div class="dash-tri"><span>{{$devices_list[11]->pole_id}}</span></div> 
                                         <div class="absolute1">
+                                          <iframe id="logininstreamer" style="display: none;" src={{$devices_list[11]->api_link}}></iframe>
                                           <button id="btninstreamer" class="btn btn-offline btn-sm3">Offline</button>
                                         </div>
                                       </div>
@@ -393,7 +395,7 @@
                                         <hr class="dash_status1">
                                         <div class="dash-tri"><span>{{$devices_list[12]->pole_id}}</span></div> 
                                         <div class="absolute1">
-                                          <button id="btndigital" class="btn btn-offline btn-sm3">Online</button>
+                                          <button id="btndigital" class="btn btn-offline btn-sm3">Offline</button>
                                         </div>
                                       </div>
                                     </div>
@@ -452,10 +454,12 @@
                                 <div class="col-md-12">
                                   <div class="card-dash">
                                     <div class="card-header card-header-white">
-                                      <div class="ct-chart" style="height:185px;">
-                                        <iframe width="100%" height="100%" frameborder="0" scrolling="no"
+                                      {{-- <div class="ct-chart" style="height:185px;"> --}}
+                                        <div class="card" style="height:175px;">
+                                        {{-- <iframe width="100%" height="100%" frameborder="0" scrolling="no"
                                           src="//umap.openstreetmap.fr/th-th/map/air-transmitter_595019?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=null&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false#16/18.7953/458.9519">
-                                        </iframe>
+                                        </iframe> --}}
+                                        <div id="air_map"></div>
                                       </div>
                                     </div>
                                     <div class="card-footer">
@@ -488,16 +492,17 @@
                             <!--  MAp -->
                               <div class="row">
                                 <div class="col-md-12">
-                                  <div class="card " style="height:277px;">
+                                  <div class="card" style="height:277px;">                                    
+                                    <div id="pole_map"></div>
                                     <div class="absoluteMap">
                                       <button class="btn btn-success btn-sm4">Online</button>
                                     </div>
-                                      <div id="totaldevice" class="text-dash-onlineall">/0</div>
-                                      <div id="restdevice" class="text-dash-online">0</div>
-                                      <div class="text-dash-onlinetag"> devices </div>
-                                    <iframe width="100%" height="100%" frameborder="0"  
+                                    <div id="totaldevice" class="text-dash-onlineall">/0</div>
+                                    <div id="restdevice" class="text-dash-online">0</div>
+                                    <div class="text-dash-onlinetag"> devices </div>
+                                    {{-- <iframe width="100%" height="100%" frameborder="0"  
                                       src="//umap.openstreetmap.fr/en/map/poles-map_595016?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=null&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false#14/18.7968/98.9639">
-                                    </iframe>
+                                    </iframe> --}}
                                   </div>
                                 </div>
                               </div>
@@ -537,11 +542,13 @@
       timeout:5000,
       success: function() {
         if(devices_list[0]['api_link'] != null){
-          document.getElementById('loginlive360').src = "http://10.2.4.54/ISAPI/Streaming/channels/101";
-          document.getElementById('live360').src = "http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview";
+          // document.getElementById('loginlive360').src = devices_list[0]['api_link'];
+          document.getElementById('live360').src = devices_list[0]['api_link'] + devices_list[0]['live_path'];
           document.getElementById('btnlive360').className = "btn btn-success btn-sm1";
           document.getElementById('btnlive360').onclick = function(ev) {window.location="{{ url('camera360') }}";};
           document.getElementById('btnlive360').innerHTML = 'Online';
+          restdevice++;
+          document.getElementById('restdevice').innerHTML = restdevice;
         }
       },
       error: function() {
@@ -562,6 +569,8 @@
           document.getElementById('btninter').className = "btn btn-success btn-sm1";
           document.getElementById('btninter').onclick = function(ev) {window.location="{{ url('intercom') }}";};
           document.getElementById('btninter').innerHTML = 'Online';
+          restdevice++;
+          document.getElementById('restdevice').innerHTML = restdevice;
         }
       },
       error: function() {
@@ -619,7 +628,7 @@
       dataType: "script",
       timeout:5000,
       success: function() {
-        if(devices_list[0]['api_link'] != null){
+        if(devices_list[4]['api_link'] != null){
           document.getElementById('faceimg').src = "http://202.28.247.117/axis-cgi/mjpg/video.cgi";
           document.getElementById('btnface').className = "btn btn-success btn-sm1";
           document.getElementById('btnface').onclick = function(ev) {window.location="{{ url('camera_face') }}";};
@@ -633,10 +642,9 @@
         // document.getElementById('faceimg').src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png"; 
       },
     });
-    // e-save
+    // esave dashboard
     $.ajax({
       type: "GET",
-      // url: "https://www.esaveag.com/slcontrol/",
       url: devices_list[5]['api_link'],
       dataType: "script",
       timeout:5000,
@@ -646,38 +654,98 @@
           document.getElementById('btnesave1').className = "btn btn-success btn-sm2";
           document.getElementById('btnesave1').onclick = function(ev) {window.location="{{ url('esave_dashboard') }}";};
           document.getElementById('btnesave1').innerHTML = 'Online';
-
-          document.getElementById('esave2').href = "{{ route('cluster_projector') }}";
-          document.getElementById('btnesave2').className = "btn btn-success btn-sm2";
-          document.getElementById('btnesave2').onclick = function(ev) {window.location="{{ url('cluster_projector') }}";};
-          document.getElementById('btnesave2').innerHTML = 'Online';
-
-          document.getElementById('esave3').href = "{{ route('cluster_projector_lador') }}";
-          document.getElementById('btnesave3').className = "btn btn-success btn-sm2";
-          document.getElementById('btnesave3').onclick = function(ev) {window.location="{{ url('cluster_projector_lador') }}";};
-          document.getElementById('btnesave3').innerHTML = 'Online';
-
-          document.getElementById('esave4').href = "{{ route('meteodata') }}";
-          document.getElementById('btnesave4').className = "btn btn-success btn-sm2";
-          document.getElementById('btnesave4').onclick = function(ev) {window.location="{{ url('meteodata') }}";};
-          document.getElementById('btnesave4').innerHTML = 'Online';
-
-          document.getElementById('esave5').href = "{{ route('occupancy') }}";
-          document.getElementById('btnesave5').className = "btn btn-success btn-sm2";
-          document.getElementById('btnesave5').onclick = function(ev) {window.location="{{ url('occupancy') }}";};
-          document.getElementById('btnesave5').innerHTML = 'Online';
-          restdevice+=5;
+          restdevice++;
           document.getElementById('restdevice').innerHTML = restdevice;
         }
       },
       error: function() {
-        console.log("e-save error");      
+        console.log("esave dashboard error");      
+      },
+    });
+    // cluster projector
+    $.ajax({
+      type: "GET",
+      url: devices_list[6]['api_link'],
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        if(devices_list[6]['api_link'] != null){
+          document.getElementById('esave2').href = "{{ route('cluster_projector') }}";
+          document.getElementById('btnesave2').className = "btn btn-success btn-sm2";
+          document.getElementById('btnesave2').onclick = function(ev) {window.location="{{ url('cluster_projector') }}";};
+          document.getElementById('btnesave2').innerHTML = 'Online';
+          restdevice++;
+          document.getElementById('restdevice').innerHTML = restdevice;
+        }
+      },
+      error: function() {
+        console.log("cluster projector error");      
+      },
+    });
+    // cluster projector lador
+    $.ajax({
+      type: "GET",
+      url: devices_list[7]['api_link'],
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        if(devices_list[7]['api_link'] != null){
+          document.getElementById('esave3').href = "{{ route('cluster_projector_lador') }}";
+          document.getElementById('btnesave3').className = "btn btn-success btn-sm2";
+          document.getElementById('btnesave3').onclick = function(ev) {window.location="{{ url('cluster_projector_lador') }}";};
+          document.getElementById('btnesave3').innerHTML = 'Online';
+          restdevice++;
+          document.getElementById('restdevice').innerHTML = restdevice;
+        }
+      },
+      error: function() {
+        console.log("cluster projector lador error");      
+      },
+    });
+    // meteodata
+    $.ajax({
+      type: "GET",
+      url: devices_list[8]['api_link'],
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        if(devices_list[8]['api_link'] != null){
+          document.getElementById('esave4').href = "{{ route('meteodata') }}";
+          document.getElementById('btnesave4').className = "btn btn-success btn-sm2";
+          document.getElementById('btnesave4').onclick = function(ev) {window.location="{{ url('meteodata') }}";};
+          document.getElementById('btnesave4').innerHTML = 'Online';
+          restdevice++;
+          document.getElementById('restdevice').innerHTML = restdevice;
+        }
+      },
+      error: function() {
+        console.log("meteodata error");      
+      },
+    });
+    // occupancy
+    $.ajax({
+      type: "GET",
+      url: devices_list[9]['api_link'],
+      dataType: "script",
+      timeout:5000,
+      success: function() {
+        if(devices_list[9]['api_link'] != null){
+          document.getElementById('esave5').href = "{{ route('occupancy') }}";
+          document.getElementById('btnesave5').className = "btn btn-success btn-sm2";
+          document.getElementById('btnesave5').onclick = function(ev) {window.location="{{ url('occupancy') }}";};
+          document.getElementById('btnesave5').innerHTML = 'Online';
+          restdevice++;
+          document.getElementById('restdevice').innerHTML = restdevice;
+        }
+      },
+      error: function() {
+        console.log("occupancy error");      
       },
     });
     // exstreamer
     $.ajax({
       type: "GET",
-      // url: "https://10.2.4.52",
+      // url: "http://10.2.4.52/index.html",
       url: devices_list[10]['api_link'],
       dataType: "script",
       timeout:5000,
@@ -698,7 +766,7 @@
     // instreamer
     $.ajax({
       type: "GET",
-      // url: "https://10.2.4.53",
+      // url: "http://10.2.4.53/index.html",
       url: devices_list[11]['api_link'],
       dataType: "script",
       timeout:5000,
@@ -779,6 +847,83 @@
       },
     });
   })();
+</script>
+
+<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqTFzYkIkd1fw2jyCxkCVsRprw-RSs0AU&callback=initMap&libraries=&v=weekly"
+  async>
+</script>
+
+<style type="text/css">
+  #pole_map {
+    margin-top: 0px;
+    height: 100%;
+    width: 100%;
+  }
+  #air_map {
+    margin-top: 0px;
+    height: 100%;
+    width: 100%;
+  }
+</style>
+
+<script>
+  var airs_list = [
+    ["device_id: 15<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.890542, 151.274856, 4],
+    ["device_id: 17<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.923036, 151.259052, 5],
+    ["device_id: 18<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -34.028249, 151.157507, 3],
+    ["device_id: 20<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.80010128657071, 151.28747820854187, 2],
+    ["device_id: 45<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.950198, 151.259302, 1]
+  ];
+  // var airs_list = {!! json_encode($poles_list) !!};
+  // console.log(airs_list);
+  var poles_list = {!! json_encode($poles_list) !!};
+  console.log(poles_list);
+
+  function initMap() {    
+    const air_map = new google.maps.Map(document.getElementById("air_map"), {
+      zoom: 10,
+      center: new google.maps.LatLng(airs_list[0][1], airs_list[0][2]),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    });
+
+    const pole_map = new google.maps.Map(document.getElementById("pole_map"), {
+      zoom: 12,
+      center: new google.maps.LatLng(poles_list[0]['latitude'], poles_list[0]['longitude']),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    for (var i=0; i<airs_list.length; i++) {  
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(airs_list[i][1], airs_list[i][2]),
+        map: air_map,
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(airs_list[i][0]);
+          infowindow.open(air_map, marker);
+        }
+      })(marker, i));
+    }
+
+    for (var i=0; i<poles_list.length; i++) {  
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(poles_list[i]['latitude'], poles_list[i]['longitude']),
+        map: pole_map,
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(poles_list[i]['location']);
+          infowindow.open(pole_map, marker);
+        }
+      })(marker, i));
+    }
+  }
 </script>
 @endsection
   

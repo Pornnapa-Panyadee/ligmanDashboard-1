@@ -12,6 +12,8 @@
           </h4>
         </div>
         <div class="card-header card-header-primary">
+          <h5>username: {{$data->device_username}}</h5>
+          <h5>password: {{$data->device_password}}</h5>
           <h4 class="card-title">Download Software</h4>      
           <p class="card-category" style="font-size: 50px;">Download ViPlex Express Here
             <a href="https://novastar.shop/wp-content/uploads/2021/02/ViPlex%20Express%20V2.6.2.0201%20Setup(x64).zip" >ViPlex Express V2.6.2</a>
@@ -40,12 +42,12 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "https://edsbox.net/CMService/Dashboard";
+  window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
 </script>
 
-<form name="digitalForm" id="digitalForm" method="POST" action="https://edsbox.net/CMService/FreeLogin" target="_blank"> 
-  <input type=hidden id="email" name="email" value="step\ligman"/>
-  <input type=hidden id="password" name="password" value="Ligman123?"/>
+<form name="digitalForm" id="digitalForm" method="POST" action={{$data->api_link}} target="_blank"> 
+  <input type=hidden id="usrname" name="usrname" value="{{ $data->device_username }}"/>
+  <input type=hidden id="usrcode" name="usrcode" value="{{	$data->device_password }}"/>
 </form>
 
 <script>
@@ -57,7 +59,7 @@
 
 <script>
   (function() {
-    var url = 'https://edsbox.net/CMService/Dashboard';
+    var url = {!! json_encode($data->api_link) !!};
     newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
     // focus on the popup //
     newWindow.focus();

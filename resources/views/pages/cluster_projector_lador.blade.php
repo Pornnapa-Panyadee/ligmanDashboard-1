@@ -13,7 +13,7 @@
         </div>
         <div class="card-header card-header-primary">
           <h4 class="card-title">First Entry</h4>
-          <p class="card-category">If you never login to "e-Save" click this button 
+          <p class="card-category">If you never logged in "e-Save" before. Please click this button
             <button type="button" class="btn btn-success" onclick="loginesaveag()">Auto Login</button> only once. After this, it is not necessary.
           </p>
         </div>
@@ -35,17 +35,17 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "https://www.esaveag.com/slcontrol/?id=230&lang=en";
+  window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
 </script>
 
-<form name="esaveagForm" id="esaveagForm" method="POST" action="https://www.esaveag.com/slcontrol/?lang=en&id=1&a=&lp=&lpt=" target="_blank"> 
-  <input type=hidden id="usrname" name="usrname" value="cmu-ligman@ligman.com"/>
-  <input type=hidden id="usrcode" name="usrcode" value="ligman@cmU1"/>
+<form name="esaveagForm" id="esaveagForm" method="POST" action={{$data->api_link}} target="_blank"> 
+  <input type=hidden id="usrname" name="usrname" value="{{ $data->device_username }}"/>
+  <input type=hidden id="usrcode" name="usrcode" value="{{	$data->device_password }}"/>
 </form>
 
 <script>
   (function() {
-    var url = 'https://www.esaveag.com/slcontrol/?id=230&lang=en';
+    var url = {!! json_encode($data->api_link) !!};
     newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
     // focus on the popup //
     newWindow.focus();

@@ -12,10 +12,10 @@
           </h4>
         </div>
         <div class="card-header card-header-primary">
-          <h4 class="card-title">First Entry</h4>
+          {{-- <h4 class="card-title">First Entry</h4>
           <p class="card-category">If you never login to "erdi" click this button 
             <button type="button" class="btn btn-success" onclick="loginerdi()">Auto Login</button> only once. After this, it is not necessary.
-          </p>
+          </p> --}}
         </div>
         <div class="row">
           <div class="col-md-12">
@@ -35,13 +35,13 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = "http://202.28.247.117";
+  window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
 </script>
 
-<form name="erdiForm" id="erdiForm" method="POST" action="http://root:vk0kipNgxuUpd@202.28.247.117/#view" target="_blank"> 
+{{-- <form name="erdiForm" id="erdiForm" method="POST" action={{$data->api_link}} target="_blank"> 
   <input type=hidden id="usrname" name="usrname" value="cmu-ligman@ligman.com"/>
   <input type=hidden id="usrcode" name="usrcode" value="ligman@cmU1"/>
-</form>
+</form> --}}
 
 <script>
   (function() {
@@ -51,9 +51,9 @@
     // newWindow.focus();
   })();
   
-  function loginerdi() {
-    console.log("start login");
-    document.getElementById("erdiForm").submit();
-  }
+  // function loginerdi() {
+  //   console.log("start login");
+  //   document.getElementById("erdiForm").submit();
+  // }
 </script>
 @endsection

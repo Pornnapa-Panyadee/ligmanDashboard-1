@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,10 @@ class HomeController extends Controller
     public function index()
     {
         $user_id = auth()->user()->id;
+        if($user_id == 1){
+            $admins_list = DB::select("SELECT `id`, `name` FROM `users` WHERE role!='user'");
+            return view('adminForm.superadmin.dashboardAll', ['admins_list' => $admins_list]);
+        }
 
         $sql = "SELECT * FROM devices
                 LEFT OUTER JOIN (
@@ -30,6 +35,19 @@ class HomeController extends Controller
                 WHERE device_users.user_id=".$user_id.") table_1 ON devices.id=table_1.device_id";
 
         $devices_list = DB::select($sql);
-        return view('dashboard', ['devices_list' => $devices_list]);
+        $poles_list = DB::select("SELECT * FROM `poles`");
+        return view('dashboard', ['devices_list' => $devices_list, 'poles_list' => $poles_list]);
+    }
+
+    protected function index_i($admin_id)
+    {
+        $sql = "SELECT * FROM devices
+                LEFT OUTER JOIN (
+                SELECT * FROM device_users
+                WHERE device_users.user_id=".$admin_id.") table_1 ON devices.id=table_1.device_id";
+
+        $devices_list = DB::select($sql);
+        $poles_list = DB::select("SELECT * FROM `poles`");
+        return view('dashboard', ['devices_list' => $devices_list, 'poles_list' => $poles_list]);
     }
 }

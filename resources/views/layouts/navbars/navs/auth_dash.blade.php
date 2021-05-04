@@ -14,7 +14,7 @@
      
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <div class="text_username" >{{ __('Username') }}</div>
+          <div class="text_username" >{{ auth()->user()->name }}</div>
         </li>
       
         <li class="nav-item dropdown">
