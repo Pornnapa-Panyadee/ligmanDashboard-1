@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +42,9 @@ Route::group(['middleware' => 'auth'], function () {
 	// 8
 	Route::get('digital_signage', function () {	return view('pages.digital_signage');})->name('digital_signage');
 	// 9
-	Route::get('meteodata', function () {return view('pages.meteodata');})->name('meteodata');
+	Route::get('meteodata', function () {
+		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=9");
+		return view('pages.meteodata', ['data' => $data[0]]);})->name('meteodata');
 	// 10
 	Route::get('air_transmitter', function () {return view('pages.air_transmitter');})->name('air_transmitter');
 	// 11

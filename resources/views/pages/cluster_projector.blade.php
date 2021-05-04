@@ -13,7 +13,7 @@
         </div>
         <div class="card-header card-header-primary">
           <h4 class="card-title">First Entry</h4>
-          <p class="card-category">If you never login to "e-Save" click this button 
+          <p class="card-category">If you never logged in "e-Save" before. Please click this button
             <button type="button" class="btn btn-success" onclick="loginesaveag()">Auto Login</button> only once. After this, it is not necessary.
           </p>
         </div>
@@ -39,8 +39,8 @@
 </script>
 
 <form name="esaveagForm" id="esaveagForm" method="POST" action="https://www.esaveag.com/slcontrol/?lang=en&id=1&a=&lp=&lpt=" target="_blank"> 
-  <input type=hidden id="usrname" name="usrname" value="cmu-ligman@ligman.com"/>
-  <input type=hidden id="usrcode" name="usrcode" value="ligman@cmU1"/>
+  <input type=hidden id="usrname" name="usrname" value="{{ $data->device_username }}"/>
+  <input type=hidden id="usrcode" name="usrcode" value="{{	$data->device_password }}"/>
 </form>
 
 <script>
