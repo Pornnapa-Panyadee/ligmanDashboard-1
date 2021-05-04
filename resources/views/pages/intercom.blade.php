@@ -12,6 +12,8 @@
             </h4>
         </div>
         <div class="card-header card-header-primary">
+          <h5>username: {{$data->device_username}}</h5>
+          <h5>password: {{$data->device_password}}</h5>
           <h4 class="card-title">First Entry</h4>
           <p class="card-category">If you never login to "Akuvox" click this button 
             <button id="Login" type="button" class="btn btn-success" onclick="loginintercom()">Auto Login</button> only once. After this, it is not necessary.

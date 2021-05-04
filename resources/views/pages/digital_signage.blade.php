@@ -12,6 +12,8 @@
           </h4>
         </div>
         <div class="card-header card-header-primary">
+          <h5>username: {{$data->device_username}}</h5>
+          <h5>password: {{$data->device_password}}</h5>
           <h4 class="card-title">Download Software</h4>      
           <p class="card-category" style="font-size: 50px;">Download ViPlex Express Here
             <a href="https://novastar.shop/wp-content/uploads/2021/02/ViPlex%20Express%20V2.6.2.0201%20Setup(x64).zip" >ViPlex Express V2.6.2</a>
@@ -44,8 +46,8 @@
 </script>
 
 <form name="digitalForm" id="digitalForm" method="POST" action="https://edsbox.net/CMService/FreeLogin" target="_blank"> 
-  <input type=hidden id="email" name="email" value="step\ligman"/>
-  <input type=hidden id="password" name="password" value="Ligman123?"/>
+  <input type=hidden id="usrname" name="usrname" value="{{ $data->device_username }}"/>
+  <input type=hidden id="usrcode" name="usrcode" value="{{	$data->device_password }}"/>
 </form>
 
 <script>
