@@ -22,7 +22,7 @@
      
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <div class="text_usernameadmin" >{{ __('Username') }}</div>
+          <div class="text_usernameadmin" >{{ auth()->user()->name }}</div>
         </li>
 
         <li class="nav-item dropdown">
