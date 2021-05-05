@@ -63,7 +63,7 @@
                                   </script> --}}
                                   {{-- <iframe src="http://10.2.4.54/ISAPI/Streaming/channels/101" style="display: none;"></iframe> --}}
                                   {{-- <img id="live360" src="http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview" width="100%" height="80%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'"> --}}
-                                  <iframe id="loginlive360" style="display: none;" src={{$devices_list[0]->api_link}}></iframe>
+                                  {{-- <iframe id="loginlive360" style="display: none;" src={{$devices_list[0]->api_link}}></iframe> --}}
                                   <img id="live360" width="100%" height="80%" src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png">
                                   </div>
                                 </div>
