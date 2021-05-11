@@ -880,6 +880,7 @@
   // console.log(airs_list);
   var poles_list = {!! json_encode($poles_list) !!};
   console.log(poles_list);
+  var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
   function initMap() {    
     const air_map = new google.maps.Map(document.getElementById("air_map"), {
@@ -900,6 +901,7 @@
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(airs_list[i][1], airs_list[i][2]),
         map: air_map,
+        icon: iconBase + 'schools_maps.png',
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
