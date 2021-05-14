@@ -63,7 +63,7 @@
                                   </script> --}}
                                   {{-- <iframe src="http://10.2.4.54/ISAPI/Streaming/channels/101" style="display: none;"></iframe> --}}
                                   {{-- <img id="live360" src="http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview" width="100%" height="80%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'"> --}}
-                                  {{-- <iframe id="loginlive360" style="display: none;" src={{$devices_list[0]->api_link}}></iframe> --}}
+                                  <iframe id="loginlive360" style="display: none;"></iframe>
                                   <img id="live360" width="100%" height="80%" src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png">
                                   </div>
                                 </div>
@@ -542,7 +542,7 @@
       timeout:5000,
       success: function() {
         if(devices_list[0]['api_link'] != null){
-          // document.getElementById('loginlive360').src = devices_list[0]['api_link'];
+          document.getElementById('loginlive360').src = devices_list[0]['api_link'] + "/ISAPI/Streaming/channels/101";
           document.getElementById('live360').src = devices_list[0]['api_link'] + devices_list[0]['live_path'];
           document.getElementById('btnlive360').className = "btn btn-success btn-sm1";
           document.getElementById('btnlive360').onclick = function(ev) {window.location="{{ url('camera360') }}";};
@@ -565,7 +565,7 @@
       timeout:5000,
       success: function() {
         if(devices_list[1]['api_link'] != null){
-          document.getElementById('interimg').src = "http://10.2.4.50:8080/video.cgi";
+          document.getElementById('interimg').src = devices_list[1]['api_link'] + ":8080/video.cgi";
           document.getElementById('btninter').className = "btn btn-success btn-sm1";
           document.getElementById('btninter').onclick = function(ev) {window.location="{{ url('intercom') }}";};
           document.getElementById('btninter').innerHTML = 'Online';
@@ -587,7 +587,7 @@
       timeout:5000,
       success: function() {
         if(devices_list[2]['api_link'] != null){
-          document.getElementById('tempimg').src = "http://202.28.247.117/axis-cgi/mjpg/video.cgi";
+          document.getElementById('tempimg').src = devices_list[2]['api_link'] + "/axis-cgi/mjpg/video.cgi";
           document.getElementById('btntemp').className = "btn btn-success btn-sm1";
           document.getElementById('btntemp').onclick = function(ev) {window.location="{{ url('camera_temp') }}";};
           document.getElementById('btntemp').innerHTML = 'Online';
@@ -608,7 +608,7 @@
       timeout:5000,
       success: function() {
         if(devices_list[3]['api_link'] != null){
-          document.getElementById('licenseimg').src = "http://202.28.247.117/axis-cgi/mjpg/video.cgi";
+          document.getElementById('licenseimg').src = devices_list[3]['api_link'] + "/axis-cgi/mjpg/video.cgi";
           document.getElementById('btnlicense').className = "btn btn-success btn-sm1";
           document.getElementById('btnlicense').onclick = function(ev) {window.location="{{ url('camera_license') }}";};
           document.getElementById('btnlicense').innerHTML = 'Online';
@@ -629,7 +629,7 @@
       timeout:5000,
       success: function() {
         if(devices_list[4]['api_link'] != null){
-          document.getElementById('faceimg').src = "http://202.28.247.117/axis-cgi/mjpg/video.cgi";
+          document.getElementById('faceimg').src = devices_list[3]['api_link'] + "/axis-cgi/mjpg/video.cgi";
           document.getElementById('btnface').className = "btn btn-success btn-sm1";
           document.getElementById('btnface').onclick = function(ev) {window.location="{{ url('camera_face') }}";};
           document.getElementById('btnface').innerHTML = 'Online';
