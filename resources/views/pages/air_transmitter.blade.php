@@ -46,7 +46,20 @@
   }
 </style>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
+  var api_link = "https://esm.erdi.cmu.ac.th/api/freshairerdi/public/index.php/api/historydata/C44F33605921";
+  var all_device = "https://esm.erdi.cmu.ac.th/api/freshairerdi/public/index.php/api/deviceall";
+
+  var req = new XMLHttpRequest();
+  req.responseType = 'json';
+  req.open('GET', api_link, true);
+  req.onload  = function() {
+    console.log(req.response);
+  };
+  req.send(null);
+
+
   var locations = [
     ["device_id: 15<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.890542, 151.274856, 4],
     ["device_id: 17<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.923036, 151.259052, 5],
