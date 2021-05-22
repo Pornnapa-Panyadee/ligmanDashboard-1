@@ -63,7 +63,7 @@
                                   </script> --}}
                                   {{-- <iframe src="http://10.2.4.54/ISAPI/Streaming/channels/101" style="display: none;"></iframe> --}}
                                   {{-- <img id="live360" src="http://10.2.4.54/ISAPI/Streaming/channels/101/httpPreview" width="100%" height="80%" onerror="this.onerror=null; this.src='https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png'"> --}}
-                                  <iframe id="loginlive360" style="display: none;" src={{$devices_list[0]->api_link}}></iframe>
+                                  <iframe id="loginlive360" style="display: none;"></iframe>
                                   <img id="live360" width="100%" height="80%" src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png">
                                   </div>
                                 </div>
@@ -542,7 +542,7 @@
       timeout:5000,
       success: function() {
         if(devices_list[0]['api_link'] != null){
-          // document.getElementById('loginlive360').src = devices_list[0]['api_link'];
+          document.getElementById('loginlive360').src = devices_list[0]['api_link'] + "/ISAPI/Streaming/channels/101";
           document.getElementById('live360').src = devices_list[0]['api_link'] + devices_list[0]['live_path'];
           document.getElementById('btnlive360').className = "btn btn-success btn-sm1";
           document.getElementById('btnlive360').onclick = function(ev) {window.location="{{ url('camera360') }}";};
@@ -565,7 +565,7 @@
       timeout:5000,
       success: function() {
         if(devices_list[1]['api_link'] != null){
-          document.getElementById('interimg').src = "http://10.2.4.50:8080/video.cgi";
+          document.getElementById('interimg').src = devices_list[1]['api_link'] + ":8080/video.cgi";
           document.getElementById('btninter').className = "btn btn-success btn-sm1";
           document.getElementById('btninter').onclick = function(ev) {window.location="{{ url('intercom') }}";};
           document.getElementById('btninter').innerHTML = 'Online';
@@ -587,7 +587,7 @@
       timeout:5000,
       success: function() {
         if(devices_list[2]['api_link'] != null){
-          document.getElementById('tempimg').src = "http://202.28.247.117/axis-cgi/mjpg/video.cgi";
+          document.getElementById('tempimg').src = devices_list[2]['api_link'] + "/axis-cgi/mjpg/video.cgi";
           document.getElementById('btntemp').className = "btn btn-success btn-sm1";
           document.getElementById('btntemp').onclick = function(ev) {window.location="{{ url('camera_temp') }}";};
           document.getElementById('btntemp').innerHTML = 'Online';
@@ -608,7 +608,7 @@
       timeout:5000,
       success: function() {
         if(devices_list[3]['api_link'] != null){
-          document.getElementById('licenseimg').src = "http://202.28.247.117/axis-cgi/mjpg/video.cgi";
+          document.getElementById('licenseimg').src = devices_list[3]['api_link'] + "/axis-cgi/mjpg/video.cgi";
           document.getElementById('btnlicense').className = "btn btn-success btn-sm1";
           document.getElementById('btnlicense').onclick = function(ev) {window.location="{{ url('camera_license') }}";};
           document.getElementById('btnlicense').innerHTML = 'Online';
@@ -629,7 +629,7 @@
       timeout:5000,
       success: function() {
         if(devices_list[4]['api_link'] != null){
-          document.getElementById('faceimg').src = "http://202.28.247.117/axis-cgi/mjpg/video.cgi";
+          document.getElementById('faceimg').src = devices_list[3]['api_link'] + "/axis-cgi/mjpg/video.cgi";
           document.getElementById('btnface').className = "btn btn-success btn-sm1";
           document.getElementById('btnface').onclick = function(ev) {window.location="{{ url('camera_face') }}";};
           document.getElementById('btnface').innerHTML = 'Online';
@@ -869,22 +869,19 @@
 </style>
 
 <script>
-  var airs_list = [
-    ["device_id: 15<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.890542, 151.274856, 4],
-    ["device_id: 17<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.923036, 151.259052, 5],
-    ["device_id: 18<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -34.028249, 151.157507, 3],
-    ["device_id: 20<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.80010128657071, 151.28747820854187, 2],
-    ["device_id: 45<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.950198, 151.259302, 1]
-  ];
-  // var airs_list = {!! json_encode($poles_list) !!};
-  // console.log(airs_list);
   var poles_list = {!! json_encode($poles_list) !!};
   console.log(poles_list);
+  var response = {!! $response !!};
+  var last_air_data = response.data[response.data.length-1];
+  console.log(last_air_data);
+  var pole = {!! json_encode($pole) !!};
+
+  var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
   function initMap() {    
     const air_map = new google.maps.Map(document.getElementById("air_map"), {
       zoom: 10,
-      center: new google.maps.LatLng(airs_list[0][1], airs_list[0][2]),
+      center: new google.maps.LatLng(pole[0]['latitude'], pole[0]['longitude']),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
     });
 
@@ -896,15 +893,16 @@
 
     var infowindow = new google.maps.InfoWindow();
 
-    for (var i=0; i<airs_list.length; i++) {  
+    for (var i=0; i<pole.length; i++) {  
       var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(airs_list[i][1], airs_list[i][2]),
+        position: new google.maps.LatLng(pole[i]['latitude'], pole[i]['longitude']),
         map: air_map,
+        icon: iconBase + 'schools_maps.png',
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          infowindow.setContent(airs_list[i][0]);
+          infowindow.setContent("<pre>"+JSON.stringify(last_air_data,undefined, 2) +"</pre>");
           infowindow.open(air_map, marker);
         }
       })(marker, i));

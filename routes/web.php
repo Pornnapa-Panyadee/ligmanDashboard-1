@@ -64,7 +64,30 @@ Route::group(['middleware' => 'auth'], function () {
 	// 10
 	Route::get('air_transmitter', function () {
 		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=15");
-		return view('pages.air_transmitter', ['data' => $data[0]]);})->name('air_transmitter');
+		$pole = DB::select("SELECT * FROM `poles` WHERE `id`=".$data[0]->pole_id);
+
+		$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+		CURLOPT_URL => $data[0]->api_link,
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => "",
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 30,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => "GET",
+		CURLOPT_HTTPHEADER => array(
+			"cache-control: no-cache",
+			"postman-token: 85a7d2b9-a34d-3301-7cad-aff332f4b4f1"
+		),
+		));
+
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+
+		curl_close($curl);
+
+		return view('pages.air_transmitter', ['pole' => $pole, 'response' => $response]);})->name('air_transmitter');
 	// 11
 	Route::get('occupancy', function () {
 		$data = DB::select("SELECT * FROM `device_users` WHERE `user_id`=".auth()->user()->id." and `device_id`=10");

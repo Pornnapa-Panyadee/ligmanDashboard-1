@@ -48,6 +48,28 @@ class HomeController extends Controller
 
         $devices_list = DB::select($sql);
         $poles_list = DB::select("SELECT * FROM `poles`");
-        return view('dashboard', ['devices_list' => $devices_list, 'poles_list' => $poles_list]);
+        $pole = DB::select("SELECT * FROM `poles` WHERE `id`=".$devices_list[14]->pole_id);
+        
+        $curl = curl_init();
+
+		curl_setopt_array($curl, array(
+		CURLOPT_URL => $devices_list[14]->api_link,
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => "",
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 30,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => "GET",
+		CURLOPT_HTTPHEADER => array(
+			"cache-control: no-cache",
+			"postman-token: 85a7d2b9-a34d-3301-7cad-aff332f4b4f1"
+		),
+		));
+
+		$response = curl_exec($curl);
+
+		curl_close($curl);
+
+        return view('dashboard', ['devices_list' => $devices_list, 'poles_list' => $poles_list, 'pole' => $pole, 'response' => $response]);
     }
 }
