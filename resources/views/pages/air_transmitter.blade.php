@@ -47,48 +47,129 @@
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/data.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+
 <script>
-  var api_link = "https://esm.erdi.cmu.ac.th/api/freshairerdi/public/index.php/api/historydata/C44F33605921";
-  var all_device = "https://esm.erdi.cmu.ac.th/api/freshairerdi/public/index.php/api/deviceall";
-
-  var req = new XMLHttpRequest();
-  req.responseType = 'json';
-  req.open('GET', api_link, true);
-  req.onload  = function() {
-    console.log(req.response);
-  };
-  req.send(null);
+  var pole = {!! json_encode($pole) !!};
+  console.log(pole);
+  var response = {!! $response !!};
 
 
-  var locations = [
-    ["device_id: 15<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.890542, 151.274856, 4],
-    ["device_id: 17<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.923036, 151.259052, 5],
-    ["device_id: 18<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -34.028249, 151.157507, 3],
-    ["device_id: 20<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.80010128657071, 151.28747820854187, 2],
-    ["device_id: 45<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.950198, 151.259302, 1]
-  ];
+  var pm2_5 = [[]];
+  var co2 = [[]];
+  var temp = [[]];
+  var humi = [[]];
+  var dataset = [[[]]];
+  for(i in response.data){
+    var date = new Date(response.data[i].date_create_long);
+    var millisec = date.getTime();
+    pm2_5[i]= [millisec, parseInt(response.data[i].pm2_5)];
+    co2[i]  = [millisec, parseInt(response.data[i].co2)];
+    temp[i] = [millisec, parseInt(response.data[i].temp)];
+    humi[i] = [millisec, parseInt(response.data[i].humi)];
+  }
+  
+  dataset = [pm2_5, co2, temp, humi];
+  console.log(dataset);
+
   // Initialize and add the map
   function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 10,
-      center: new google.maps.LatLng(locations[0][1], locations[0][2]),
+      center: new google.maps.LatLng(pole[0]['latitude'], pole[0]['longitude']),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
     });
 
     var infowindow = new google.maps.InfoWindow();
+    var contentDiv = '<div><div id="graph_pm2_5"></div><div id="graph_co2"></div></div><div id="graph_temp"></div></div><div id="graph_humi"></div></div>';
 
-    for (var i=0; i<locations.length; i++) {  
+    google.maps.event.addListener(infowindow, 'domready', function() {
+      var graph_tag = ['graph_pm2_5', 'graph_co2', 'graph_temp', 'graph_humi'];
+      var text_tag = ['PM 2.5', 'CO2', 'Temperature', 'Humidity'];
+      for (var i=0; i<graph_tag.length; i++) {  
+        dataChart = {      
+          chart: {
+            renderTo: document.getElementById(graph_tag[i]),
+            height: 300,
+            width: 720,
+          },
+          navigator: {
+            enabled: false,
+          },
+          navigation: {
+            buttonOptions: {
+              align: 'left',
+            }
+          },
+          rangeSelector: {
+            selected: 1,            
+            buttons: [{
+              type: 'hour',
+              count: 1,
+              text: '1hr',
+              title: 'View 1 hour'
+            }, {
+              type: 'day',
+              count: 1,
+              text: '1d',
+              title: 'View 1 day'
+            }, {
+              type: 'day',
+              count: 7,
+              text: '7d',
+              title: 'View 7 days'
+            }, {
+              type: 'month',
+              count: 1,
+              text: '1M',
+              title: 'View 1 month'
+            }, {
+              type: 'ytd',
+              text: 'YTD',
+              title: 'View year to date'
+            }, {
+              type: 'year',
+              count: 1,
+              text: '1y',
+              title: 'View 1 year'
+            }, {
+              type: 'all',
+              text: 'All',
+              title: 'View all'
+            }],
+          },
+          title: {
+            text: text_tag[i]
+          },
+          series: [{
+            type: 'column',
+            name: text_tag[i],
+            data: dataset[i],
+          }],
+        }
+        chart = new Highcharts.stockChart(dataChart);
+      }
+    });
+
+    for (var i=0; i<pole.length; i++) {  
       var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        position: new google.maps.LatLng(pole[i]['latitude'], pole[i]['longitude']),
         map: map,
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
+          // infowindow.setContent(locations[i][0]);
+          // infowindow.open(map, marker);
+          infowindow.open(map, marker);				   
+          infowindow.setContent(contentDiv);         
         }
       })(marker, i));
+         
     }
   }
 </script>
