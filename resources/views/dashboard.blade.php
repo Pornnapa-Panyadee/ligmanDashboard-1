@@ -869,23 +869,19 @@
 </style>
 
 <script>
-  var airs_list = [
-    ["device_id: 15<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.890542, 151.274856, 4],
-    ["device_id: 17<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.923036, 151.259052, 5],
-    ["device_id: 18<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -34.028249, 151.157507, 3],
-    ["device_id: 20<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.80010128657071, 151.28747820854187, 2],
-    ["device_id: 45<br>co2: 0<br>humi: 59.03564<br>pm1: 34<br>pm10: 44<br>pm2_5: 35<br>pm4: 0<br>temp: 23.63959", -33.950198, 151.259302, 1]
-  ];
-  // var airs_list = {!! json_encode($poles_list) !!};
-  // console.log(airs_list);
   var poles_list = {!! json_encode($poles_list) !!};
   console.log(poles_list);
+  var response = {!! $response !!};
+  var last_air_data = response.data[response.data.length-1];
+  console.log(last_air_data);
+  var pole = {!! json_encode($pole) !!};
+
   var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
   function initMap() {    
     const air_map = new google.maps.Map(document.getElementById("air_map"), {
       zoom: 10,
-      center: new google.maps.LatLng(airs_list[0][1], airs_list[0][2]),
+      center: new google.maps.LatLng(pole[0]['latitude'], pole[0]['longitude']),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
     });
 
@@ -897,16 +893,16 @@
 
     var infowindow = new google.maps.InfoWindow();
 
-    for (var i=0; i<airs_list.length; i++) {  
+    for (var i=0; i<pole.length; i++) {  
       var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(airs_list[i][1], airs_list[i][2]),
+        position: new google.maps.LatLng(pole[i]['latitude'], pole[i]['longitude']),
         map: air_map,
         icon: iconBase + 'schools_maps.png',
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          infowindow.setContent(airs_list[i][0]);
+          infowindow.setContent("<pre>"+JSON.stringify(last_air_data,undefined, 2) +"</pre>");
           infowindow.open(air_map, marker);
         }
       })(marker, i));
