@@ -871,41 +871,58 @@
 <script>
   var poles_list = {!! json_encode($poles_list) !!};
   console.log(poles_list);
-  var response = {!! $response !!};
-  var last_air_data = response.data[response.data.length-1];
-  console.log(last_air_data);
-  var pole = {!! json_encode($pole) !!};
+
+  var air_pole = {!! json_encode($air_pole) !!};
+  console.log(air_pole);
+
+  var response = false;
+  if(air_pole!="'NA'"){
+    var response = {!! $response !!};
+    var last_air_data = response.data[response.data.length-1];
+    console.log(last_air_data);
+  }
 
   var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
   function initMap() {    
-    const air_map = new google.maps.Map(document.getElementById("air_map"), {
-      zoom: 10,
-      center: new google.maps.LatLng(pole[0]['latitude'], pole[0]['longitude']),
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-    });
+    if (response){
+      var config_air_map = {
+        zoom: 10,
+        center: new google.maps.LatLng(air_pole[0]['latitude'], air_pole[0]['longitude']),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+      }
+    }else{
+      var config_air_map = {
+        zoom: 10,
+        center: new google.maps.LatLng(0, 10),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+      }
+    }
+    const air_map = new google.maps.Map(document.getElementById("air_map"), config_air_map);
 
     const pole_map = new google.maps.Map(document.getElementById("pole_map"), {
-      zoom: 12,
-      center: new google.maps.LatLng(poles_list[0]['latitude'], poles_list[0]['longitude']),
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-    });
+        zoom: 12,
+        center: new google.maps.LatLng(poles_list[0]['latitude'], poles_list[0]['longitude']),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+      });
 
     var infowindow = new google.maps.InfoWindow();
 
-    for (var i=0; i<pole.length; i++) {  
-      var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(pole[i]['latitude'], pole[i]['longitude']),
-        map: air_map,
-        icon: iconBase + 'schools_maps.png',
-      });
+    if(response){
+      for (var i=0; i<air_pole.length; i++) {  
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(air_pole[i]['latitude'], air_pole[i]['longitude']),
+          map: air_map,
+          icon: iconBase + 'schools_maps.png',
+        });
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent("<pre>"+JSON.stringify(last_air_data,undefined, 2) +"</pre>");
-          infowindow.open(air_map, marker);
-        }
-      })(marker, i));
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+            infowindow.setContent("<pre>"+JSON.stringify(last_air_data,undefined, 2) +"</pre>");
+            infowindow.open(air_map, marker);
+          }
+        })(marker, i));
+      }
     }
 
     for (var i=0; i<poles_list.length; i++) {  
