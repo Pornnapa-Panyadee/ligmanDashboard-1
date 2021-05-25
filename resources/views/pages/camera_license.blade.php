@@ -45,10 +45,10 @@
 
 <script>
   (function() {
-    // var url = 'http://202.28.247.117/#view';
-    // newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
-    // // focus on the popup //
-    // newWindow.focus();
+    var url = {!! json_encode($data->api_link) !!};
+    newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
+    // focus on the popup //
+    newWindow.focus();
   })();
   
   // function loginerdi() {
