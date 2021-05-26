@@ -79,7 +79,7 @@
   // Initialize and add the map
   function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 10,
+      zoom: 14,
       center: new google.maps.LatLng(pole[0]['latitude'], pole[0]['longitude']),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
     });
@@ -90,67 +90,154 @@
     google.maps.event.addListener(infowindow, 'domready', function() {
       var graph_tag = ['graph_pm2_5', 'graph_co2', 'graph_temp', 'graph_humi'];
       var text_tag = ['PM 2.5', 'CO2', 'Temperature', 'Humidity'];
+      var color_pm=['#52b947','#f2ec19','#fc8946','#ec1d23','#802a7b','#350317']
+      var colors = ['#52b947', '#37474f', '#fcaf17', '#4099ff'];
+
       for (var i=0; i<graph_tag.length; i++) {  
-        dataChart = {      
-          chart: {
-            renderTo: document.getElementById(graph_tag[i]),
-            height: 300,
-            width: 720,
-          },
-          navigator: {
-            enabled: false,
-          },
-          navigation: {
-            buttonOptions: {
-              align: 'left',
-            }
-          },
-          rangeSelector: {
-            selected: 1,            
-            buttons: [{
-              type: 'hour',
-              count: 1,
-              text: '1hr',
-              title: 'View 1 hour'
-            }, {
-              type: 'day',
-              count: 1,
-              text: '1d',
-              title: 'View 1 day'
-            }, {
-              type: 'day',
-              count: 7,
-              text: '7d',
-              title: 'View 7 days'
-            }, {
-              type: 'month',
-              count: 1,
-              text: '1M',
-              title: 'View 1 month'
-            }, {
-              type: 'ytd',
-              text: 'YTD',
-              title: 'View year to date'
-            }, {
-              type: 'year',
-              count: 1,
-              text: '1y',
-              title: 'View 1 year'
-            }, {
-              type: 'all',
-              text: 'All',
-              title: 'View all'
+        if(i==0){
+          dataChart = {      
+            chart: {
+              renderTo: document.getElementById(graph_tag[i]),
+              height: 300,
+              width: 720,
+            },
+            navigator: {
+              enabled: false,
+            },
+            navigation: {
+              buttonOptions: {
+                align: 'left',
+              }
+            },
+            rangeSelector: {
+              selected: 1,            
+              buttons: [{
+                type: 'hour',
+                count: 1,
+                text: '1hr',
+                title: 'View 1 hour'
+              }, {
+                type: 'day',
+                count: 1,
+                text: '1d',
+                title: 'View 1 day'
+              }, {
+                type: 'day',
+                count: 7,
+                text: '7d',
+                title: 'View 7 days'
+              }, {
+                type: 'month',
+                count: 1,
+                text: '1M',
+                title: 'View 1 month'
+              }, {
+                type: 'ytd',
+                text: 'YTD',
+                title: 'View year to date'
+              }, {
+                type: 'year',
+                count: 1,
+                text: '1y',
+                title: 'View 1 year'
+              }, {
+                type: 'all',
+                text: 'All',
+                title: 'View all'
+              }],
+            },
+            title: {
+              text: text_tag[i]
+            },
+            series: [{
+              type: 'column',
+              name: text_tag[i],
+              data: dataset[i],
+              zonesAxis: 'y',
+                zones: [{
+                    value: 12,
+                    color: color_pm[0],
+                }, {
+                    value: 35,
+                    color: color_pm[1],
+                }, {
+                    value: 55,
+                    color: color_pm[2],
+                }, {
+                    value: 150,
+                    color: color_pm[3],
+                }, {
+                  value: 250,
+                    color: color_pm[4],
+                }, {
+                    color: color_pm[5],
+                }]
             }],
-          },
-          title: {
-            text: text_tag[i]
-          },
-          series: [{
-            type: 'column',
-            name: text_tag[i],
-            data: dataset[i],
-          }],
+          }
+        }else{
+          dataChart = {      
+            chart: {
+              renderTo: document.getElementById(graph_tag[i]),
+              height: 300,
+              width: 720,
+            },
+            navigator: {
+              enabled: false,
+            },
+            navigation: {
+              buttonOptions: {
+                align: 'left',
+              }
+            },
+            rangeSelector: {
+              selected: 1,            
+              buttons: [{
+                type: 'hour',
+                count: 1,
+                text: '1hr',
+                title: 'View 1 hour'
+              }, {
+                type: 'day',
+                count: 1,
+                text: '1d',
+                title: 'View 1 day'
+              }, {
+                type: 'day',
+                count: 7,
+                text: '7d',
+                title: 'View 7 days'
+              }, {
+                type: 'month',
+                count: 1,
+                text: '1M',
+                title: 'View 1 month'
+              }, {
+                type: 'ytd',
+                text: 'YTD',
+                title: 'View year to date'
+              }, {
+                type: 'year',
+                count: 1,
+                text: '1y',
+                title: 'View 1 year'
+              }, {
+                type: 'all',
+                text: 'All',
+                title: 'View all'
+              }],
+            },
+            title: {
+              text: text_tag[i]
+            },
+            series: [{
+              type: 'column',
+              name: text_tag[i],
+              data: dataset[i],
+              color: colors[i],
+            }],
+          }
         }
+        
         chart = new Highcharts.stockChart(dataChart);
       }
     });
