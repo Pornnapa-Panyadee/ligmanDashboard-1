@@ -882,7 +882,16 @@
     console.log(last_air_data);
   }
 
-  var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+  var iconBase = '/material/img/pin_PM/pin_pm_2/';
+  var pm_names = ['good.png', 'moderate.png', 'unhealthy.png', 'unhealth_redy.png', 'veryunhealthy.png', 'hazardous.png'];
+  // iconBase = iconBase + pm_names[4];
+  var pm_value = parseInt(last_air_data.pm2_5);
+  if(pm_value < 12) iconBase = iconBase + pm_names[0];
+  else if(pm_value < 35) iconBase = iconBase + pm_names[1];
+  else if(pm_value < 55) iconBase = iconBase + pm_names[2];
+  else if(pm_value < 150) iconBase = iconBase + pm_names[3];
+  else if(pm_value < 250) iconBase = iconBase + pm_names[4];
+  else iconBase = iconBase + pm_names[5];
 
   function initMap() {    
     if (response){
@@ -913,12 +922,13 @@
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(air_pole[i]['latitude'], air_pole[i]['longitude']),
           map: air_map,
-          icon: iconBase + 'schools_maps.png',
+          icon: iconBase,
         });
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
           return function() {
-            infowindow.setContent("<pre>"+JSON.stringify(last_air_data,undefined, 2) +"</pre>");
+            // infowindow.setContent("<pre>"+JSON.stringify(last_air_data,undefined, 2) +"</pre>");
+            infowindow.setContent("<table class='table table-sm'><tbody><tr><th scope='row'>ID</th><td>"+last_air_data.driver_id+"</td></tr><tr><th scope='row'>PM 2.5</th><td>"+last_air_data.pm2_5+"</td></tr><tr><th scope='row'>Humidity</th><td>"+last_air_data.humi+"</td></tr><tr><th scope='row'>Temperature</th><td>"+last_air_data.temp+"</td></tr></tbody></table>");
             infowindow.open(air_map, marker);
           }
         })(marker, i));
