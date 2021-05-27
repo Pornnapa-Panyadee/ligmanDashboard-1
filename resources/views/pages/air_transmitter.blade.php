@@ -74,7 +74,21 @@
   }
   
   dataset = [pm2_5, co2, temp, humi];
-  console.log(dataset);
+  // console.log(dataset);
+
+  var last_air_data = response.data[response.data.length-1];
+  console.log(last_air_data);
+
+  var iconBase = '/material/img/pin_PM/pin_pm_2/';
+  var pm_names = ['good.png', 'moderate.png', 'unhealthy.png', 'unhealth_redy.png', 'veryunhealthy.png', 'hazardous.png'];
+
+  var pm_value = parseInt(last_air_data.pm2_5);
+  if(pm_value < 12) iconBase = iconBase + pm_names[0];
+  else if(pm_value < 35) iconBase = iconBase + pm_names[1];
+  else if(pm_value < 55) iconBase = iconBase + pm_names[2];
+  else if(pm_value < 150) iconBase = iconBase + pm_names[3];
+  else if(pm_value < 250) iconBase = iconBase + pm_names[4];
+  else iconBase = iconBase + pm_names[5];
 
   // Initialize and add the map
   function initMap() {
@@ -99,7 +113,7 @@
             chart: {
               renderTo: document.getElementById(graph_tag[i]),
               height: 300,
-              width: 720,
+              width: 628,
             },
             navigator: {
               enabled: false,
@@ -179,7 +193,7 @@
             chart: {
               renderTo: document.getElementById(graph_tag[i]),
               height: 300,
-              width: 720,
+              width: 628,
             },
             navigator: {
               enabled: false,
@@ -246,6 +260,7 @@
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(pole[i]['latitude'], pole[i]['longitude']),
         map: map,
+        icon: iconBase,
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
