@@ -629,7 +629,7 @@
       timeout:5000,
       success: function() {
         if(devices_list[4]['api_link'] != null){
-          document.getElementById('faceimg').src = devices_list[3]['api_link'] + "/axis-cgi/mjpg/video.cgi";
+          document.getElementById('faceimg').src = devices_list[4]['api_link'] + "/axis-cgi/mjpg/video.cgi";
           document.getElementById('btnface').className = "btn btn-success btn-sm1";
           document.getElementById('btnface').onclick = function(ev) {window.location="{{ url('camera_face') }}";};
           document.getElementById('btnface').innerHTML = 'Online';
