@@ -882,7 +882,7 @@
     console.log(last_air_data);
   }
 
-  var iconBase = '/material/img/pin_PM/pin_pm_2/';
+  var iconBase = '/material/img/pin_PM1/';
   var pm_names = ['good.png', 'moderate.png', 'unhealthy.png', 'unhealth_redy.png', 'veryunhealthy.png', 'hazardous.png'];
   // iconBase = iconBase + pm_names[4];
   var pm_value = parseInt(last_air_data.pm2_5);
