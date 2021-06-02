@@ -3474,7 +3474,7 @@ tbody.collapse.show {
 
 .card-dashList {
   text-align: center;
-  margin: 20px;;
+  margin: 10px;
   position: relative;
   flex-direction: column;
   min-width: 0;
