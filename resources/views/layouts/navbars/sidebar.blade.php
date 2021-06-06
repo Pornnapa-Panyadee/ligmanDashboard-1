@@ -22,30 +22,25 @@
               <p>{{ __('Speed Dome Camera 360°') }}</p>
           </a>
         </li>
-        <li class="nav-item{{ $activePage == 'camera_license' ? ' active' : '' }}">
-          <a class="nav-link" href="{{ route('camera_license') }}">
-            <i class="icon-car text-orange"></i>
-              <p>{{ __('Camera Fix Lens (plate)') }}</p>
-          </a>
-        </li>
-        <li class="nav-item{{ $activePage == 'camera_temp' ? ' active' : '' }}">
-          <a class="nav-link" href="{{ route('camera_temp') }}">
-            <i class="icon-temp text-orange"></i>
-              <p>{{ __('Camera Temp Monitoring') }}</p>
-          </a>
-        </li>
-        <li class="nav-item{{ $activePage == 'camera_face' ? ' active' : '' }}">
-          <a class="nav-link" href="{{ route('camera_face') }}">
-            <i class="icon-face text-orange"></i>
-            <p>{{ __('Camera Fix Lens (Face)') }}</p>
-          </a>
-        </li>
         <li class="nav-item{{ $activePage == 'intercom' ? ' active' : '' }}">
           <a class="nav-link" href="{{ route('intercom') }}">
             <i class="icon-intercom text-orange"></i>
               <p>{{ __('Intercom') }}</p>
           </a>
         </li>
+        <li class="nav-item{{ $activePage == 'camera_license' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('camera_license') }}">
+            <i class="icon-car text-orange"></i>
+              <p>{{ __('Lens Plate Recognition') }}</p>
+          </a>
+        </li>
+        <li class="nav-item{{ $activePage == 'camera_face' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('camera_face') }}">
+            <i class="icon-face text-orange"></i>
+            <p>{{ __('Face Recognition ') }}</p>
+          </a>
+        </li>
+        
        <!-- E-save -->
        <div id="group">
           <li class="menu-title text-head ">Lighting</li>

@@ -509,6 +509,14 @@ div.absoluteMap{
   text-align:center;
   color:e8e8e8;
 }
+.icon_Face{
+  padding-top: 10px;
+  font-size:20px;
+  font-weight: bold;
+  height:234px;
+  text-align:center;
+  color:e8e8e8;
+}
 .icon_dashEs{
   font-size:14px;
   font-weight: bold;
@@ -1329,9 +1337,14 @@ pre code {
   background-color: #fafafa;
 }
 
+.table-sm th{
+  background-color: #f5cf84;
+  
+}
 .table-sm th,
 .table-sm td {
   padding: 0.3rem;
+  text-align: center;
 }
 
 .table-bordered {
