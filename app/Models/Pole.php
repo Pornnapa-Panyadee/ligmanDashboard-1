@@ -19,5 +19,6 @@ class Pole extends Authenticatable
         'location',
         'latitude',
         'longitude',
+        'user_id',
     ];
 }

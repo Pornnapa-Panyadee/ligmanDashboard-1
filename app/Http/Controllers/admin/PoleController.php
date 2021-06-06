@@ -40,7 +40,14 @@ class PoleController extends Controller
             return back()->withStatus(__('Information Invalid. Try again.'));
         }
 
-        Pole::create($request->all());
+        // Pole::create($request->all());
+        Pole::create([
+            'latitude' => $data['latitude'],
+            'longitude' => $data['longitude'],
+            'location' => $data['location'],
+            'user_id' => auth()->user()->id,
+        ]);
+
 
         return redirect('admin/list')->withStatus(__('Create Pole Successed.'));
     }
