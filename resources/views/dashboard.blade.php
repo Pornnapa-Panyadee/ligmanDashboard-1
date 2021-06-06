@@ -104,7 +104,7 @@
                             </div>
                           </div>
                         <!-- camera 3 device -->
-                          <div class="row" style="margin-top:3px;">
+                          <!-- <div class="row" style="margin-top:3px;">
                             <div class="col-md-4">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
@@ -164,6 +164,54 @@
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>{{$devices_list[4]->pole_id}}</span></div> 
                                     <span class="text_font">{{ __('Face') }}</span>
+                                    <div class="absolute1">
+                                      <button id="btnface" class="btn btn-offline btn-sm1">Offline</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+                        <!-- Edit 2 device From Erdi -->
+                        <div class="row" style="margin-top:3px;">
+                            <div class="col-md-8">
+                              <div class="card-dash">
+                                <div class="card-header card-header-white">
+                                  <div class="ct-chart" style="
+                                  height:240px;display: flex;
+                                  justify-content: center;
+                                  align-items: center;"
+                                  ><img id="licenseimg" width="50%" src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png">
+                                    
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="stats">
+                                    <hr class="dash_status">
+                                    <div class="dash-tri"><span>{{$devices_list[3]->pole_id}}</span></div> 
+                                    <span class="text_font">{{ __('Licence Plate Recognition') }}</span>
+                                    <div class="absolute1">
+                                      <button id="btnlicense" class="btn btn-offline btn-sm1">Offline</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-4">
+                              <div class="card-dash">
+                                <div class="card-header ">
+                                  <div  class="icon_Face">
+                                      <a id="faceimg"  href="#">
+                                      <i class="icon-face text-orange"  style="font-size:120px;"></i>
+                                      <p>Face Recognition <br>Thermometer</p>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="stats">
+                                    <hr class="dash_status">
+                                    <div class="dash-tri"><span>{{$devices_list[4]->pole_id}}</span></div> 
                                     <div class="absolute1">
                                       <button id="btnface" class="btn btn-offline btn-sm1">Offline</button>
                                     </div>
@@ -928,7 +976,7 @@
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
           return function() {
             // infowindow.setContent("<pre>"+JSON.stringify(last_air_data,undefined, 2) +"</pre>");
-            infowindow.setContent("<table class='table table-sm'><tbody><tr><th scope='row'>ID</th><td>"+last_air_data.driver_id+"</td></tr><tr><th scope='row'>PM 2.5</th><td>"+last_air_data.pm2_5+"</td></tr><tr><th scope='row'>Humidity</th><td>"+last_air_data.humi+"</td></tr><tr><th scope='row'>Temperature</th><td>"+last_air_data.temp+"</td></tr></tbody></table>");
+            infowindow.setContent("<table class='table table-sm table-bordered'><tbody><tr><th>PM 2.5</th><th>Hum</th><th>Temp</th> </tr><tr><td>"+last_air_data.pm2_5+" </td> <td>"+parseInt(last_air_data.humi)+"</td><td>"+parseInt(last_air_data.temp)+"</td></tr></tbody></table>");
             infowindow.open(air_map, marker);
           }
         })(marker, i));
