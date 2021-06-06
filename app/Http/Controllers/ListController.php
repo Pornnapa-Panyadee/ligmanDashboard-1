@@ -51,6 +51,7 @@ class ListController extends Controller
 
     protected function deleteAccount($user_id)
     {
+        DB::table('device_users')->where('user_id', $user_id)->delete();
         DB::table('users')->where('id', $user_id)->delete();
 
         return back()->withStatus(__('Delete Account Successed.'));
