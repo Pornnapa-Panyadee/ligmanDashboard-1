@@ -20,13 +20,16 @@
             </div>
           </div>
         </div>
+        <div id="map"></div>
+        <div class="row justify-content-end"> <img src = "{{ asset('material/img/pm25.png') }}" width="40%" > </div>
       </div>
     </div>
+    
   </div>
   {{-- <iframe width="100%" height="730px" frameborder="0" allowfullscreen 
     src="//umap.openstreetmap.fr/th-th/map/air-transmitter_595019?scaleControl=true&miniMap=true&scrollWheelZoom=true&zoomControl=null&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false#16/18.7953/458.9519">
   </iframe>             --}}
-  <div id="map"></div>
+  
 </div>
 
 <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
