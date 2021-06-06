@@ -21,7 +21,9 @@ class PoleController extends Controller
 
     public function getIndex()
     {
-        $poles_list = DB::select('SELECT * FROM `poles`');
+        // $poles_list = DB::select('SELECT * FROM `poles`');
+        $user_id = auth()->user()->id;
+        $poles_list = DB::select('SELECT * FROM `poles` WHERE `user_id`='.$user_id);
         return view('adminForm.admin.location', ['poles_list' => $poles_list]);
     }
 

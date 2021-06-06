@@ -35,7 +35,8 @@ class HomeController extends Controller
                 WHERE device_users.user_id=".$user_id.") table_1 ON devices.id=table_1.device_id";
 
         $devices_list = DB::select($sql);
-        $poles_list = DB::select("SELECT * FROM `poles`");
+        // $poles_list = DB::select("SELECT * FROM `poles`");
+        $poles_list = DB::select('SELECT * FROM `poles` WHERE `user_id`='.$user_id);
         
         $air_pole = "'NA'";
         $response = "'NA'";
@@ -76,7 +77,8 @@ class HomeController extends Controller
                 WHERE device_users.user_id=".$admin_id.") table_1 ON devices.id=table_1.device_id";
 
         $devices_list = DB::select($sql);
-        $poles_list = DB::select("SELECT * FROM `poles`");
+        // $poles_list = DB::select("SELECT * FROM `poles`");
+        $poles_list = DB::select('SELECT * FROM `poles` WHERE `user_id`='.$admin_id);
         $air_pole = "'NA'";
         $response = "'NA'";
 

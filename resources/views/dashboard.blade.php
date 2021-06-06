@@ -917,31 +917,31 @@
 </style>
 
 <script>
-  var poles_list = {!! json_encode($poles_list) !!};
-  console.log(poles_list);
+  function initMap() {
+    var poles_list = {!! json_encode($poles_list) !!};
+    console.log(poles_list);
 
-  var air_pole = {!! json_encode($air_pole) !!};
-  console.log(air_pole);
+    var air_pole = {!! json_encode($air_pole) !!};
+    console.log(air_pole);
 
-  var response = false;
-  if(air_pole!="'NA'"){
-    var response = {!! $response !!};
-    var last_air_data = response.data[response.data.length-1];
-    console.log(last_air_data);
-  }
+    var response = false;
+    if(air_pole!="'NA'"){
+      var response = {!! $response !!};
+      var last_air_data = response.data[response.data.length-1];
+      console.log(last_air_data);
+    }
 
-  var iconBase = '/material/img/pin_PM1/';
-  var pm_names = ['good.png', 'moderate.png', 'unhealthy.png', 'unhealth_redy.png', 'veryunhealthy.png', 'hazardous.png'];
-  // iconBase = iconBase + pm_names[4];
-  var pm_value = parseInt(last_air_data.pm2_5);
-  if(pm_value < 12) iconBase = iconBase + pm_names[0];
-  else if(pm_value < 35) iconBase = iconBase + pm_names[1];
-  else if(pm_value < 55) iconBase = iconBase + pm_names[2];
-  else if(pm_value < 150) iconBase = iconBase + pm_names[3];
-  else if(pm_value < 250) iconBase = iconBase + pm_names[4];
-  else iconBase = iconBase + pm_names[5];
+    var iconBase = '/material/img/pin_PM1/';
+    var pm_names = ['good.png', 'moderate.png', 'unhealthy.png', 'unhealth_redy.png', 'veryunhealthy.png', 'hazardous.png'];
+    // iconBase = iconBase + pm_names[4];
+    var pm_value = parseInt(last_air_data.pm2_5);
+    if(pm_value < 12) iconBase = iconBase + pm_names[0];
+    else if(pm_value < 35) iconBase = iconBase + pm_names[1];
+    else if(pm_value < 55) iconBase = iconBase + pm_names[2];
+    else if(pm_value < 150) iconBase = iconBase + pm_names[3];
+    else if(pm_value < 250) iconBase = iconBase + pm_names[4];
+    else iconBase = iconBase + pm_names[5];
 
-  function initMap() {    
     if (response){
       var config_air_map = {
         zoom: 10,
