@@ -35,7 +35,8 @@
 </div>
 
 <script>
-  window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
+  // window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
+  window.frames["myFrame"].location = "http://147.50.41.133:82/admin";
 </script>
 
 {{-- <form name="erdiForm" id="erdiForm" method="POST" action={{$data->api_link}} target="_blank"> 
@@ -45,7 +46,8 @@
 
 <script>
   (function() {
-    var url = {!! json_encode($data->api_link) !!};
+    // var url = {!! json_encode($data->api_link) !!};
+    var url = "http://147.50.41.133:82/admin";
     newWindow = window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=no,top=190,left=255,width=1640,height=800");
     // focus on the popup //
     newWindow.focus();
