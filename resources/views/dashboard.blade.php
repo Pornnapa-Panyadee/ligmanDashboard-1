@@ -574,13 +574,12 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-  var devices_list = {!! json_encode($devices_list) !!};
-  console.log(devices_list);
-  var restdevice = 0;
-  var totaldevice = devices_list.length;
-  document.getElementById('totaldevice').innerHTML = "/"+totaldevice;
-
   (function() {
+    var devices_list = {!! json_encode($devices_list) !!};
+    console.log(devices_list);
+    var restdevice = 0;
+    var totaldevice = devices_list.length;
+    document.getElementById('totaldevice').innerHTML = "/"+totaldevice;
     // camera360
     $.ajax({
       type: "GET",
@@ -894,10 +893,15 @@
         console.log("Air Transmitter error");      
       },
     });
+    google.maps.event.addDomListener(window, 'load', initMap);
   })();
 </script>
 
 <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+{{-- <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqTFzYkIkd1fw2jyCxkCVsRprw-RSs0AU&callback=initMap&libraries=&v=weekly"
+  async>
+</script> --}}
 <script
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqTFzYkIkd1fw2jyCxkCVsRprw-RSs0AU&callback=initMap&libraries=&v=weekly"
   async>
@@ -919,49 +923,49 @@
 <script>
   function initMap() {
     var poles_list = {!! json_encode($poles_list) !!};
-    console.log(poles_list);
+    console.log(poles_list.length);
+    var isPole = true;
+    if(poles_list.length==0){
+      isPole = false;
+      poles_list = [{'latitude':0, 'longitude':10}];
+    }
 
     var air_pole = {!! json_encode($air_pole) !!};
-    console.log(air_pole);
 
     var response = false;
     if(air_pole!="'NA'"){
       var response = {!! $response !!};
       var last_air_data = response.data[response.data.length-1];
       console.log(last_air_data);
+    }else{
+      air_pole = [{'latitude':0, 'longitude':10}];
+      console.log(air_pole);
     }
 
     var iconBase = '/material/img/pin_PM1/';
     var pm_names = ['good.png', 'moderate.png', 'unhealthy.png', 'unhealth_redy.png', 'veryunhealthy.png', 'hazardous.png'];
     // iconBase = iconBase + pm_names[4];
-    var pm_value = parseInt(last_air_data.pm2_5);
-    if(pm_value < 12) iconBase = iconBase + pm_names[0];
-    else if(pm_value < 35) iconBase = iconBase + pm_names[1];
-    else if(pm_value < 55) iconBase = iconBase + pm_names[2];
-    else if(pm_value < 150) iconBase = iconBase + pm_names[3];
-    else if(pm_value < 250) iconBase = iconBase + pm_names[4];
-    else iconBase = iconBase + pm_names[5];
-
-    if (response){
-      var config_air_map = {
-        zoom: 10,
-        center: new google.maps.LatLng(air_pole[0]['latitude'], air_pole[0]['longitude']),
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-      }
-    }else{
-      var config_air_map = {
-        zoom: 10,
-        center: new google.maps.LatLng(0, 10),
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-      }
+    if(response){
+      var pm_value = parseInt(last_air_data.pm2_5);
+      if(pm_value < 12) iconBase = iconBase + pm_names[0];
+      else if(pm_value < 35) iconBase = iconBase + pm_names[1];
+      else if(pm_value < 55) iconBase = iconBase + pm_names[2];
+      else if(pm_value < 150) iconBase = iconBase + pm_names[3];
+      else if(pm_value < 250) iconBase = iconBase + pm_names[4];
+      else iconBase = iconBase + pm_names[5];
     }
-    const air_map = new google.maps.Map(document.getElementById("air_map"), config_air_map);
+
+    const air_map = new google.maps.Map(document.getElementById("air_map"), {
+      zoom: 10,
+      center: new google.maps.LatLng(air_pole[0]['latitude'], air_pole[0]['longitude']),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    });
 
     const pole_map = new google.maps.Map(document.getElementById("pole_map"), {
-        zoom: 12,
-        center: new google.maps.LatLng(poles_list[0]['latitude'], poles_list[0]['longitude']),
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-      });
+      zoom: 12,
+      center: new google.maps.LatLng(poles_list[0]['latitude'], poles_list[0]['longitude']),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    });
 
     var infowindow = new google.maps.InfoWindow();
 
@@ -983,18 +987,20 @@
       }
     }
 
-    for (var i=0; i<poles_list.length; i++) {  
-      var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(poles_list[i]['latitude'], poles_list[i]['longitude']),
-        map: pole_map,
-      });
+    if(isPole){
+      for (var i=0; i<poles_list.length; i++) {  
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(poles_list[i]['latitude'], poles_list[i]['longitude']),
+          map: pole_map,
+        });
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(poles_list[i]['location']);
-          infowindow.open(pole_map, marker);
-        }
-      })(marker, i));
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+            infowindow.setContent(poles_list[i]['location']);
+            infowindow.open(pole_map, marker);
+          }
+        })(marker, i));
+      }
     }
   }
 </script>

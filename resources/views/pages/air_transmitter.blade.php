@@ -57,44 +57,48 @@
 <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
 
 <script>
-  var pole = {!! json_encode($pole) !!};
-  console.log(pole);
-  var response = {!! $response !!};
-
-
-  var pm2_5 = [[]];
-  var co2 = [[]];
-  var temp = [[]];
-  var humi = [[]];
-  var dataset = [[[]]];
-  for(i in response.data){
-    var date = new Date(response.data[i].date_create_long);
-    var millisec = date.getTime();
-    pm2_5[i]= [millisec, parseInt(response.data[i].pm2_5)];
-    co2[i]  = [millisec, parseInt(response.data[i].co2)];
-    temp[i] = [millisec, parseInt(response.data[i].temp)];
-    humi[i] = [millisec, parseInt(response.data[i].humi)];
-  }
-  
-  dataset = [pm2_5, co2, temp, humi];
-  // console.log(dataset);
-
-  var last_air_data = response.data[response.data.length-1];
-  console.log(last_air_data);
-
-  var iconBase = '/material/img/pin_PM1/';
-  var pm_names = ['good.png', 'moderate.png', 'unhealthy.png', 'unhealth_redy.png', 'veryunhealthy.png', 'hazardous.png'];
-
-  var pm_value = parseInt(last_air_data.pm2_5);
-  if(pm_value < 12) iconBase = iconBase + pm_names[0];
-  else if(pm_value < 35) iconBase = iconBase + pm_names[1];
-  else if(pm_value < 55) iconBase = iconBase + pm_names[2];
-  else if(pm_value < 150) iconBase = iconBase + pm_names[3];
-  else if(pm_value < 250) iconBase = iconBase + pm_names[4];
-  else iconBase = iconBase + pm_names[5];
+  (function() {
+    google.maps.event.addDomListener(window, 'load', initMap);
+  })();
 
   // Initialize and add the map
   function initMap() {
+    var pole = {!! json_encode($pole) !!};
+    console.log(pole);
+    var response = {!! $response !!};
+
+    var pm2_5 = [[]];
+    var co2 = [[]];
+    var temp = [[]];
+    var humi = [[]];
+    var dataset = [[[]]];
+    
+    for(i in response.data){
+      var date = new Date(response.data[i].date_create_long);
+      var millisec = date.getTime();
+      pm2_5[i]= [millisec, parseInt(response.data[i].pm2_5)];
+      co2[i]  = [millisec, parseInt(response.data[i].co2)];
+      temp[i] = [millisec, parseInt(response.data[i].temp)];
+      humi[i] = [millisec, parseInt(response.data[i].humi)];
+    }
+    
+    dataset = [pm2_5, co2, temp, humi];
+    // console.log(dataset);
+
+    var last_air_data = response.data[response.data.length-1];
+    console.log(last_air_data);
+
+    var iconBase = '/material/img/pin_PM1/';
+    var pm_names = ['good.png', 'moderate.png', 'unhealthy.png', 'unhealth_redy.png', 'veryunhealthy.png', 'hazardous.png'];
+
+    var pm_value = parseInt(last_air_data.pm2_5);
+    if(pm_value < 12) iconBase = iconBase + pm_names[0];
+    else if(pm_value < 35) iconBase = iconBase + pm_names[1];
+    else if(pm_value < 55) iconBase = iconBase + pm_names[2];
+    else if(pm_value < 150) iconBase = iconBase + pm_names[3];
+    else if(pm_value < 250) iconBase = iconBase + pm_names[4];
+    else iconBase = iconBase + pm_names[5];
+    
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 14,
       center: new google.maps.LatLng(pole[0]['latitude'], pole[0]['longitude']),
