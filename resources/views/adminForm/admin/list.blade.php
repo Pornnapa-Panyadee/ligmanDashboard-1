@@ -1,4 +1,4 @@
-@extends('layouts.app_admin', ['activePage' => 'listadmin', 'titlePage' => __('Create Account')])
+@extends($slidebar, ['activePage' => 'listadmin', 'titlePage' => __('Create Account')])
 
 @section('content')
 <div class="content">
