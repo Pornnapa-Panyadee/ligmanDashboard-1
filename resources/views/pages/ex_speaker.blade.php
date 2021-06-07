@@ -14,10 +14,10 @@
         <div class="card-header card-header-primary">
           <h5>username: {{$data->device_username}}</h5>
           <h5>password: {{$data->device_password}}</h5>
-          <h4 class="card-title">First Entry</h4>
+          {{-- <h4 class="card-title">First Entry</h4>
           <p class="card-category">If you never login to "EXSTREAMER" click this button 
             <button type="button" class="btn btn-success" onclick="loginexspeaker()">Auto Login</button> only once. After this, it is not necessary.
-          </p>
+          </p> --}}
         </div>
         <div class="row">
           <div class="col-md-12">
@@ -40,10 +40,10 @@
   window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
 </script>
 
-<form name="exspeakForm" id="exspeakForm" method="POST" action={{$data->api_link}} target="_blank"> 
+{{-- <form name="exspeakForm" id="exspeakForm" method="POST" action={{$data->api_link}} target="_blank"> 
   <input type=hidden id="usrname" name="usrname" value="admin"/>
   <input type=hidden id="usrcode" name="usrcode" value="ligman"/>
-</form>
+</form> --}}
 
 <script>
   function loginexspeaker(){
