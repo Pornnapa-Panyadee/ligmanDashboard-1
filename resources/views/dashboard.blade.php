@@ -188,7 +188,7 @@
                                 <div class="card-footer">
                                   <div class="stats">
                                     <hr class="dash_status">
-                                    <div class="dash-tri"><span>{{$devices_list[3]->pole_id}}</span></div> 
+                                    <div class="dash-tri"><span>{{$devices_list[2]->pole_id}}</span></div> 
                                     <span class="text_font">{{ __('Licence Plate Recognition') }}</span>
                                     <div class="absolute1">
                                       <button id="btnlicense" class="btn btn-offline btn-sm1">Offline</button>
@@ -211,7 +211,7 @@
                                 <div class="card-footer">
                                   <div class="stats">
                                     <hr class="dash_status">
-                                    <div class="dash-tri"><span>{{$devices_list[4]->pole_id}}</span></div> 
+                                    <div class="dash-tri"><span>{{$devices_list[3]->pole_id}}</span></div> 
                                     <div class="absolute1">
                                       <button id="btnface" class="btn btn-offline btn-sm1">Offline</button>
                                     </div>
@@ -259,7 +259,7 @@
                                   <div class="card-footer">
                                     <div class="stats">
                                       <hr class="dash_status1">
-                                      <div class="dash-tri"><span>{{$devices_list[5]->pole_id}}</span></div> 
+                                      <div class="dash-tri"><span>{{$devices_list[4]->pole_id}}</span></div> 
                                       <div class="absolute1">
                                         <button id="btnesave1" class="btn btn-offline btn-sm2">Offline</button>
                                       </div>
@@ -281,7 +281,7 @@
                                   <div class="card-footer">
                                     <div class="stats">
                                       <hr class="dash_status1">
-                                      <div class="dash-tri"><span>{{$devices_list[6]->pole_id}}</span></div> 
+                                      <div class="dash-tri"><span>{{$devices_list[5]->pole_id}}</span></div> 
                                       <div class="absolute1">
                                         <button id="btnesave2" class="btn btn-offline btn-sm2">Offline</button>
                                       </div>
@@ -303,7 +303,7 @@
                                   <div class="card-footer">
                                   <div class="stats">
                                       <hr class="dash_status1">
-                                      <div class="dash-tri"><span>{{$devices_list[7]->pole_id}}</span></div> 
+                                      <div class="dash-tri"><span>{{$devices_list[6]->pole_id}}</span></div> 
                                       <div class="absolute1">
                                         <button id="btnesave3" class="btn btn-offline btn-sm2">Offline</button>
                                       </div>
@@ -325,7 +325,7 @@
                                   <div class="card-footer">
                                     <div class="stats">
                                       <hr class="dash_status1">
-                                      <div class="dash-tri"><span>{{$devices_list[8]->pole_id}}</span></div> 
+                                      <div class="dash-tri"><span>{{$devices_list[7]->pole_id}}</span></div> 
                                       <div class="absolute1">
                                         <button id="btnesave4" class="btn btn-offline btn-sm2">Offline</button>
                                       </div>
@@ -347,7 +347,7 @@
                                   <div class="card-footer">
                                     <div class="stats">
                                       <hr class="dash_status1">
-                                      <div class="dash-tri"><span>{{$devices_list[9]->pole_id}}</span></div> 
+                                      <div class="dash-tri"><span>{{$devices_list[8]->pole_id}}</span></div> 
                                       <div class="absolute1">
                                         <button id="btnesave5" class="btn btn-offline btn-sm2">Offline</button>
                                       </div>
@@ -395,7 +395,7 @@
                                     <div class="card-footer">
                                       <div class="stats">
                                           <hr class="dash_status1">
-                                          <div class="dash-tri"><span>{{$devices_list[10]->pole_id}}</span></div> 
+                                          <div class="dash-tri"><span>{{$devices_list[9]->pole_id}}</span></div> 
                                           <div class="absolute1">
                                             {{-- <iframe id="loginexstreamer" style="display: none;" src={{$devices_list[10]->api_link}}></iframe> --}}
                                             <button id="btnexstreamer" class="btn btn-offline btn-sm3">Offline</button>
@@ -418,7 +418,7 @@
                                     <div class="card-footer">
                                       <div class="stats">
                                         <hr class="dash_status1">
-                                        <div class="dash-tri"><span>{{$devices_list[11]->pole_id}}</span></div> 
+                                        <div class="dash-tri"><span>{{$devices_list[10]->pole_id}}</span></div> 
                                         <div class="absolute1">
                                           <iframe id="logininstreamer" style="display: none;" src={{$devices_list[11]->api_link}}></iframe>
                                           <button id="btninstreamer" class="btn btn-offline btn-sm3">Offline</button>
@@ -441,7 +441,7 @@
                                     <div class="card-footer">
                                       <div class="stats">
                                         <hr class="dash_status1">
-                                        <div class="dash-tri"><span>{{$devices_list[12]->pole_id}}</span></div> 
+                                        <div class="dash-tri"><span>{{$devices_list[11]->pole_id}}</span></div> 
                                         <div class="absolute1">
                                           <button id="btndigital" class="btn btn-offline btn-sm3">Offline</button>
                                         </div>
@@ -463,7 +463,7 @@
                                     <div class="card-footer">
                                       <div class="stats">
                                         <hr class="dash_status1">
-                                        <div class="dash-tri"><span>{{$devices_list[13]->pole_id}}</span></div> 
+                                        <div class="dash-tri"><span>{{$devices_list[12]->pole_id}}</span></div> 
                                         <div class="absolute1">
                                           <button id="btnplug" class="btn btn-offline btn-sm3">Offline</button>
                                         </div>
