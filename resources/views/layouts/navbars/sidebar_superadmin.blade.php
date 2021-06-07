@@ -30,6 +30,13 @@
           </a>
         </li>
 
+        <li class="nav-item{{ $activePage == 'deviceSuperadmin' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('adminForm.superadmin.device') }}">
+            <i class="material-icons text-orange">format_list_bulleted</i>
+            <p>{{ __('Device Settings') }}</p>
+          </a>
+        </li>
+
         <li class="nav-item{{ $activePage == 'superadminDashboard' ? ' active' : '' }}">
           <a class="nav-link" href="{{ route('adminForm.superadmin.dashboard') }}">
             <i class="material-icons text-orange">dashboard</i>

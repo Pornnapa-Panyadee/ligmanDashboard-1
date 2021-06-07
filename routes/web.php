@@ -152,6 +152,10 @@ Route::group(['middleware' => 'auth'], function () {
   	// Route::get('superadmin/dashboard', function () {return view('adminForm.superadmin.dashboardAll');})->name('adminForm.superadmin.dashboard');
 	Route::get('superadmin/dashboard', ['as' => 'adminForm.superadmin.dashboard', 'uses' => 'App\Http\Controllers\HomeController@index']);
 	Route::get('superadmin/dashboard/{admin_id}', ['as' => 'adminForm.superadmin.dashboard_i', 'uses' => 'App\Http\Controllers\HomeController@index_i']);
+	// Add
+	Route::get('superadmin/device', ['as' => 'adminForm.superadmin.device', 'uses' => 'App\Http\Controllers\ListController@getDevice']);
+
+
 
 	// Delete
 	Route::post('superadmin/delaccount{user_id}', ['as' => 'adminForm.admin.delete_account', 'uses' => 'App\Http\Controllers\ListController@deleteAccount']);
