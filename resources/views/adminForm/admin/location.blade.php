@@ -1,4 +1,4 @@
-@extends('layouts.app_admin', ['activePage' => 'create_location', 'titlePage' => __('Create Pole Location')])
+@extends($slidebar, ['activePage' => 'create_location', 'titlePage' => __('Create Pole Location')])
 
 @section('content')
 

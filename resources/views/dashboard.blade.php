@@ -513,7 +513,7 @@
                                     <div class="card-footer">
                                       <div class="stats">
                                         <hr class="dash_status1">
-                                        <div class="dash-tri"><span>{{$devices_list[14]->pole_id}}</span></div> 
+                                        <div class="dash-tri"><span>{{$devices_list[13]->pole_id}}</span></div> 
                                         <span class="text_font">{{ __('Air Transmitter') }}</span>
                                         <div class="absolute1">
                                           <button id="btnpmair" class="btn btn-offline btn-sm3">Offline</button>
@@ -625,37 +625,15 @@
         // document.getElementById('interimg').src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png"; 
       },
     });
-    // temp camera
+    // LPR
     $.ajax({
       type: "GET",
-      // url: "http://202.28.247.117",
       url: devices_list[2]['api_link'],
       dataType: "script",
       timeout:5000,
       success: function() {
         if(devices_list[2]['api_link'] != null){
-          document.getElementById('tempimg').src = devices_list[2]['api_link'] + "/axis-cgi/mjpg/video.cgi";
-          document.getElementById('btntemp').className = "btn btn-success btn-sm1";
-          document.getElementById('btntemp').onclick = function(ev) {window.location="{{ url('camera_temp') }}";};
-          document.getElementById('btntemp').innerHTML = 'Online';
-          restdevice++;
-          document.getElementById('restdevice').innerHTML = restdevice;
-        }
-      },
-      error: function() {
-        console.log("temp camera error");      
-        // document.getElementById('tempimg').src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png"; 
-      },
-    });
-    // LPR
-    $.ajax({
-      type: "GET",
-      url: devices_list[3]['api_link'],
-      dataType: "script",
-      timeout:5000,
-      success: function() {
-        if(devices_list[3]['api_link'] != null){
-          document.getElementById('licenseimg').src = devices_list[3]['api_link'] + "/axis-cgi/mjpg/video.cgi";
+          document.getElementById('licenseimg').src = devices_list[2]['api_link'] + "/axis-cgi/mjpg/video.cgi";
           document.getElementById('btnlicense').className = "btn btn-success btn-sm1";
           document.getElementById('btnlicense').onclick = function(ev) {window.location="{{ url('camera_license') }}";};
           document.getElementById('btnlicense').innerHTML = 'Online';
@@ -671,12 +649,12 @@
     // face camera
     $.ajax({
       type: "GET",
-      url: devices_list[4]['api_link'],
+      url: devices_list[3]['api_link'],
       dataType: "script",
       timeout:5000,
       success: function() {
-        if(devices_list[4]['api_link'] != null){
-          document.getElementById('faceimg').src = devices_list[4]['api_link'] + "/axis-cgi/mjpg/video.cgi";
+        if(devices_list[3]['api_link'] != null){
+          document.getElementById('faceimg').src = devices_list[3]['api_link'] + "/axis-cgi/mjpg/video.cgi";
           document.getElementById('btnface').className = "btn btn-success btn-sm1";
           document.getElementById('btnface').onclick = function(ev) {window.location="{{ url('camera_face') }}";};
           document.getElementById('btnface').innerHTML = 'Online';
@@ -692,11 +670,11 @@
     // esave dashboard
     $.ajax({
       type: "GET",
-      url: devices_list[5]['api_link'],
+      url: devices_list[4]['api_link'],
       dataType: "script",
       timeout:5000,
       success: function() {
-        if(devices_list[5]['api_link'] != null){
+        if(devices_list[4]['api_link'] != null){
           document.getElementById('esave1').href = "{{ route('esave_dashboard') }}";
           document.getElementById('btnesave1').className = "btn btn-success btn-sm2";
           document.getElementById('btnesave1').onclick = function(ev) {window.location="{{ url('esave_dashboard') }}";};
@@ -712,11 +690,11 @@
     // cluster projector
     $.ajax({
       type: "GET",
-      url: devices_list[6]['api_link'],
+      url: devices_list[5]['api_link'],
       dataType: "script",
       timeout:5000,
       success: function() {
-        if(devices_list[6]['api_link'] != null){
+        if(devices_list[5]['api_link'] != null){
           document.getElementById('esave2').href = "{{ route('cluster_projector') }}";
           document.getElementById('btnesave2').className = "btn btn-success btn-sm2";
           document.getElementById('btnesave2').onclick = function(ev) {window.location="{{ url('cluster_projector') }}";};
@@ -732,11 +710,11 @@
     // cluster projector lador
     $.ajax({
       type: "GET",
-      url: devices_list[7]['api_link'],
+      url: devices_list[6]['api_link'],
       dataType: "script",
       timeout:5000,
       success: function() {
-        if(devices_list[7]['api_link'] != null){
+        if(devices_list[6]['api_link'] != null){
           document.getElementById('esave3').href = "{{ route('cluster_projector_lador') }}";
           document.getElementById('btnesave3').className = "btn btn-success btn-sm2";
           document.getElementById('btnesave3').onclick = function(ev) {window.location="{{ url('cluster_projector_lador') }}";};
@@ -752,11 +730,11 @@
     // meteodata
     $.ajax({
       type: "GET",
-      url: devices_list[8]['api_link'],
+      url: devices_list[7]['api_link'],
       dataType: "script",
       timeout:5000,
       success: function() {
-        if(devices_list[8]['api_link'] != null){
+        if(devices_list[7]['api_link'] != null){
           document.getElementById('esave4').href = "{{ route('meteodata') }}";
           document.getElementById('btnesave4').className = "btn btn-success btn-sm2";
           document.getElementById('btnesave4').onclick = function(ev) {window.location="{{ url('meteodata') }}";};
@@ -772,11 +750,11 @@
     // occupancy
     $.ajax({
       type: "GET",
-      url: devices_list[9]['api_link'],
+      url: devices_list[8]['api_link'],
       dataType: "script",
       timeout:5000,
       success: function() {
-        if(devices_list[9]['api_link'] != null){
+        if(devices_list[8]['api_link'] != null){
           document.getElementById('esave5').href = "{{ route('occupancy') }}";
           document.getElementById('btnesave5').className = "btn btn-success btn-sm2";
           document.getElementById('btnesave5').onclick = function(ev) {window.location="{{ url('occupancy') }}";};
@@ -793,11 +771,11 @@
     $.ajax({
       type: "GET",
       // url: "http://10.2.4.52/index.html",
-      url: devices_list[10]['api_link'],
+      url: devices_list[9]['api_link'],
       dataType: "script",
       timeout:5000,
       success: function() {
-        if(devices_list[10]['api_link'] != null){
+        if(devices_list[9]['api_link'] != null){
           document.getElementById('exstreamer').href = "{{ route('ex_speaker') }}";
           document.getElementById('btnexstreamer').className = "btn btn-success btn-sm3";
           document.getElementById('btnexstreamer').onclick = function(ev) {window.location="{{ url('ex_speaker') }}";};
@@ -814,11 +792,11 @@
     $.ajax({
       type: "GET",
       // url: "http://10.2.4.53/index.html",
-      url: devices_list[11]['api_link'],
+      url: devices_list[10]['api_link'],
       dataType: "script",
       timeout:5000,
       success: function() {
-        if(devices_list[11]['api_link'] != null){
+        if(devices_list[10]['api_link'] != null){
           document.getElementById('instreamer').href = "{{ route('in_speaker') }}";
           document.getElementById('btninstreamer').className = "btn btn-success btn-sm3";
           document.getElementById('btninstreamer').onclick = function(ev) {window.location="{{ url('in_speaker') }}";};
@@ -835,11 +813,11 @@
     $.ajax({
       type: "GET",
       // url: "https://edsbox.net/CMService/FreeLogin",
-      url: devices_list[12]['api_link'],
+      url: devices_list[11]['api_link'],
       dataType: "script",
       timeout:5000,
       success: function() {
-        if(devices_list[12]['api_link'] != null){
+        if(devices_list[11]['api_link'] != null){
           document.getElementById('digital').href = "{{ route('digital_signage') }}";
           document.getElementById('btndigital').className = "btn btn-success btn-sm3";
           document.getElementById('btndigital').onclick = function(ev) {window.location="{{ url('digital_signage') }}";};
@@ -855,11 +833,11 @@
     // round plug
     $.ajax({
       type: "GET",
-      url: devices_list[13]['api_link'],
+      url: devices_list[12]['api_link'],
       dataType: "script",
       timeout:5000,
       success: function() {
-        if(devices_list[13]['api_link'] != null){
+        if(devices_list[12]['api_link'] != null){
           document.getElementById('plug').href = "{{ route('power_socket') }}";
           document.getElementById('btnplug').className = "btn btn-success btn-sm3";
           document.getElementById('btnplug').onclick = function(ev) {window.location="{{ url('power_socket') }}";};
@@ -876,11 +854,11 @@
     $.ajax({
       type: "GET",
       // url: "https://umap.openstreetmap.fr/th-th/",
-      url: devices_list[14]['api_link'],
+      url: devices_list[13]['api_link'],
       dataType: "script",
       timeout:5000,
       success: function() {
-        if(devices_list[14]['api_link'] != null){
+        if(devices_list[13]['api_link'] != null){
           document.getElementById('plug').href = "{{ route('air_transmitter') }}";
           document.getElementById('btnpmair').className = "btn btn-success btn-sm3";
           document.getElementById('btnpmair').onclick = function(ev) {window.location="{{ url('air_transmitter') }}";};

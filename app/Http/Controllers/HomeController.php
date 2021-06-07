@@ -40,14 +40,15 @@ class HomeController extends Controller
         
         $air_pole = "'NA'";
         $response = "'NA'";
+        $air_device = $devices_list[13];
 
-        if ($devices_list[14]->pole_id != null){
-            $air_pole = DB::select("SELECT * FROM `poles` WHERE `id`=".$devices_list[14]->pole_id);
+        if ($air_device->pole_id != null){
+            $air_pole = DB::select("SELECT * FROM `poles` WHERE `id`=".$air_device->pole_id);
             
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-            CURLOPT_URL => $devices_list[14]->api_link,
+            CURLOPT_URL => $air_device->api_link,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -81,14 +82,15 @@ class HomeController extends Controller
         $poles_list = DB::select('SELECT * FROM `poles` WHERE `user_id`='.$admin_id);
         $air_pole = "'NA'";
         $response = "'NA'";
+        $air_device = $devices_list[13];
 
-        if ($devices_list[14]->pole_id != null){
-            $air_pole = DB::select("SELECT * FROM `poles` WHERE `id`=".$devices_list[14]->pole_id);
+        if ($air_device->pole_id != null){
+            $air_pole = DB::select("SELECT * FROM `poles` WHERE `id`=".$air_device->pole_id);
             
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-            CURLOPT_URL => $devices_list[14]->api_link,
+            CURLOPT_URL => $air_device->api_link,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,

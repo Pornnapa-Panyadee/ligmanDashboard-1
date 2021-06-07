@@ -38,11 +38,11 @@
       </div>
     </div>
   </div>
-  <iframe name="myFrame" width="100%" height="650px"><p>Your browser does not support iframes.</p></iframe>
+  {{-- <iframe name="myFrame" width="100%" height="650px"><p>Your browser does not support iframes.</p></iframe> --}}
 </div>
 
 <script>
-  window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
+  // window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
 </script>
 
 <form name="digitalForm" id="digitalForm" method="POST" action={{$data->api_link}} target="_blank"> 

@@ -174,6 +174,9 @@
               type: 'column',
               name: text_tag[i],
               data: dataset[i],
+              dataGrouping: {
+              approximation: "average",
+              },
               zonesAxis: 'y',
                 zones: [{
                     value: 12,

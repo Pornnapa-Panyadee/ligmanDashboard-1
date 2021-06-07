@@ -28,7 +28,10 @@ class DeviceController extends Controller
         // $poles_list = DB::select('SELECT * FROM `poles`');
         $user_id = auth()->user()->id;
         $poles_list = DB::select('SELECT * FROM `poles` WHERE `user_id`='.$user_id);
-        return view('adminForm.admin.create_device', ['devices_list' => $devices_list, 'poles_list' => $poles_list]);
+
+        if($user_id==1) $slidebar = 'layouts.app_superadmin';
+        else $slidebar = 'layouts.app_admin';
+        return view('adminForm.admin.create_device', ['slidebar'=>$slidebar, 'devices_list' => $devices_list, 'poles_list' => $poles_list]);
     }
 
     protected function getEdit($device_id)
@@ -38,7 +41,10 @@ class DeviceController extends Controller
         $user_id = auth()->user()->id;
         $poles_list = DB::select('SELECT * FROM `poles` WHERE `user_id`='.$user_id);
         $device_user = DB::select('SELECT * FROM `device_users` WHERE `id`='.$device_id);
-        return view('adminForm.admin.device_edit', ['devices_list' => $devices_list, 'poles_list' => $poles_list, 'device_user' => $device_user[0]]);
+
+        if($user_id==1) $slidebar = 'layouts.app_superadmin';
+        else $slidebar = 'layouts.app_admin';
+        return view('adminForm.admin.device_edit', ['slidebar'=>$slidebar, 'devices_list' => $devices_list, 'poles_list' => $poles_list, 'device_user' => $device_user[0]]);
     }
 
     protected function postInsert(Request $request)

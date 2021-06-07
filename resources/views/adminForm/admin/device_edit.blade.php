@@ -1,4 +1,4 @@
-@extends('layouts.app_admin', ['activePage' => 'edit_device', 'titlePage' => __('Edit Device')])
+@extends($slidebar, ['activePage' => 'edit_device', 'titlePage' => __('Edit Device')])
 
 @section('content')
 
