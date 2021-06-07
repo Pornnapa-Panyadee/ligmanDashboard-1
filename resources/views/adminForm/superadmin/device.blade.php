@@ -1,4 +1,4 @@
-@extends('layouts.app_admin', ['activePage' => 'listadmin', 'titlePage' => __('Create Account')])
+@extends('layouts.app_superadmin', ['activePage' => 'deviceSuperadmin', 'titlePage' => __('Device Settings')])
 
 @section('content')
 <div class="content">
@@ -110,7 +110,7 @@
                                     <td>{{ $device->device_name }}</td>
                                     <td>{{ $device->device_username }}</td>
                                     <td>{{ $device->pole_id }}</td>
-                                    <td>{{ substr($device->api_link,0,20) }}</td> 
+                                    <td>{{ substr($device->api_link,0,20) }}</td>
                                     <td class="td-actions text-right">
                                         <form action={{ url('admin/editdevice/'.$device->id) }} method="GET" style="display: inline;">
                                             {{ csrf_field() }}  
