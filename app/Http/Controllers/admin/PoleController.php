@@ -21,7 +21,9 @@ class PoleController extends Controller
 
     public function getIndex()
     {
-        $poles_list = DB::select('SELECT * FROM `poles`');
+        // $poles_list = DB::select('SELECT * FROM `poles`');
+        $user_id = auth()->user()->id;
+        $poles_list = DB::select('SELECT * FROM `poles` WHERE `user_id`='.$user_id);
         return view('adminForm.admin.location', ['poles_list' => $poles_list]);
     }
 
@@ -40,7 +42,14 @@ class PoleController extends Controller
             return back()->withStatus(__('Information Invalid. Try again.'));
         }
 
-        Pole::create($request->all());
+        // Pole::create($request->all());
+        Pole::create([
+            'latitude' => $data['latitude'],
+            'longitude' => $data['longitude'],
+            'location' => $data['location'],
+            'user_id' => auth()->user()->id,
+        ]);
+
 
         return redirect('admin/list')->withStatus(__('Create Pole Successed.'));
     }

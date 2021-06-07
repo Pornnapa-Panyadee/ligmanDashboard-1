@@ -14,7 +14,7 @@ class ListController extends Controller
         $user_id = auth()->user()->id;
         $sql = "SELECT device_users.id, devices.device_name, device_users.device_username, poles.id AS pole_id, device_users.api_link FROM device_users INNER JOIN devices ON devices.id=device_users.device_id INNER JOIN poles ON poles.id=device_users.pole_id WHERE device_users.user_id=".$user_id;
         $devices_list = DB::select($sql);
-        $poles_list = DB::select('SELECT * FROM `poles`');
+        $poles_list = DB::select('SELECT * FROM `poles` WHERE `user_id`='.$user_id);
         return view('adminForm.admin.list', ['devices_list' => $devices_list, 'poles_list' => $poles_list]);
     }
 
@@ -32,6 +32,7 @@ class ListController extends Controller
 
     protected function deletePole($pole_id)
     {
+        DB::table('device_users')->where('pole_id', $pole_id)->delete();
         DB::table('poles')->where('id', $pole_id)->delete();
 
         return back()->withStatus(__('Delete Pole Successed.'));
@@ -52,6 +53,7 @@ class ListController extends Controller
     protected function deleteAccount($user_id)
     {
         DB::table('device_users')->where('user_id', $user_id)->delete();
+        DB::table('poles')->where('user_id', $user_id)->delete();
         DB::table('users')->where('id', $user_id)->delete();
 
         return back()->withStatus(__('Delete Account Successed.'));

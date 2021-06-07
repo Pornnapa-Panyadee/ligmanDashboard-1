@@ -25,14 +25,18 @@ class DeviceController extends Controller
     public function getIndex()
     {
         $devices_list = DB::select('SELECT * FROM `devices`');
-        $poles_list = DB::select('SELECT * FROM `poles`');
+        // $poles_list = DB::select('SELECT * FROM `poles`');
+        $user_id = auth()->user()->id;
+        $poles_list = DB::select('SELECT * FROM `poles` WHERE `user_id`='.$user_id);
         return view('adminForm.admin.create_device', ['devices_list' => $devices_list, 'poles_list' => $poles_list]);
     }
 
     protected function getEdit($device_id)
     {
         $devices_list = DB::select('SELECT * FROM `devices`');
-        $poles_list = DB::select('SELECT * FROM `poles`');
+        // $poles_list = DB::select('SELECT * FROM `poles`');
+        $user_id = auth()->user()->id;
+        $poles_list = DB::select('SELECT * FROM `poles` WHERE `user_id`='.$user_id);
         $device_user = DB::select('SELECT * FROM `device_users` WHERE `id`='.$device_id);
         return view('adminForm.admin.device_edit', ['devices_list' => $devices_list, 'poles_list' => $poles_list, 'device_user' => $device_user[0]]);
     }
