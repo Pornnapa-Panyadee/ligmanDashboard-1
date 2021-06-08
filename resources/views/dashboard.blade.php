@@ -181,7 +181,7 @@
                                   height:240px;display: flex;
                                   justify-content: center;
                                   align-items: center;"
-                                  ><img id="licenseimg" width="75%" src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png">
+                                  ><img id="licenseimg" height="100%" src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png">
                                     
                                   </div>
                                 </div>
