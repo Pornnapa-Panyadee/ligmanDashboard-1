@@ -31,7 +31,7 @@
         <li class="nav-item{{ $activePage == 'camera_license' ? ' active' : '' }}">
           <a class="nav-link" href="{{ route('camera_license') }}">
             <i class="icon-car text-orange"></i>
-              <p>{{ __('Lens Plate Recognition') }}</p>
+              <p>{{ __('License Plate Recognition') }}</p>
           </a>
         </li>
         <li class="nav-item{{ $activePage == 'camera_face' ? ' active' : '' }}">
@@ -43,7 +43,7 @@
         
        <!-- E-save -->
        <div id="group">
-          <li class="menu-title text-head ">Lighting</li>
+          <li class="menu-title text-head ">E-save</li>
         </div>
         <li class="nav-item {{ $activePage == 'esave_dashboard' ? ' active' : '' }}">
           <a class="nav-link " href="{{ route('esave_dashboard') }}">
@@ -78,7 +78,7 @@
       
       <!-- Facility  -->
         <div id="group">
-          <li class="menu-title text-head ">Advertisement</li>
+          <li class="menu-title text-head ">Facility</li>
         </div>
         <li class="nav-item{{ $activePage == 'ex_speaker' ? ' active' : '' }}">
           <a class="nav-link" href="{{ route('ex_speaker') }}">

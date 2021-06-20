@@ -189,7 +189,7 @@
                                   <div class="stats">
                                     <hr class="dash_status">
                                     <div class="dash-tri"><span>{{$devices_list[2]->pole_id}}</span></div> 
-                                    <span class="text_font">{{ __('Licence Plate Recognition') }}</span>
+                                    <span class="text_font">{{ __('License Plate Recognition') }}</span>
                                     <div class="absolute1">
                                       <button id="btnlicense" class="btn btn-offline btn-sm1">Offline</button>
                                     </div>
