@@ -982,7 +982,7 @@
 
 <?php
 // Delay for 5 seconds
-sleep(5);
+sleep(1);
 ?>
 
 <script
