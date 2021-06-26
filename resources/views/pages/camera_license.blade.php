@@ -38,7 +38,7 @@
 
 <script>
   // window.frames["myFrame"].location = {!! json_encode($data->api_link) !!};
-  window.frames["myFrame"].location = "http://147.50.41.133:82";
+  window.frames["myFrame"].location = "http://147.50.41.133:82/admin";
 </script>
 
 {{-- <form name="erdiForm" id="erdiForm" method="POST" action={{$data->api_link}} target="_blank"> 
