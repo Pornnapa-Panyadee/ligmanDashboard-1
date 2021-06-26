@@ -880,10 +880,7 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqTFzYkIkd1fw2jyCxkCVsRprw-RSs0AU&callback=initMap&libraries=&v=weekly"
   async>
 </script> --}}
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqTFzYkIkd1fw2jyCxkCVsRprw-RSs0AU&callback=initMap&libraries=&v=weekly"
-  async>
-</script>
+
 
 <style type="text/css">
   #pole_map {
@@ -899,7 +896,7 @@
 </style>
 
 <script>
-  window.initMap = function () {
+  function initMap() {
     var poles_list = {!! json_encode($poles_list) !!};
     console.log(poles_list.length);
     var isPole = true;
@@ -981,6 +978,16 @@
       }
     }
   }
+</script>
+
+<?php
+// Delay for 5 seconds
+sleep(5);
+?>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqTFzYkIkd1fw2jyCxkCVsRprw-RSs0AU&callback=initMap&libraries=&v=weekly"
+  async>
 </script>
 @endsection
   
