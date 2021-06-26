@@ -899,7 +899,7 @@
 </style>
 
 <script>
-  function initMap() {
+  window.initMap = function () {
     var poles_list = {!! json_encode($poles_list) !!};
     console.log(poles_list.length);
     var isPole = true;
