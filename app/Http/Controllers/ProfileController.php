@@ -18,7 +18,7 @@ class ProfileController extends Controller
         $role = auth()->user()->role;
         if($role == 'superadmin') $slidebar = 'layouts.app_superadmin';
         elseif ($role == 'admin') $slidebar = 'layouts.app_admin';
-        else $slidebar = '';
+        else return view('profile.edit');
         return view('profile.edit', ['slidebar'=>$slidebar]);
     }
 

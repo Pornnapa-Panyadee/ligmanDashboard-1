@@ -27,7 +27,7 @@ class ListController extends Controller
     {
         $user_id = auth()->user()->id;
         $role = auth()->user()->role;
-        if
+        if($role == 'user') return redirect('profile');
         if($role != 'superadmin'){
             return redirect('admin/list');
         }else{
