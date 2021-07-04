@@ -29,7 +29,7 @@
         <li class="nav-item{{ $activePage == 'camera_license' ? ' active' : '' }}">
           <a class="nav-link" href="{{ route('camera_license') }}">
             <i class="icon-car text-orange"></i>
-              <p>{{ __('Camera Fix Lens (plate)') }}</p>
+              <p>{{ __('License Plate Recognition') }}</p>
           </a>
         </li>
         <li class="nav-item{{ $activePage == 'camera_temp' ? ' active' : '' }}">
@@ -41,7 +41,7 @@
         <li class="nav-item{{ $activePage == 'camera_face' ? ' active' : '' }}">
           <a class="nav-link" href="{{ route('camera_face') }}">
             <i class="icon-face text-orange"></i>
-            <p>{{ __('Camera Fix Lens (Face)') }}</p>
+            <p>{{ __('Face Recognition Thermometer') }}</p>
           </a>
         </li>
         <li class="nav-item{{ $activePage == 'intercom' ? ' active' : '' }}">

@@ -88,7 +88,7 @@ class UserController extends Controller
         $user->no_device = 0;
         $user->save();
 
-        return redirect('superadmin/userlist')->withStatus(__('Create Account Successed.'));
+        return redirect('superadmin/userlist')->withStatus(__('Account Successfully Created.'));
     }
 
     protected function postUpdate(Request $request)
@@ -124,6 +124,6 @@ class UserController extends Controller
         $user->permission = $permission;
         $user->save();
         
-        return redirect('superadmin/userlist')->withStatus(__('Edit Account Successed.'));
+        return redirect('superadmin/userlist')->withStatus(__('Account Successfully Updated.'));
     }
 }

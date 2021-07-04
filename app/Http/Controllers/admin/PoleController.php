@@ -57,7 +57,7 @@ class PoleController extends Controller
         ]);
 
 
-        return redirect('admin/list')->withStatus(__('Create Pole Successed.'));
+        return redirect('admin/list')->withStatus(__('Pole Successfully Created.'));
     }
 
     protected function postUpdate(Request $request)
@@ -73,6 +73,6 @@ class PoleController extends Controller
         $pole = Pole::find($data['id']);
         $pole->update($request->all());
         
-        return redirect('admin/list')->withStatus(__('Edit Pole Successed.'));
+        return redirect('admin/list')->withStatus(__('Pole Successfully Updated.'));
     }
 }

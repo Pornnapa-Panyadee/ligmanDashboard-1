@@ -24,7 +24,8 @@ class ListController extends Controller
     public function getSuper()
     {
         $user_id = auth()->user()->id;
-        if($user_id != 1){
+        $role = auth()->user()->role;
+        if($role != 'superadmin'){
             return redirect('admin/list');
         }else{
             $users_list = DB::select('SELECT * FROM `users` WHERE `id`!='.$user_id);
@@ -38,7 +39,7 @@ class ListController extends Controller
         DB::table('device_users')->where('pole_id', $pole_id)->delete();
         DB::table('poles')->where('id', $pole_id)->delete();
 
-        return back()->withStatus(__('Delete Pole Successed.'));
+        return back()->withStatus(__('Pole Successfully Deleted.'));
     }
 
     protected function deleteDevice($device_id)
@@ -50,7 +51,7 @@ class ListController extends Controller
         $user->save();
         // DB::table('device_users')->where('id', $device_id)->delete();
 
-        return back()->withStatus(__('Delete Device Successed.'));
+        return back()->withStatus(__('Device Successfully Deleted.'));
     }
 
     protected function deleteAccount($user_id)
@@ -59,6 +60,6 @@ class ListController extends Controller
         DB::table('poles')->where('user_id', $user_id)->delete();
         DB::table('users')->where('id', $user_id)->delete();
 
-        return back()->withStatus(__('Delete Account Successed.'));
+        return back()->withStatus(__('Account Successfully Deleted.'));
     }
 }

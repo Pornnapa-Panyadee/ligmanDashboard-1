@@ -70,7 +70,7 @@ class DeviceController extends Controller
         $user->no_device++;
         $user->save();
 
-        return redirect('admin/list')->withStatus(__('Create Device Successed.'));
+        return redirect('admin/list')->withStatus(__('Device Successfully Created.'));
     }
 
     protected function postUpdate(Request $request)
@@ -91,6 +91,6 @@ class DeviceController extends Controller
         $device->pole_id = $data['pole_id'];
         $device->save();
         
-        return redirect('admin/list')->withStatus(__('Edit Device Successed.'));
+        return redirect('admin/list')->withStatus(__('Device Successfully Updated.'));
     }
 }
