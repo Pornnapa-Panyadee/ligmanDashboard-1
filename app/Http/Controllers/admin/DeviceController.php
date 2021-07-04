@@ -33,7 +33,7 @@ class DeviceController extends Controller
 
         if($role == 'superadmin') $slidebar = 'layouts.app_superadmin';
         elseif ($role == 'admin') $slidebar = 'layouts.app_admin';
-        else return view('profile.edit');
+        else return redirect('profile');;
         return view('adminForm.admin.create_device', ['slidebar'=>$slidebar, 'devices_list' => $devices_list, 'poles_list' => $poles_list]);
     }
 
@@ -48,7 +48,7 @@ class DeviceController extends Controller
 
         if($role == 'superadmin') $slidebar = 'layouts.app_superadmin';
         elseif ($role == 'admin') $slidebar = 'layouts.app_admin';
-        else return view('profile.edit');
+        else return redirect('profile');;
         return view('adminForm.admin.device_edit', ['slidebar'=>$slidebar, 'devices_list' => $devices_list, 'poles_list' => $poles_list, 'device_user' => $device_user[0]]);
     }
 

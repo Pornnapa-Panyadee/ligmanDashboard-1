@@ -19,7 +19,7 @@ class ListController extends Controller
         
         if($role == 'superadmin') $slidebar = 'layouts.app_superadmin';
         elseif ($role == 'admin') $slidebar = 'layouts.app_admin';
-        else return view('profile.edit');
+        else return redirect('profile');;
         return view('adminForm.admin.list', ['slidebar'=>$slidebar, 'devices_list' => $devices_list, 'poles_list' => $poles_list]);
     }
 
@@ -27,6 +27,7 @@ class ListController extends Controller
     {
         $user_id = auth()->user()->id;
         $role = auth()->user()->role;
+        if
         if($role != 'superadmin'){
             return redirect('admin/list');
         }else{
