@@ -12,12 +12,14 @@ class ListController extends Controller
     public function getIndex()
     {
         $user_id = auth()->user()->id;
+        $role = auth()->user()->role;
         $sql = "SELECT device_users.id, devices.device_name, device_users.device_username, poles.id AS pole_id, device_users.api_link FROM device_users INNER JOIN devices ON devices.id=device_users.device_id INNER JOIN poles ON poles.id=device_users.pole_id WHERE device_users.user_id=".$user_id;
         $devices_list = DB::select($sql);
         $poles_list = DB::select('SELECT * FROM `poles` WHERE `user_id`='.$user_id);
         
-        if($user_id==1) $slidebar = 'layouts.app_superadmin';
-        else $slidebar = 'layouts.app_admin';
+        if($role == 'superadmin') $slidebar = 'layouts.app_superadmin';
+        elseif ($role == 'admin') $slidebar = 'layouts.app_admin';
+        else return view('profile.edit');
         return view('adminForm.admin.list', ['slidebar'=>$slidebar, 'devices_list' => $devices_list, 'poles_list' => $poles_list]);
     }
 
