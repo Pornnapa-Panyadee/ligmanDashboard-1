@@ -34,6 +34,7 @@ class PoleController extends Controller
 
     protected function getEdit($pole_id)
     {
+        $role = auth()->user()->role;
         $pole = DB::select('SELECT * FROM `poles` WHERE `id`='.$pole_id);
 
         if($role == 'superadmin') $slidebar = 'layouts.app_superadmin';
