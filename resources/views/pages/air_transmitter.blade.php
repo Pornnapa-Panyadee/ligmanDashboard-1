@@ -77,7 +77,7 @@
       var date = new Date(response.data[i].date_create_long);
       var millisec = date.getTime();
       pm2_5[i]= [millisec, parseInt(response.data[i].pm2_5)];
-      co2[i]  = [millisec, parseInt(response.data[i].co2)];
+      co2[i]  = [millisec, parseInt(response.data[i].pm10)];
       temp[i] = [millisec, parseInt(response.data[i].temp)];
       humi[i] = [millisec, parseInt(response.data[i].humi)];
     }
@@ -106,11 +106,11 @@
     });
 
     var infowindow = new google.maps.InfoWindow();
-    var contentDiv = '<div><div id="graph_pm2_5"></div><div id="graph_co2"></div></div><div id="graph_temp"></div></div><div id="graph_humi"></div></div>';
+    var contentDiv = '<div><div id="graph_pm2_5"></div><div id="graph_pm10"></div></div><div id="graph_temp"></div></div><div id="graph_humi"></div></div>';
 
     google.maps.event.addListener(infowindow, 'domready', function() {
-      var graph_tag = ['graph_pm2_5', 'graph_co2', 'graph_temp', 'graph_humi'];
-      var text_tag = ['PM 2.5', 'CO2', 'Temperature', 'Humidity'];
+      var graph_tag = ['graph_pm2_5', 'graph_pm10', 'graph_temp', 'graph_humi'];
+      var text_tag = ['PM 2.5', 'PM 10', 'Temperature', 'Humidity'];
       var color_pm=['#52b947','#f2ec19','#fc8946','#ec1d23','#802a7b','#350317']
       var colors = ['#52b947', '#37474f', '#fcaf17', '#4099ff'];
 
@@ -133,6 +133,11 @@
             rangeSelector: {
               selected: 1,            
               buttons: [{
+                type: 'minute',
+                count: 15,
+                text: '15m',
+                title: 'View 15 minute'
+              }, {
                 type: 'hour',
                 count: 1,
                 text: '1hr',
@@ -216,6 +221,11 @@
             rangeSelector: {
               selected: 1,            
               buttons: [{
+                type: 'minute',
+                count: 15,
+                text: '15m',
+                title: 'View 15 minute'
+              }, {
                 type: 'hour',
                 count: 1,
                 text: '1hr',
@@ -257,6 +267,9 @@
               type: 'column',
               name: text_tag[i],
               data: dataset[i],
+              dataGrouping: {
+              approximation: "average",
+              },
               color: colors[i],
             }],
           }
