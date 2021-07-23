@@ -133,15 +133,15 @@
             rangeSelector: {
               selected: 1,            
               buttons: [{
-                type: 'minute',
-                count: 15,
-                text: '15m',
-                title: 'View 15 minute'
+                type: 'hour',
+                count: 6,
+                text: '6hr',
+                title: 'View 6 hours'
               }, {
                 type: 'hour',
-                count: 1,
-                text: '1hr',
-                title: 'View 1 hour'
+                count: 12,
+                text: '12hr',
+                title: 'View 12 hours'
               }, {
                 type: 'day',
                 count: 1,
@@ -221,15 +221,15 @@
             rangeSelector: {
               selected: 1,            
               buttons: [{
-                type: 'minute',
-                count: 15,
-                text: '15m',
-                title: 'View 15 minute'
+                type: 'hour',
+                count: 6,
+                text: '6hr',
+                title: 'View 6 hours'
               }, {
                 type: 'hour',
-                count: 1,
-                text: '1hr',
-                title: 'View 1 hour'
+                count: 12,
+                text: '12hr',
+                title: 'View 12 hours'
               }, {
                 type: 'day',
                 count: 1,
