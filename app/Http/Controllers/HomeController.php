@@ -24,7 +24,8 @@ class HomeController extends Controller
     public function index()
     {
         $user_id = auth()->user()->id;
-        if($user_id == 1){
+        $role = auth()->user()->role;
+        if($role == 'superadmin'){
             $admins_list = DB::select("SELECT `id`, `name` FROM `users` WHERE role!='user'");
             return view('adminForm.superadmin.dashboardAll', ['admins_list' => $admins_list]);
         }

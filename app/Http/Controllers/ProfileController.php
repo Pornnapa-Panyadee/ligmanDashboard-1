@@ -15,7 +15,8 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        if(auth()->user()->id==1) $slidebar = 'layouts.app_superadmin';
+        $role = auth()->user()->role;
+        if($role == 'superadmin') $slidebar = 'layouts.app_superadmin';
         else $slidebar = 'layouts.app_admin';
         return view('profile.edit', ['slidebar'=>$slidebar]);
     }
@@ -30,7 +31,7 @@ class ProfileController extends Controller
     {
         auth()->user()->update($request->all());
 
-        return back()->withStatus(__('Profile successfully updated.'));
+        return back()->withStatus(__('Profile Successfully Updated.'));
     }
 
     /**
@@ -43,6 +44,6 @@ class ProfileController extends Controller
     {
         auth()->user()->update(['password' => Hash::make($request->get('password'))]);
 
-        return back()->withStatusPassword(__('Password successfully updated.'));
+        return back()->withStatusPassword(__('Password Successfully Updated.'));
     }
 }

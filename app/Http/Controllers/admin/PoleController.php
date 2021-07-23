@@ -23,19 +23,23 @@ class PoleController extends Controller
     {
         // $poles_list = DB::select('SELECT * FROM `poles`');
         $user_id = auth()->user()->id;
+        $role = auth()->user()->role;
         $poles_list = DB::select('SELECT * FROM `poles` WHERE `user_id`='.$user_id);
 
-        if($user_id==1) $slidebar = 'layouts.app_superadmin';
-        else $slidebar = 'layouts.app_admin';
+        if($role == 'superadmin') $slidebar = 'layouts.app_superadmin';
+        elseif ($role == 'admin') $slidebar = 'layouts.app_admin';
+        else return redirect('profile');;
         return view('adminForm.admin.location', ['slidebar'=>$slidebar, 'poles_list' => $poles_list]);
     }
 
     protected function getEdit($pole_id)
     {
+        $role = auth()->user()->role;
         $pole = DB::select('SELECT * FROM `poles` WHERE `id`='.$pole_id);
 
-        if(auth()->user()->id==1) $slidebar = 'layouts.app_superadmin';
-        else $slidebar = 'layouts.app_admin';
+        if($role == 'superadmin') $slidebar = 'layouts.app_superadmin';
+        elseif ($role == 'admin') $slidebar = 'layouts.app_admin';
+        else return redirect('profile');;
         return view('adminForm.admin.location_edit', ['slidebar'=>$slidebar, 'pole' => $pole[0]]);
     }
 
@@ -57,7 +61,7 @@ class PoleController extends Controller
         ]);
 
 
-        return redirect('admin/list')->withStatus(__('Create Pole Successed.'));
+        return redirect('admin/list')->withStatus(__('Pole Successfully Created.'));
     }
 
     protected function postUpdate(Request $request)
@@ -73,6 +77,6 @@ class PoleController extends Controller
         $pole = Pole::find($data['id']);
         $pole->update($request->all());
         
-        return redirect('admin/list')->withStatus(__('Edit Pole Successed.'));
+        return redirect('admin/list')->withStatus(__('Pole Successfully Updated.'));
     }
 }

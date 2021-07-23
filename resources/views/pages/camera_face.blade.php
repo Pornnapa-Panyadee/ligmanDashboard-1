@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'camera_face', 'titlePage' => __('Camera Fix Lens (Face)')])
+@extends('layouts.app', ['activePage' => 'camera_face', 'titlePage' => __('Face Recognition Thermometer')])
 
 @section('content')
 <div class="content">
@@ -8,7 +8,7 @@
         <div class="card-header card-header-primary">
           <h4 class="card-title"> 
             <i class="icon-In-loud text-orange"></i> 
-            <b>Camera Fix Lens (Face)</b>
+            <b>Face Recognition Thermometer</b>
           </h4>
         </div>
         <div class="card-header card-header-primary">

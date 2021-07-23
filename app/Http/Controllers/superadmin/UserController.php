@@ -32,8 +32,8 @@ class UserController extends Controller
 
     public function getIndex()
     {
-        $user_id = auth()->user()->id;
-        if($user_id != 1){
+        $role = auth()->user()->role;
+        if($role != 'superadmin'){
             return redirect('admin/list');
         }else{
             $admins_list = DB::select("SELECT name FROM `users` WHERE role='admin'");
@@ -43,7 +43,8 @@ class UserController extends Controller
 
     protected function getEdit($user_id)
     {
-        if(auth()->user()->id != 1){
+        $role = auth()->user()->role;
+        if($role != 'superadmin'){
             return redirect('admin/list');
         }else{
             $user = DB::select('SELECT * FROM `users` WHERE `id`='.$user_id);
@@ -88,7 +89,7 @@ class UserController extends Controller
         $user->no_device = 0;
         $user->save();
 
-        return redirect('superadmin/userlist')->withStatus(__('Create Account Successed.'));
+        return redirect('superadmin/userlist')->withStatus(__('Account Successfully Created.'));
     }
 
     protected function postUpdate(Request $request)
@@ -124,6 +125,6 @@ class UserController extends Controller
         $user->permission = $permission;
         $user->save();
         
-        return redirect('superadmin/userlist')->withStatus(__('Edit Account Successed.'));
+        return redirect('superadmin/userlist')->withStatus(__('Account Successfully Updated.'));
     }
 }

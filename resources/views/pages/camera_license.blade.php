@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'camera_license', 'titlePage' => __('Camera Fix Lens (plate)')])
+@extends('layouts.app', ['activePage' => 'camera_license', 'titlePage' => __('License Plate Recognition')])
 
 @section('content')
 <div class="content">
@@ -8,7 +8,7 @@
         <div class="card-header card-header-primary">
           <h4 class="card-title"> 
             <i class="icon-In-loud text-orange"></i> 
-            <b>Camera Fix Lens (plate)</b>
+            <b>License Plate Recognition</b>
           </h4>
         </div>
         <div class="card-header card-header-primary">
