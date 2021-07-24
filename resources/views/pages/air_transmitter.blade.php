@@ -34,7 +34,7 @@
 
 <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
 <script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqTFzYkIkd1fw2jyCxkCVsRprw-RSs0AU&callback=initMap&libraries=&v=weekly"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMtZlj7kb3ZqUufl0OOOurIEGGog9VLms&callback=initMap&libraries=&v=weekly"
   async>
 </script>
 
@@ -77,7 +77,7 @@
       var date = new Date(response.data[i].date_create_long);
       var millisec = date.getTime();
       pm2_5[i]= [millisec, parseInt(response.data[i].pm2_5)];
-      co2[i]  = [millisec, parseInt(response.data[i].co2)];
+      co2[i]  = [millisec, parseInt(response.data[i].pm10)];
       temp[i] = [millisec, parseInt(response.data[i].temp)];
       humi[i] = [millisec, parseInt(response.data[i].humi)];
     }
@@ -106,11 +106,11 @@
     });
 
     var infowindow = new google.maps.InfoWindow();
-    var contentDiv = '<div><div id="graph_pm2_5"></div><div id="graph_co2"></div></div><div id="graph_temp"></div></div><div id="graph_humi"></div></div>';
+    var contentDiv = '<div><div id="graph_pm2_5"></div><div id="graph_pm10"></div></div><div id="graph_temp"></div></div><div id="graph_humi"></div></div>';
 
     google.maps.event.addListener(infowindow, 'domready', function() {
-      var graph_tag = ['graph_pm2_5', 'graph_co2', 'graph_temp', 'graph_humi'];
-      var text_tag = ['PM 2.5', 'CO2', 'Temperature', 'Humidity'];
+      var graph_tag = ['graph_pm2_5', 'graph_pm10', 'graph_temp', 'graph_humi'];
+      var text_tag = ['PM 2.5', 'PM 10', 'Temperature', 'Humidity'];
       var color_pm=['#52b947','#f2ec19','#fc8946','#ec1d23','#802a7b','#350317']
       var colors = ['#52b947', '#37474f', '#fcaf17', '#4099ff'];
 
@@ -134,9 +134,14 @@
               selected: 1,            
               buttons: [{
                 type: 'hour',
-                count: 1,
-                text: '1hr',
-                title: 'View 1 hour'
+                count: 6,
+                text: '6hr',
+                title: 'View 6 hours'
+              }, {
+                type: 'hour',
+                count: 12,
+                text: '12hr',
+                title: 'View 12 hours'
               }, {
                 type: 'day',
                 count: 1,
@@ -217,9 +222,14 @@
               selected: 1,            
               buttons: [{
                 type: 'hour',
-                count: 1,
-                text: '1hr',
-                title: 'View 1 hour'
+                count: 6,
+                text: '6hr',
+                title: 'View 6 hours'
+              }, {
+                type: 'hour',
+                count: 12,
+                text: '12hr',
+                title: 'View 12 hours'
               }, {
                 type: 'day',
                 count: 1,
@@ -257,6 +267,9 @@
               type: 'column',
               name: text_tag[i],
               data: dataset[i],
+              dataGrouping: {
+              approximation: "average",
+              },
               color: colors[i],
             }],
           }
