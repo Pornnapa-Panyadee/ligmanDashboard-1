@@ -353,7 +353,10 @@ div.text_usernameadmin {
   font-size:18px;
   font-weight: bold;
 }
-
+p.text_esave{
+  font-size:0.8vw;
+  font-weight: bold;
+}
 
 h1.text_dash{
   padding-top: 2px;
@@ -507,7 +510,6 @@ div.absoluteMap{
   font-weight: bold;
   height:90px;
   text-align:center;
-  color:e8e8e8;
 }
 .icon_Face{
   padding-top: 10px;
@@ -515,21 +517,19 @@ div.absoluteMap{
   font-weight: bold;
   height:234px;
   text-align:center;
-  color:e8e8e8;
 }
 .icon_dashEs{
   font-size:14px;
   font-weight: bold;
   height:123px;
   text-align:center;
-  color:e8e8e8;
+  margin-left: -8px;
 }
 .icon_dashAd{
   font-size:16px;
   font-weight: bold;
   height:120px;
   text-align:center;
-  color:e8e8e8;
 }
 .icon_dashCS{
   font-size:14px;
@@ -537,7 +537,6 @@ div.absoluteMap{
   height:180px;
   text-align:center;
   padding-top: 20px;
-  color:e8e8e8;
 }
 .login_layout{
   height:100%;
@@ -554,6 +553,30 @@ div.absoluteMap{
   position:sticky;
   top:20%;
   left:10%;
+}
+.card-air{
+  height:185px;
+}
+.card-map{
+  height:280px;
+}
+#card-360camera{
+  height:350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#card-intercom{
+  height:350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#card-lpr{
+  height:240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media print {
@@ -860,11 +883,46 @@ pre code {
   .container {
     max-width: 540px;
   }
+  .card-air{
+    height:185px;
+  }
+  .card-map{
+    height:280px;
+  }
 }
 
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+  }
+  .card-air{
+    height:185px;
+  }
+  .card-map{
+    height:280px;
+  }
+  .dash-tri {
+    width: 0px;
+    height: 0px;
+    border-style: inset;
+    border-width: 0 15px 25px 15px;
+    border-color: transparent transparent #fcb017 transparent;
+    float: left;
+    transform:rotate(180deg);
+    display:block
+  }
+  
+  .dash-tri span {
+    font-size:14px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    left: 5px;
+    top: 8px;
+    position: relative;
+    margin: 0px;
+    transform:rotate(180deg);
+    display:block;
   }
 }
 
@@ -875,7 +933,79 @@ pre code {
   .container1 {
     max-width: 98%;
   }
-
+  .icon_dashEs{
+    font-size:0.8vw;
+    font-weight: bold;
+    height:60px;
+    text-align:center;
+    margin-left: -8px;
+  }
+  .icon_dashAd{
+    font-size:12px;
+    font-weight: bold;
+    height:90px;
+    text-align:center;
+  }
+  .icon_Face{
+    padding-top: 10px;
+    font-size:16px;
+    font-weight: bold;
+    height:160px;
+    text-align:center;
+  }
+  .card-air{
+    height:100px;
+  }
+  .card-map{
+    height:200px;
+  }
+  #card-360camera{
+    height:250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #card-intercom{
+    height:250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #card-lpr{
+    height:165px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  hr.dash_status1 {
+    position: absolute;
+    margin-left: 0px;
+    margin-top:4px;
+    border: 8px solid #c5c5c5;
+    width:75%;
+  }
+  .dash-tri {
+    width: 0px;
+    height: 0px;
+    border-style: inset;
+    border-width: 0 10px 20px 10px;
+    border-color: transparent transparent #fcb017 transparent;
+    float: left;
+    transform:rotate(180deg);
+    display:block
+  }
+  .dash-tri span {
+    font-size:12px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    left: 3px;
+    top: 2px;
+    position: relative;
+    margin: 0px;
+    transform:rotate(180deg);
+    display:block;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -884,6 +1014,80 @@ pre code {
   }
   .container1 {
     max-width: 98%;
+  }
+  .icon_dashEs{
+    font-size:14px;
+    font-weight: bold;
+    height:123px;
+    text-align:center;
+    margin-left: -8px;
+  }
+  .icon_dashAd{
+    font-size:16px;
+    font-weight: bold;
+    height:120px;
+    text-align:center;
+  }
+  .icon_Face{
+    padding-top: 10px;
+    font-size:20px;
+    font-weight: bold;
+    height:234px;
+    text-align:center;
+  }
+  .card-air{
+    height:185px;
+  }
+  .card-map{
+    height:280px;
+  }
+  #card-360camera{
+    height:350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #card-intercom{
+    height:350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #card-lpr{
+    height:240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  hr.dash_status1 {
+    position: absolute;
+    margin-left: 0px;
+    margin-top:4px;
+    border: 8px solid #c5c5c5;
+    width:85%;
+  }
+  .dash-tri {
+    width: 0px;
+    height: 0px;
+    border-style: inset;
+    border-width: 0 15px 25px 15px;
+    border-color: transparent transparent #fcb017 transparent;
+    float: left;
+    transform:rotate(180deg);
+    display:block
+  }
+  
+  .dash-tri span {
+    font-size:14px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    left: 5px;
+    top: 8px;
+    position: relative;
+    margin: 0px;
+    transform:rotate(180deg);
+    display:block;
   }
 }
 
@@ -986,8 +1190,8 @@ pre code {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 8px;
-  padding-left: 8px;
+  padding-right: 4px;
+  padding-left: 4px;
 }
 
 .col {
@@ -3501,7 +3705,9 @@ tbody.collapse.show {
 .text_dashList{
   font-family: "Roboto";
   color: #fff;
-  margin-top: -10px;
+  font-size: 1vw;
+  margin: 10px 0;
+  font-weight: bold;
 }
 
 .card>hr {
@@ -8420,16 +8626,16 @@ fieldset[disabled][disabled] .btn-group-raised .btn,
 .btn.btn-sm2,
 .btn-group-sm2>.btn,
 .btn-group-sm2 .btn {
-  padding: 0.36625rem 1.25rem;
+  padding: 0.36625rem 0.55rem;
   margin-top:-0.12rem;
-  font-size: 0.6875rem;
+  font-size: 0.5875rem;
   line-height: 1.1;
   border-radius: 0.2rem;
 }
 .btn.btn-sm3,
 .btn-group-sm3>.btn,
 .btn-group-sm3 .btn {
-  padding: 0.32625rem 0.88rem;
+  padding: 0.32625rem 0.58rem;
   margin-top:-0.12rem;
   font-size: 0.6875rem;
   line-height: 1.1;
@@ -15523,7 +15729,7 @@ select.selectpicker {
 }
 
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-  width: 87%;
+  width: 76%;
 }
 
 .bootstrap-select .dropdown-toggle:focus {
@@ -16343,7 +16549,15 @@ Copyright (c) 2015 Daniel Eden
   background-color: #999;
 }
 
+#create_pix{
+  background-color: #515357;
+  margin-left:15px;
+}
+.createac{
+  width: 100%;
+}
 @media all and (max-width: 991px) {
+  
   [class*="navbar-expand-"]>.container,
   [class*="navbar-expand-"]>.container-fluid {
     padding-left: 15px;
@@ -16353,7 +16567,8 @@ Copyright (c) 2015 Daniel Eden
     padding: 15px;
   }
   .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
-    width: -webkit-fill-available !important;
+    /* width: -webkit-fill-available !important; */
+    width: 80%;
   }
   .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) .dropdown-menu.show {
     min-width: auto;
@@ -16511,6 +16726,13 @@ Copyright (c) 2015 Daniel Eden
   .dropdown-menu.show .dropdown-item.open+.dropdown-menu.show .dropdown-item.open+.dropdown-menu,
   .dropdown-menu.show .dropdown-item.open+.dropdown-menu.show .dropdown-item.open+.dropdown-menu.show {
     left: -165px !important;
+  }
+  .createac{
+    width: 30%;
+    text-align: center;
+  }
+  #create_pix{
+    background-color: #515357;
   }
 }
 

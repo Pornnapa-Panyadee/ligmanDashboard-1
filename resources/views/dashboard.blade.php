@@ -39,12 +39,7 @@
                             <div class="col-md-6">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="
-                                  height:350px;
-                                  display: flex;
-                                  justify-content: center;
-                                  align-items: center;"
-                                  >
+                                  <div class="ct-chart" id="card-360camera">
                                   {{-- <iframe id="live360" name="live360" width="200%" height="200%" height="200%" style="
                                   zoom: 0.5;
                                   -moz-transform: scale(0.5);
@@ -82,11 +77,7 @@
                             <div class="col-md-6">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="
-                                  height:350px;display: flex;
-                                  justify-content: center;
-                                  align-items: center;"
-                                  >
+                                  <div class="ct-chart" id="card-intercom">
                                   <img id="interimg" width="100%" src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png">
                                   </div>
                                 </div>
@@ -177,12 +168,8 @@
                             <div class="col-md-8">
                               <div class="card-dash">
                                 <div class="card-header card-header-white">
-                                  <div class="ct-chart" style="
-                                  height:240px;display: flex;
-                                  justify-content: center;
-                                  align-items: center;"
-                                  ><img id="licenseimg" height="100%" src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png">
-                                    
+                                  <div class="ct-chart" id="card-lpr">
+                                  <img id="licenseimg" width="50%" src = "https://www.kindpng.com/picc/m/116-1165084_disconnect-png-transparent-png.png">
                                   </div>
                                 </div>
                                 <div class="card-footer">
@@ -203,7 +190,7 @@
                                 <div class="card-header ">
                                   <div  class="icon_Face">
                                       <a id="faceimg"  href="#">
-                                      <i class="icon-face text-orange"  style="font-size:120px;"></i>
+                                      <i class="icon-face text-orange"  style="font-size:5vw;"></i>
                                       <p>Face Recognition <br>Thermometer</p>
                                     </a>
                                   </div>
@@ -227,7 +214,7 @@
                 </div>
               <!-- end camera -->
           </div>
-          <div class="col-lg-6 col-md-12">
+          <div class="col-lg-6 col-md-12" >
             <div class="row">
               <!-- E-save -->
                 <div class="col-lg-12 col-md-12">
@@ -251,7 +238,7 @@
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
                                       <a id="esave1" class="dash-link" href="#">
-                                        <i class="icon-gauge text-orange"  style="font-size:65px;"></i>
+                                        <i class="icon-gauge text-orange"  style="font-size:3vw;"></i>
                                         <p>E-Save <br> Dashboard</p>
                                       </a>
                                     </div>
@@ -272,8 +259,8 @@
                                 <div class="card-dash">
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
-                                      <a id="esave2" class="dash-link " href="#">
-                                        <i class="icon-cluster_projectors text-orange"  style="font-size:65px;"></i>
+                                      <a id="esave2" class="dash-link " href="#" >
+                                        <i class="icon-cluster_projectors text-orange"  style="font-size:3vw;"></i>
                                         <p>Cluster <br> Projectors</p>
                                       </a>
                                     </div>
@@ -295,7 +282,7 @@
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
                                       <a id="esave3" class="dash-link " href="#">
-                                        <i class="icon-cluster_projectors_ladar text-orange"  style="font-size:65px;"></i>
+                                        <i class="icon-cluster_projectors_ladar text-orange"  style="font-size:3vw;"></i>
                                         <p>Cluster <br> Projectors Lador</p>
                                       </a>
                                     </div>
@@ -317,7 +304,7 @@
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
                                       <a id="esave4" class="dash-link " href="#">
-                                        <i class="icon-cloudy1 text-orange"  style="font-size:65px;"></i>
+                                        <i class="icon-cloudy1 text-orange"  style="font-size:3vw;"></i>
                                         <p>E-Save <br> Meteodata </p>
                                       </a>
                                     </div>
@@ -339,7 +326,7 @@
                                   <div class="card-header">
                                     <div class="icon_dashEs" >
                                         <a id="esave5" class="dash-link " href="{{ route('occupancy') }}">
-                                          <i class="icon-occupancy text-orange"  style="font-size:65px;"></i>
+                                          <i class="icon-occupancy text-orange"  style="font-size:3vw;"></i>
                                           <p>Occupancy  <br> Sensor</p>
                                         </a>
                                     </div>
@@ -387,7 +374,7 @@
                                     <div class="card-header">
                                       <div class="icon_dashAd" >
                                         <a id="exstreamer" class="dash-link " href="#">
-                                          <i class="icon-bullhorn text-orange"  style="font-size:60px;"></i>
+                                          <i class="icon-bullhorn text-orange"  style="font-size:4vw;"></i>
                                           <p class="icon_dashAd">Exstreamer <br>Loud Speaker</p>
                                         </a>
                                       </div>
@@ -410,7 +397,7 @@
                                     <div class="card-header ">
                                       <div class="icon_dashAd" >
                                         <a id="instreamer" class="dash-link " href="#">
-                                          <i class="icon-In-loud text-orange"  style="font-size:60px;"></i>
+                                          <i class="icon-In-loud text-orange"  style="font-size:4vw;"></i>
                                           <p class="icon_dashAd">Instreamer <br>Loud Speaker </p>
                                         </a>
                                       </div>
@@ -433,7 +420,7 @@
                                     <div class="card-header">
                                       <div class="icon_dashAd" >
                                         <a id="digital" class="dash-link " href="#">
-                                          <i class="icon-Digital_Signage text-orange"  style="font-size:60px;"></i>
+                                          <i class="icon-Digital_Signage text-orange"  style="font-size:4vw;"></i>
                                           <p class="icon_dashAd">Digital <br> Signage</p>
                                         </a>
                                       </div>
@@ -455,7 +442,7 @@
                                     <div class="card-header">
                                       <div class="icon_dashAd" >
                                         <a id="plug" class="dash-link " href="#">
-                                          <i class="icon-power-plug text-orange"  style="font-size:60px;"></i>
+                                          <i class="icon-power-plug text-orange"  style="font-size:4vw;"></i>
                                           <p class="icon_dashAd">Round <br> Power Socket
                                         </a>
                                       </div>
@@ -503,7 +490,7 @@
                                   <div class="card-dash">
                                     <div class="card-header card-header-white">
                                       {{-- <div class="ct-chart" style="height:185px;"> --}}
-                                        <div class="card" style="height:175px;">
+                                        <div class="card-air" >
                                         {{-- <iframe width="100%" height="100%" frameborder="0" scrolling="no"
                                           src="//umap.openstreetmap.fr/th-th/map/air-transmitter_595019?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=null&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false#16/18.7953/458.9519">
                                         </iframe> --}}
@@ -540,7 +527,7 @@
                             <!--  MAp -->
                               <div class="row">
                                 <div class="col-md-12">
-                                  <div class="card" style="height:277px;">                                    
+                                  <div class="card-map" >                                    
                                     <div id="pole_map"></div>
                                     <div class="absoluteMap">
                                       <button class="btn btn-success btn-sm4">Online</button>
