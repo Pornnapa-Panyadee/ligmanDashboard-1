@@ -18,7 +18,7 @@
     
         <div class="row justify-content-center">
         <!-- add Location Pole -->
-            <div class="col-md-5">
+            <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-5 ">
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
@@ -75,7 +75,7 @@
                 </div>
             </div>
         <!-- add Device -->
-            <div class="col-md-7">
+            <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-7">
                 <div class="card">
                     <div class="card-header">
                         <div class="row">

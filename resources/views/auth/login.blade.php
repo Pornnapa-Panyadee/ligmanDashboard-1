@@ -1,7 +1,7 @@
 @extends('layouts.appLog', ['class' => 'off-canvas-sidebar', 'activePage' => 'login', 'title' => __('Material Dashboard')])
 
 @section('content')
-<div class="row align-items-center" style="height:940px; ">
+<div class="row align-items-center" style="height:100%; ">
     <div class="col-md-8 ml-auto mr-auto mb-3 text-center" >
         <img src="{{ asset('material/img/logo/ligman_logo_20_2c_fn_200.png') }}" widht="100%" >
     </div>

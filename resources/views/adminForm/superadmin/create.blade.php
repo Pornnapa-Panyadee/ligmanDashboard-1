@@ -16,14 +16,14 @@
                         <form class="form" method="POST" action="{{ route('adminForm.superadmin.insert') }}">
                             @csrf
                             <div class="card mb-3">
-                                <div class="card-header  text-center" style="margin-top:-20px;background-color: #e8e8e8;">
+                                <div class="card-header text-center" style="margin-top:-20px;background-color: #e8e8e8;">
                                     <h4 class="card-title"><strong>{{ __('Create Account') }}</strong></h4>
                                 </div>
                                 <div class="row">
-                                    <div class="col-4" style="background-color: #515357;margin-left:15px;">
-                                        <img src="{{ asset('material/img/create-1.png')}}" width=100% >
+                                    <div class="col-11 col-sm-11 col-md-11 col-lg-4  text-center" id="create_pix">
+                                        <img src="{{ asset('material/img/create-1.png')}}" class="createac" >
                                     </div>
-                                    <div class="col-6" style="margin-top:30px;">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 " style="margin-top:30px;">
                                         <div class="card-body">
                                             @if (session('status'))
                                                 <div class="row">
@@ -109,7 +109,7 @@
                                                         <i class="material-icons">check_circle_outline</i>
                                                     </span>
                                                     </div>
-                                                    <select class="selectpicker" id="role" name="role" data-style="select-with-transition" title="{{ __('status...') }}" data-size="7" style="width: 400px" required>
+                                                    <select class="selectpicker" id="role" name="role" data-style="select-with-transition"  class="form-control" title="{{ __('status...') }}" data-size="7" style="width: 400px" required>
                                                         <option value="admin">admin </option>
                                                         <option value="user">user</option>
                                                     </select>                                                   

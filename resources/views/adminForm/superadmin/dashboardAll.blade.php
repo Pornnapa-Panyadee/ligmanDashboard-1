@@ -5,15 +5,15 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
         <div class="col-md-10">
-           <div class="row">
+           <div class="row"  >
                 @foreach($admins_list as $admin)
-                <div class="col-md-2" >
-                    <div class="card-dashList">
+                <div class="col-md-3">
+                    <div class="card-dashList" style="height:90%; margin-bottom:10px;" >
                         <a class="nav-link" href="{{ url('superadmin/dashboard/'.$admin->id) }}">
                             <div class="card-icon text-orange" >
-                                <i class="material-icons" style="font-size:120px;">account_circle</i>
+                                <i class="material-icons" style="font-size:8vw;">account_circle</i>
                             </div>
-                            <h4 class="text_dashList">{{$admin->name}}</h4>
+                            <font class="text_dashList">{{$admin->name}}</font>
                         </a>
                      </div>
                 </div>
