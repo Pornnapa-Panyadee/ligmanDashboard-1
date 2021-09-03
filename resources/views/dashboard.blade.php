@@ -975,7 +975,6 @@
                 timeout: 5000,
                 success: function() {
                     if (devices_list[13]['api_link'] != null) {
-                        document.getElementById('plug').href = "{{ route('air_transmitter') }}";
                         document.getElementById('btnpmair').className = "btn btn-success btn-sm3";
                         document.getElementById('btnpmair').onclick = function(ev) {
                             window.location = "{{ url('air_transmitter') }}";
