@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\DB;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/emergency/action', function () {
+	Cache::put('emergency', now());
+	$time = Cache::get('emergency');
+    return ['status' => 200, 'time' => $time];
+});
+
+
+Route::get('/emergency/get', function () {
+	$time = Cache::get('emergency');
+    return ['time' => $time];
+});
 
 Route::get('/', function () {
     return view('auth.login');
