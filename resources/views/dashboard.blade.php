@@ -1076,7 +1076,7 @@
                         return function() {
                             // infowindow.setContent("<pre>"+JSON.stringify(last_air_data,undefined, 2) +"</pre>");
                             infowindow.setContent(
-                                "<table class='table table-sm table-bordered'><tbody><tr><th>PM 2.5</th><th>Hum</th><th>Temp</th> </tr><tr><td>" +
+                                "<table class='table table-sm table-bordered' style='color: black;'><tbody><tr><th>PM 2.5</th><th>Hum</th><th>Temp</th> </tr><tr><td>" +
                                 last_air_data.pm2_5 + " </td> <td>" + parseInt(last_air_data.humi) +
                                 "</td><td>" + parseInt(last_air_data.temp) +
                                 "</td></tr></tbody></table>");
