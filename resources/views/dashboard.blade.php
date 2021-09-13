@@ -590,16 +590,11 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="card-map">
-                                                        <div id="pole_map"></div>
-                                                        <div class="absoluteMap">
-                                                            <button class="btn btn-success btn-sm4">Online</button>
-                                                        </div>
-                                                        <div id="totaldevice" class="text-dash-onlineall">/0</div>
-                                                        <div id="restdevice" class="text-dash-online">0</div>
+                                                        <div id="pole_map"></div>                                                       
                                                         <div class="text-dash-onlinetag"> devices </div>
                                                         {{-- <iframe width="100%" height="100%" frameborder="0"  
-                                      src="//umap.openstreetmap.fr/en/map/poles-map_595016?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=null&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false#14/18.7968/98.9639">
-                                    </iframe> --}}
+                                                                src="//umap.openstreetmap.fr/en/map/poles-map_595016?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=null&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=false&onLoadPanel=undefined&captionBar=false#14/18.7968/98.9639">
+                                                            </iframe> --}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -607,6 +602,14 @@
                                         </div>
 
                                     </div>
+                                    <div class="row">
+                                        <div class="absoluteMap">
+                                            <button class="btn btn-success btn-sm4">Online</button>
+                                        </div>
+                                            <div id="totaldevice" class="text-dash-onlineall">/0</div>
+                                            <div id="restdevice" class="text-dash-online">0</div> 
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -628,7 +631,7 @@
             // console.log(devices_list);
             var restdevice = 0;
             var totaldevice = devices_list.length;
-            document.getElementById('totaldevice').innerHTML = "/" + totaldevice;
+            document.getElementById('totaldevice').innerHTML = " /" + totaldevice +" devices";
             var alert = false;
 
             setInterval(function() {
@@ -995,7 +998,7 @@
     <style type="text/css">
         #pole_map {
             margin-top: 0px;
-            height: 100%;
+            height: 90%;
             width: 100%;
         }
 
